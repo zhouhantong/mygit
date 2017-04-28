@@ -1,0 +1,54 @@
+{
+  "name": "hfz",
+  "version": "1.0.0",
+  "description": "hfz Project",
+  "homepage": "http://goodhfz.com",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": {
+    "name": "Cator V. <hi@catorv.com>"
+  },
+  "dependencies": {
+    "uglify-js": "~2",
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-rsync": "*",
+	  "grunt-babel": "*",
+	  "html-minifier": "*",
+    "stylus": "*",
+    "babel-core": "*",
+    "babel-preset-es2015": "*",
+    "babel-plugin-async-to-promises": "*",
+    "babel-plugin-transform-do-expressions": "*",
+    "babel-plugin-transform-function-bind": "*",
+    "babel-plugin-transform-object-rest-spread": "*",
+    "babel-plugin-syntax-trailing-function-commas": "*",
+    "babel-plugin-transform-exponentiation-operator": "*",
+    "babel-plugin-transform-react-jsx": "*",
+    "forever": "*",
+    "rsyncwrapper": "*"
+  },
+  "babel": {
+    "presets": [ "es2015" ],
+    "plugins": [
+      "async-to-promises",
+      "transform-do-expressions",
+      "transform-function-bind",
+      "transform-object-rest-spread",
+      "syntax-trailing-function-commas",
+      "transform-exponentiation-operator",
+      ["transform-react-jsx", {"pragma": "v.jsx"}]
+    ]
+  }
+}

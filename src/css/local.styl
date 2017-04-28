@@ -1,0 +1,130 @@
+@import 'lib'
+
+#page-local-detail
+    background-color: white
+    .more
+        text-align: center
+        cursor: pointer
+        background-color: COLOR_BG
+        height: 40px
+        line-height: 40px
+        &:active
+          color: #1D6AF4
+    .spacer
+        height: 44px
+    .head
+        height: 44px 
+        line-height: 44px 
+        background-color: COLOR_BG
+        vendor-property: display box
+        box-orient: horizontal
+        box-pack: center
+        box-align: center
+        border-bottom: 2px solid #df6520
+        .sort
+          position: absolute;
+          top: 0px
+          left: 0
+          width: 110px
+          height: 44px 
+          opacity: 0
+        .radius
+          position: absolute;
+          right: 0
+          top: 0px
+          width: 110px
+          height: 44px 
+          opacity: 0 
+        .sort-value,
+        .radius-value
+          width: 110px   
+          text-align: center
+          font-size: 14px 
+          color: #000
+          &:after 
+            position: absolute
+            content: ''
+            size: 18px 18px 
+            top: 50%
+            margin-top: -8px
+            background: image('icon-prev.png') no-repeat right center
+            background-size: 18px 18px 
+            transform: rotate(-90deg)           
+    #ptitle
+        box-flex: 1
+        box-pack: center
+        color: #df6520
+        font-weight: bold
+        font-size: 17px
+        text-align: center
+    .pcontent
+        background-color: white
+        > div
+            cursor: pointer
+            vendor-property: display box
+            &.highlight,
+            &.selected
+              background: rgba(0,0,0,0.1)
+            &:after
+              position: absolute
+              content: ''
+              left: 0
+              right: 0
+              bottom: 0
+              height: 1px
+              background: image('line.png') repeat
+              background-size: 1px 1px                
+            > *
+                vendor-property: display box
+            .icon
+                height: 80px
+                width: 105px
+                margin: 8px 10px
+            .middle
+                margin: 8px 0
+                box-orient: vertical
+                box-flex: 1
+                span
+                    font-size: 13px 
+                .scores
+                  font-size: 10px
+                  line-height: 16px
+                img 
+                  margin-top: 6px
+                  margin-bottom: 2px
+            .tuan
+                display: inline-block
+                background: image('tuan.jpg')
+                background-size: cover
+                width: 20px
+                height: 20px
+                margin-bottom: -4px
+            .last
+                color: #a5a5a5
+                box-orient: vertical
+                box-pack: center
+                box-align: end
+                font-size: smaller
+                vendor-property: display box
+                margin-right: 5px
+                > *
+                    vendor-property: display box
+            .btn
+                width: 45px
+                height: 22px
+                background-size: cover
+            .btn.order
+                background: image('order.jpg')
+            .btn.coupon
+                background: image('coupon.jpg')
+            label
+                margin-right: 3px
+                font-size: 12px
+            .desc
+                color: #a5a5a5
+                font-size: 10px
+            .scores
+                color: #a5a5a5
+                span
+                    margin-right: 10px
+                    display: inline-block

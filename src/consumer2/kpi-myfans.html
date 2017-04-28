@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>我的粉丝</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/kpi.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-kpi-myfans" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+        <div class="select-layer"></div>
+        <div class="list"></div>
+        <script name="select-layer" type="text/template">
+          <div class="select-layer">
+            <div class="select-bar">
+              <div class="btn selected" v-link="*changeTab a">全部</div>
+              <div class="btn" v-link="*changeTab b">日期</div>
+            </div>
+          </div>
+        </script>
+        <script name="item-layer" type="text/template">
+          <div class="item-layer">
+            <img src="${headimgurl}" onerror="this.src='images/head.jpg'">
+            <div class="right-pannel">
+              <div>${nickname}</div>
+              <div class="line-layer">
+                <div>吸粉时间</div>
+                <div>${atime}</div>
+              </div>
+            </div>           
+          </div>
+        </script>
+        <script name="item-layer2" type="text/template">
+          <div class="item-layer2">
+            <div>${subdate}</div>     
+            <div>${subcounts}</div>     
+          </div>
+        </script>
+        <script name="item-layer3" type="text/template">
+          <div class="item-layer3">
+            <div>今日：</div>     
+            <div>${subtoday}人</div>     
+          </div>
+        </script>
+        <div class="loadding-bar"></div>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

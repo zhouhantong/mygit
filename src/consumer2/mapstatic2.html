@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/consumer.css" rel="stylesheet">
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+</head>
+<body>
+  <!-- html -->
+<div id="mapview2"></div>
+<!-- js -->
+<script>
+  var map = new BMap.Map("mapview2");
+  map.centerAndZoom(new BMap.Point(getQueryString('longitude'),getQueryString('latitude')), 15);
+  map.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_RIGHT}));
+
+  var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+  var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+  // var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); 
+  //右上角，仅包含平移和缩放按钮
+
+  map.addControl(top_left_control);        
+  map.addControl(top_left_navigation);     
+  // map.addControl(top_right_navigation);  
+
+  var point = new BMap.Point(getQueryString('longitude'),getQueryString('latitude'));
+  var marker = new BMap.Marker(point);  // 创建标注
+  map.addOverlay(marker);              // 将标注添加到地图中
+  marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+  var str = '';
+  var tmp = window.location.search.split('title=');
+  if(tmp && tmp.length > 1) {
+    str = tmp[1];
+  } 
+  // var label = new BMap.Label(decodeURIComponent(str),{offset:new BMap.Size(20,-10)});
+  // marker.setLabel(label);
+
+
+  function ComplexCustomOverlay(point, text){
+    this._point = point;
+    this._text = text;
+  }
+  ComplexCustomOverlay.prototype = new BMap.Overlay();
+  ComplexCustomOverlay.prototype.initialize = function(map){
+    var div = this._div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+    div.style.height = "42px";
+    div.style.width = "100px";
+    div.style.background = "url('images/map-note.png') no-repeat center center";
+    div.style.backgroundSize = "100px 42px";
+    div.style.textAlign = "center";
+    div.style.color = "white";
+    div.style.display = "block";
+    div.style.lineHeight = "30px";
+    div.style.whiteSpace = "nowrap";
+    div.style.MozUserSelect = "none";
+    div.style.fontSize = "10px";
+    div.style.backgroundColor = 'transparent';
+    div.innerText = this._text;
+    // div.appendChild(document.createTextNode(this._text));      
+    map.getPanes().labelPane.appendChild(div);
+    return div;
+  }
+  ComplexCustomOverlay.prototype.draw = function(){
+    var pixel = map.pointToOverlayPixel(this._point);
+    this._div.style.left = pixel.x - 52 + "px";
+    this._div.style.top  = pixel.y - 85 + "px";
+  }
+      
+  var myCompOverlay = new ComplexCustomOverlay(new BMap.Point(getQueryString('longitude'),getQueryString('latitude')), decodeURIComponent(str));
+
+  map.addOverlay(myCompOverlay);  
+
+
+  // map.setCurrentCity("广州");
+  function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+  }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/home.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-register-agent" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+        
+        <script name="form-layer" type="text/template">
+          <div class="form-layer">
+            <div class="input-area">
+              <input type="text" id="mname" placeholder="请输入员工姓名" value="">
+            </div>             
+            <div class="input-area ${CEMPNO?hide}">
+              <input type="text" id="cempno" placeholder="请输入员工工号" value="">
+            </div>
+            <div class="input-area select-company-1 ${CCHR?hide}" v-name="PopupSelectBox" data-index="1" data-preid="0">
+              <div class="text-value">请选择部门</div>
+            </div>
+            <div class="company-layer"></div>
+            <div class="input-area type-position ${CCHR?hide}">
+              <div class="text-value">请选择职位</div>
+              <select></select>
+            </div>
+            <div class="input-area ${CANSHOW?hide}">
+              <input type="tel" id="telnum" placeholder="请输入手机号" value="">
+            </div>
+            <div class="input-area ${CANSHOW?hide}">
+              <input type="tel" id="vericode" placeholder="请输入验证码" value="" maxlength="6">
+              <div class="btn-vericode" v-link="*getVericode">获取验证码</div>
+            </div> 
+          </div>
+        </script>
+
+        <script name="company-layer" type="text/template">
+          <div class="input-area select-company-${index} hide" v-name="PopupSelectBox" data-index="${index}">
+            <div class="text-value">请选择部门</div>
+          </div>
+        </script>
+
+        <script name="reg-layer" type="text/template">
+          <div class="comm-default-btn" v-link="*register">${btntxt}</div>
+        </script> 
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

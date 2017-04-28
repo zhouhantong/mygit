@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../../css/main.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head> 
+<body> 
+  <!-- html -->
+  <article id="page-list" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <script class="hide" name="stage" type="text/template">
+          <div class="stage">
+            <div class="header">
+              <img src="images/1.jpg" alt="">
+            </div>
+            <div class="counterBox"></div>
+            <div class="list"></div>
+            <div class="exlpain">
+              【活动时间】8月28日12:00-9月1日15:00<br>
+              【参与方式】点击进入选手主页——我要投票（每个微信号每天可以投  三票，但只能对一位参赛者投一票）<br>
+              【红包奖励】参与投票成功后，前1800名参与投票的人，均可收到随机红包一个（同一ID只可获得一次红包）。<br>
+              【活动规则】禁止刷票，活动有刷票监测机制，凡发现刷票者将提出警告及扣除相关刷票数目,情节严重者将取消参赛资格。<br>
+              【奖励规则】投票截止后，武汉好房子官方微信实时显示票数，按得票高低排列，活动现场公布投票结果给予第一名“最佳人气奖”现场颁奖，人气投票排名第二和第三的选手给予奖品鼓励（场下领取）。<br>
+              ※本活动最终解释权归武汉中原好声音组委会所有。
+            </div>
+          </div>
+        </script>
+        <script name="counter" type="text/template" class="hide">
+          <div class="counter">
+            <div class="name">${name}</div>
+            <div class="count">${count}</div>
+          </div>
+        </script>
+        <script name="item" type="text/template" class="hide">
+          <div class="item hide">
+            <div class="imgBox">
+              <img src="${bigimgurl}" alt="" v-link="*onDetail ${id}">
+              <div class="likebt" v-link="*onLike ${id} ${openid}"></div>
+            </div>
+            <div class="mainBox">
+              <div class="flex">
+                <div class="no">NO.${teachername}</div>
+                <div class="name ellipsis">${title}</div>
+              </div>
+              <div class="flex">
+                <div class="title">人气值</div>
+                <div class="like"><span>${like}</span>票</div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script name="detail" type="text/template" class="hide">
+          <div class="scrim">
+            <div class="scrim-wrapper">
+              <div class="detail">
+                <img src="${bigimgurl}" alt="">
+                <div class="main">
+                  <div class="item">
+                    <div>NO.${teachername}</div>
+                    <div class="flex ellipsis">${title}</div>
+                    <div>票数：<span>${like}</span></div>
+                  </div>
+                  <div class="item">
+                    <div>排名：</div>
+                    <div class="flex">${index}</div>
+                    <div>距上一名还差：${difflike}</div>
+                  </div>
+                  <div class="item">
+                    <div>描述：</div>
+                    <div class="flex">${memo}</div>
+                  </div>
+                </div>
+                <div class="close" v-link="*onClose"></div>
+              </div>
+              <div class="likebt" v-link="*onLike ${id} ${openid}">投TA一票</div>
+            </div>
+          </div>
+        </script>
+      </div>
+    </section>
+  </article>
+
+<!-- js -->
+<script src="../../main.js" data-require="./actcode,lib/util/Grid,lib/iscroll"></script>

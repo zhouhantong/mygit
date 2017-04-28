@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>积分兑换</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    }       
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-points-convert" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <script name="stage" type="text/template">
+          <div class="count-layer"></div>
+          <div class="convert-layer">
+            <div class="header">积分兑换</div>
+            <div class="explain">
+              <div>*注：</div>
+              <div>兑换信息（可用兑换余额：<span>${balance}积分</span>）<br>100积分=1钻石
+                <div class="ex-hintbox"></div>
+              </div>
+            </div>
+            <div class="input-layer">
+              <input type="number" id="balance" placeholder="请输入要兑换的钻石数量">
+            </div>
+            <div class="convertBt" v-link="*exChange">确认兑换</div>
+          </div>
+          <div class="list-layer">
+            <div class="header">兑换历史记录</div>
+            <div class="list-header">
+              <div class="item">编号</div>
+              <div class="item">钻石</div>
+              <div class="item">时间</div>
+            </div>
+            <div class="list">
+
+            </div>
+          </div>
+          <div class="loadding-bar"></div>
+        </script>
+
+        <script name="count-item" type="text/template">
+          <div class="count-item">
+            <div class="icon ${type}"></div>
+            <div class="name">${name}</div>
+            <div class="count">${count}</div>
+            <div class="suffix">${suffix}</div>
+          </div>
+        </script>
+
+        <script name="history-items" type="text/template">
+          <div class="item-layer">
+            <div class="item">${id}</div>
+            <div class="item">${points}</div>
+            <div class="item">${time}</div>
+          </div>
+        </script>
+
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>

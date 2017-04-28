@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="css/main.css" rel="stylesheet">
+</head> 
+<body> 
+  <!-- html -->
+  <article id="page-local-detail" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <div class="head">
+          <div class="sort-value">默认排序</div>
+          <select name="sort" class="sort">
+            <option value="1">默认排序</option>
+            <option value="7">按距离排序</option>
+          </select>
+          <div id="ptitle"></div>
+          <div class="radius-value">1000米内</div>
+          <select name="radius" class="radius">
+            <option value="1000">1000米以内</option>
+            <option value="500">500米以内</option>
+            <option value="300">300米以内</option>
+          </select>
+        </div>
+        <div class="pcontent"></div>
+      </div>
+      <div class="more">+ 更多结果</div>
+      <div class="common-nodata-item notop hide">未查询到相关记录</div>
+    </section>
+  </article>
+<!-- js -->
+<script src="main.js" data-require=""></script>

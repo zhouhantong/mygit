@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>房贷计算器</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/consumer.css" rel="stylesheet">
+</head>
+<body>
+  <!-- html -->
+  <article id="page-calculate" class="vpage hide detail-page">
+    <section>
+      <div class="vpage-content">
+        <div class="calculate-bar">
+          <div class="selectarea s1 selected" data-index="1">贷款计算器</div> 
+          <div class="selectarea s2" data-index="2">税费计算器</div>
+        </div>
+        <div class="note-text">请您填写：</div>
+        <div class="credit">
+          <div class="form-table">
+            <label>贷款类别：</label>
+            <div class="credittype hflexbox">
+              <div class="credittype-option selected" data-index="1">商业贷款</div>
+              <div class="credittype-option" data-index="2">公积金贷款</div>
+              <div class="credittype-option" data-index="3">组合型贷款</div>
+            </div>
+            <div class="type-sy-gjj">
+              <label>计算方式：</label>
+              <div class="calculatetype area">
+                <div class="credittype-option selected">根据面积、单位计算</div>
+                <div class="calculatetype-area">              
+                  <div class="input-area">
+                    <div>单价：</div>
+                    <input type="text" id="dprice" placeholder="" value="">
+                    <div>元/平米</div>
+                  </div>   
+                  <div class="input-area">
+                    <div>面积：</div>
+                    <input type="text" id="area" placeholder="" value="">
+                    <div>平方米</div>
+                  </div> 
+                  <div class="input-area type-mortgage">  
+                    <label>按揭成数：</label>
+                    <div class="text-value">7成</div>
+                    <select>
+                      <option value="9">9成</option>
+                      <option value="8">8成</option>
+                      <option value="7" selected="true">7成</option>
+                      <option value="6">6成</option>
+                      <option value="5">5成</option>
+                      <option value="4">4成</option>
+                      <option value="3">3成</option>
+                      <option value="2">2成</option>
+                    </select>
+                  </div>                                        
+                </div>
+              </div>  
+              <div class="calculatetype total">
+                <div class="credittype-option">根据贷款总额计算</div>
+                <div class="calculatetype-total hide">     
+                  <div class="input-area">
+                    <div>贷款总额：</div>
+                    <input type="text" id="creditttotal" placeholder="" value="">
+                    <div>元</div>
+                  </div>  
+                </div>             
+              </div>
+            </div>  
+            <div class="type-zuhe hide">
+              <div class="input-area">
+                <div>商业性：</div>
+                <input type="text" id="sy" placeholder="" value="">
+                <div>元</div>
+              </div> 
+              <div class="input-area">
+                <div>公积金：</div>
+                <input type="text" id="gjj" placeholder="" value="">
+                <div>元</div>
+              </div>                              
+            </div>            
+            <div class="input-area type-year">  
+              <label>按揭年数：</label>
+              <div class="text-value t1">20年（240期）</div>
+              <select>
+                <option value="1">1年（12期）</option>
+                <option value="2">2年（24期）</option>
+                <option value="3">3年（36期）</option>
+                <option value="4">4年（48期）</option>
+                <option value="5">5年（60期）</option>
+                <option value="6">6年（72期）</option>
+                <option value="7">7年（84期）</option>
+                <option value="8">8年（96期）</option>
+                <option value="9">9年（108期）</option>
+                <option value="10">10年（120期）</option>
+                <option value="11">11年（132期）</option>
+                <option value="12">12年（144期）</option>
+                <option value="13">13年（156期）</option>
+                <option value="14">14年（168期）</option>
+                <option value="15">15年（180期）</option>
+                <option value="16">16年（192期）</option>
+                <option value="17">17年（204期）</option>
+                <option value="18">18年（216期）</option>
+                <option value="19">19年（228期）</option>
+                <option value="20" selected="true">20年（240期）</option>
+                <option value="25">25年（300期）</option>
+                <option value="30">30年（360期）</option>
+              </select>
+            </div>   
+            <div class="input-area type-lily">  
+              <label>贷款利率：</label>
+              <div class="text-value t2">15年10月24日基准利率</div>
+              <select>
+
+                <option value="32">15年10月24日利率上限（1.1倍）</option>
+                <option value="31">15年10月24日利率下限（85折）</option>
+                <option value="30">15年10月24日利率下限（7折）</option>
+                <option value="29" selected="selected">15年10月24日基准利率</option>
+                <option value="28">15年8月26日利率上限（1.1倍）</option>
+                <option value="27">15年8月26日利率下限（85折）</option>
+                <option value="26">15年8月26日利率下限（7折）</option>
+                <option value="25">15年8月26日基准利率</option>
+                <option value="24">15年6月28日利率上限（1.1倍）</option>
+                <option value="23">15年6月28日利率下限（85折）</option>
+                <option value="22">15年6月28日利率下限（7折）</option>
+                <option value="21">15年6月28日基准利率</option>
+                <option value="20">15年5月11日利率上限（1.1倍）</option>
+                <option value="19">15年5月11日利率下限（85折）</option>
+                <option value="18">15年5月11日利率下限（7折）</option>
+                <option value="17">15年5月11日基准利率</option>
+                <option value="16">15年3月1日利率上限（1.1倍）</option>
+                <option value="15">15年3月1日利率下限（85折）</option>
+                <option value="14">15年3月1日利率下限（7折）</option>
+                <option value="13">15年3月1日基准利率</option>
+                <option value="12">14年11月22日利率上限（1.1倍）</option>
+                <option value="11">14年11月22日利率下限（85折）</option>
+                <option value="10">14年11月22日利率下限（7折）</option>
+                <option value="9">14年11月22日基准利率</option>
+                <option value="8">12年7月6日利率上限（1.1倍）</option>
+                <option value="7">12年7月6日利率下限（85折）</option>
+                <option value="6">12年7月6日利率下限（7折）</option>
+                <option value="5">12年7月6日基准利率</option>
+                <option value="4">12年6月8日利率上限（1.1倍）</option>
+                <option value="3">12年6月8日利率下限（85折）</option>
+                <option value="2">12年6月8日利率下限（7折）</option>
+                <option value="1">12年6月8日基准利率</option>
+
+<!--                 <option value="16">15年3月1日利率上限（1.1倍）</option>
+                <option value="15">15年3月1日利率下限（85折）</option>
+                <option value="14">15年3月1日利率下限（7折）</option>
+                <option value="13" selected="selected">15年3月1日基准利率</option>
+                <option value="12">14年11月22日利率上限（1.1倍）</option>
+                <option value="11">14年11月22日利率下限（85折）</option>
+                <option value="10">14年11月22日利率下限（7折）</option>
+                <option value="9">14年11月22日基准利率</option>
+                <option value="8">12年7月6日利率上限（1.1倍）</option>
+                <option value="7">12年7月6日利率下限（85折）</option>
+                <option value="6">12年7月6日利率下限（7折）</option>
+                <option value="5">12年7月6日基准利率</option>
+                <option value="4">12年6月8日利率上限（1.1倍）</option>
+                <option value="3">12年6月8日利率下限（85折）</option>
+                <option value="2">12年6月8日利率下限（7折）</option>
+                <option value="1">12年6月8日基准利率</option> -->
+              </select>
+            </div>   
+            <div class="input-area lily">
+              <input type="text" id="lily" placeholder="" value="4.9">
+              <div>％</div>
+              <div class="text-note1 hide"> (商业)</div>
+            </div> 
+            <div class="input-area lily2 hide">
+              <input type="text" id="lily2" placeholder="" value="3.25">
+              <div>％</div>
+              <div class="text-note2"> (公积金)</div>
+            </div>             
+            <div class="repaymenttype hflexbox">
+              <div>还款方式：</div>
+              <div class="credittype-option b1 selected" data-index="1">等额本息</div>
+              <div class="credittype-option b2" data-index="2">等额本金</div>
+            </div>
+          </div>
+        </div>
+        <div class="tax hide">
+          <div class="form-table">
+            <label>房屋类型：</label>
+            <div class="taxtype hflexbox">
+              <div class="credittype-option a1 selected" data-index="1">新房</div>
+              <div class="credittype-option a2" data-index="2">二手房</div>
+            </div> 
+            <div class="type-xf">
+              <div class="input-area">
+                <div>房屋面积：</div>
+                <input type="text" id="fwmj" placeholder="" value="">
+                <div>平米</div>
+              </div> 
+              <div class="input-area">
+                <div>房屋单价：</div>
+                <input type="text" id="fwdj" placeholder="" value="">
+                <div>元/平米</div>
+              </div>  
+              <div class="input-area need-hide hide">
+                <div>房屋总价：</div>
+                <input type="text" id="houseprice" placeholder="" value="">
+                <div>万元</div>
+              </div>  
+              <div class="input-area type-jzfs need-hide hide">  
+                <label>计征方式：</label>
+                <div class="text-value">总价</div>
+                <select>
+                  <option value="1" selected="true">总价</option>
+                  <option value="2">差价</option>
+                </select>
+              </div>              
+              <div class="input-area yj hide">
+                <div>房屋原价：</div>
+                <input type="text" id="houseyprice" placeholder="" value="">
+                <div>万元</div>
+              </div>  
+              <div class="input-area type-fcxz need-hide hide">  
+                <label>房产性质：</label>
+                <div class="text-value">普通住宅</div>
+                <select>
+                  <option value="1" selected="true">普通住宅</option>
+                  <option value="2">非普通住宅</option>
+                  <option value="3">经济适用房</option>
+                </select>
+              </div>
+              <div class="input-area type-fcgz need-hide hide">  
+                <label>房产购置满5年：</label>
+                <div class="text-value">是</div>
+                <select>
+                  <option value="1" selected="true">是</option>
+                  <option value="2">否</option>
+                </select>
+              </div>  
+              <div class="input-area type-scgf need-hide hide">  
+                <label>买房家庭首次购房：</label>
+                <div class="text-value">是</div>
+                <select>
+                  <option value="1" selected="true">是</option>
+                  <option value="2">否</option>
+                </select>
+              </div>  
+              <div class="input-area type-wyzf need-hide hide">  
+                <label>卖房家庭唯一住房：</label>
+                <div class="text-value">是</div>
+                <select>
+                  <option value="1" selected="true">是</option>
+                  <option value="2">否</option>
+                </select>
+              </div>                                                  
+            </div>                         
+          </div>
+        </div>
+        <div class="calculate-btn-bar">
+          <div class="calculate-btn x1">开始计算</div>
+          <div class="calculate-btn x2">重新填写</div>
+        </div>
+        <div class="credit-result hide">
+          <div class="note-text">查看结果：</div>
+          <div class="hflexbox result-item">
+            <label>房款总额：</label>
+            <div class="result t1"></div>
+            <span>元</span>
+          </div>
+          <div class="hflexbox result-item">
+            <label>贷款总额：</label>
+            <div class="result t2"></div>
+            <span>元</span>
+          </div>
+          <div class="hflexbox result-item">
+            <label>还款总额：</label>
+            <div class="result t3"></div>
+            <span>元</span>
+          </div>
+          <div class="hflexbox result-item">
+            <label>支付利息款：</label>
+            <div class="result t4"></div>
+            <span>元</span>
+          </div>
+          <div class="hflexbox result-item">
+            <label>首期付款：</label>
+            <div class="result t5"></div>
+            <span>元</span>
+          </div>
+          <div class="hflexbox result-item">
+            <label>贷款月数：</label>
+            <div class="result t6"></div>
+          </div>
+          <div class="hflexbox result-item tp1">
+            <label>月均还款：</label>
+            <div class="result t7"></div>
+            <span>元</span>
+          </div>    
+          <div class="hflexbox result-item tp2 hide">
+            <div class="input-area">
+              <label>月均还款：</label>
+              <div class="textarea-area">
+                <textarea rows="4" placeholder=""></textarea>
+              </div>
+            </div>
+          </div>                                                
+        </div>
+        <div class="tax-result hide">
+          <div class="note-text">查看结果：</div>
+          <div class="xftype">
+            <div class="hflexbox result-item">
+              <label>房款总额：</label>
+              <div class="result m1"></div>
+              <span>元</span>
+            </div>   
+            <div class="hflexbox result-item">
+              <label>印花税：</label>
+              <div class="result m2"></div>
+              <span>元</span>
+            </div>   
+            <div class="hflexbox result-item">
+              <label>公证费：</label>
+              <div class="result m3"></div>
+              <span>元</span>
+            </div>  
+            <div class="hflexbox result-item">
+              <label>契税：</label>
+              <div class="result m4"></div>
+              <span>元</span>
+            </div>  
+            <div class="hflexbox result-item">
+              <label>委托办理产权手续费：</label>
+              <div class="result m5"></div>
+              <span>元</span>
+            </div>    
+            <div class="hflexbox result-item">
+              <label>房屋买卖手续费：</label>
+              <div class="result m6"></div>
+              <span>元</span>
+            </div>             
+          </div>
+          <div class="esftype">
+            <div class="hflexbox result-item">
+              <label>契税：</label>
+              <div class="result f1"></div>
+              <span>元</span>
+            </div>
+            <div class="hflexbox result-item">
+              <label>营业税：</label>
+              <div class="result f2"></div>
+              <span>元</span>
+            </div>  
+            <div class="hflexbox result-item">
+              <label>印花税：</label>
+              <div class="result f3"></div>
+              <span>元</span>
+            </div>    
+            <div class="hflexbox result-item">
+              <label>个人所得税：</label>
+              <div class="result f4"></div>
+              <span>元</span>
+            </div>    
+            <div class="hflexbox result-item">
+              <label>工本印花税：</label>
+              <div class="result f5"></div>
+              <span>元</span>
+            </div>  
+            <div class="hflexbox result-item">
+              <label>综合地价税：</label>
+              <div class="result f6"></div>
+              <span>元</span>
+            </div>
+            <div class="hflexbox result-item">
+              <label>合计：</label>
+              <div class="result f7"></div>
+              <span>元</span>
+            </div>                                           
+          </div>                                          
+        </div>
+        <div class="note-text2 hide">*以上结果仅供参考</div>
+      </div>
+    </section>
+  </article>
+<!-- js -->
+<script src="../main.js" data-require=""></script>

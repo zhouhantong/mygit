@@ -1,0 +1,9 @@
+window.actCode = 20160824;
+window.acode = "40ee91dbcc764100b2406cac55157a47";
+window.SHARE_TITLE = '我为歌狂，第五季中原好声音';
+window.SHARE_DESC = '我为歌狂，第五季中原好声音';
+window.SHARE_TIMELINE_TITLE = '我为歌狂，第五季中原好声音';
+window.SHARE_IMG_URL = `${location.origin}/activity/whhfz-hsy/images/share.jpg`;
+window.SHARE_LINK = `${location.origin}/activity/whhfz-hsy/list.html`;
+var EXP_HTTP = /^(https?\:\/\/|\.\/|\.\.\/)/i;
+window.maxCount = 9;

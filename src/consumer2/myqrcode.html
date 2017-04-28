@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>我的二维码</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/home.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-myqrcode" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+
+        <script name="qr-detail"  type="text/template">
+          <div class="codeBox">
+            <div class="${hasCode?hide}">你还没有上传二维码</div>
+          </div>
+
+          <div class="codeBt">
+            <form id="_qr_form" method="post" enctype="multipart/form-data">
+              <input type="file" name="qrcode" accept="image/*" class="qrcode-upfile">
+
+              <div><img src="./images/icon_qrcode_white.png"/>${hasCode?重新上传二维码:上传二维码}</div>
+            </form>
+          </div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

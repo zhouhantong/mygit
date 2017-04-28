@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>算价记录</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-my-calchistory" class="vpage hide page-common">    
+    <section>
+      <div class="vpage-content">
+
+        <div class="list"></div>
+
+        <script name="item-layer" type="text/template">
+          <div class="item" v-link="../consumer2/house-calculate.html?from=1&id=${id}&projectid=${projectid}&price=${price}&area=${area}&lowtotal=${lowtotal}&hightotal=${hightotal}&title=${encodetitle}">
+            <div class="title">${prprojectname}</div>
+            <div class="line-layer">
+              <div>户型</div>
+              <div>${title}</div>
+            </div>
+            <div class="line-layer">
+              <div>单价</div>
+              <div>${prprice}元/m²</div>
+            </div>
+            <div class="line-layer">
+              <div>面积</div>
+              <div>${prarea}m²</div>
+            </div> 
+            <div class="line-layer">
+              <div></div>
+              <div>${time}</div>
+            </div>                     
+          </div>
+        </script>
+
+        <div class="loadding-bar"></div>
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="lib/iscroll"></script>
+</body>
+</html>

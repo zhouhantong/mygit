@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>我的</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/home.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-myhome" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+
+        <div class="top-layer"></div>
+        <div class="info-layer"></div>
+        <div class="function-layer"></div>
+        
+
+        <script name="top-layer" type="text/template">
+          <img src="images/home/logo.png">
+        </script>
+
+        <script name="info-layer" type="text/template">
+          <img src="${headimgurl}">
+          <div class="right-pannel">
+            <div class="item">
+              <div class="name ellipsis ${typeClass}">${name}</div>
+              <!-- <div class="icon ${typeClass}"></div> -->
+              <div class="rztxt ${ZYRZ:hide}" v-link="./register-agent.html?type=3">点击认证>></div>
+              <div class="rztxt2 ${RZING:hide}">认证审核中...</div>
+              <div class="flex"></div>
+              <div class="edit" v-link="./register-editjoin.html?userinfo=${userinfo}">修改</div>
+            </div>
+            <div class="item">
+              <div class="mobile">${mobile}</div>
+              <div class="jf ${isTeamMember?hide} hide">积分余额：${pointsNum}</div>
+            </div>
+            <div class="item">
+              <div class="sf ${identityClass}">${identity}</div>
+              <div class="zs  ${isTeamMember?hide} hide">钻石数：${cashNum}</div>
+            </div>            
+          </div>
+        </script>
+
+        <script name="function-layer" type="text/template">
+          <div class="f-layer ${REGISTER:hide}">
+            <div class="func-layer ${ISFLEX?flex}">
+              <div class="${ISOPEN?hide} ${isValidLeader:hide}" v-link="*openWd">
+                <div class="icon wdwd"></div>
+                <div class="right-pannel">
+                  <div>我要开店</div>
+                  <div>免费开店</div>
+                </div>
+              </div>
+              <div class="${ISOPEN:hide}" v-link="${WDLINK}">
+                <div class="icon wdwd"></div>
+                <div class="right-pannel">
+                  <div>我的微店</div>
+                  <div>轻松管理小店</div>
+                </div>
+              </div>
+              <div class="${ISAPP?hide}" v-link="../market/my-notice.html">
+                <div class="icon wdxx"></div>
+                <div class="right-pannel">
+                  <div>我的消息</div>
+                  <div>查看系统消息</div>
+                </div>
+              </div>              
+            </div>           
+          </div>
+
+          <div class="f-layer ${NOBORDERTOP?noborertop}">
+            <div class="func-layer ${ISAPP:hide}">
+              <div v-link="*onOpenContact">
+                <div class="icon dhb"></div>
+                <div class="right-pannel">
+                  <div>电话簿客户</div>
+                  <div>可以直接推荐通讯录客户</div>
+                </div>
+              </div>
+              <div v-link="*onOpenRecommendCustomer">
+                <div class="icon tskh"></div>
+                <div class="right-pannel">
+                  <div>平台推送客户</div>
+                  <div>平台提供客户</div>
+                </div>
+              </div>
+            </div>
+            <div class="func-layer flex ${ISOPEN:hide}">
+              <div v-link="../market/my-orderlist.html">
+                <div class="icon yykh"></div>
+                <div class="right-pannel">
+                  <div>预约客户</div>
+                  <div>我的客户通讯录</div>
+                </div>
+              </div>
+            </div> 
+          </div>
+
+          <div class="f-layer ${REGISTER:hide}  ${isTeamMember?hide} hide">
+            <div class="func-layer">
+              <div v-link="../market/points-convert.html">
+                <div class="icon jfdh"></div>
+                <div class="right-pannel">
+                  <div>积分兑换</div>
+                  <div>兑换积分赢大礼</div>
+                </div>
+              </div>
+              <div v-link="../market/diamond-rank.html">
+                <div class="icon zspm"></div>
+                <div class="right-pannel">
+                  <div>积分排名</div>
+                  <div>查看成绩排名</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-layer ${ISSALER:hide}">
+            <div class="func-layer flex">
+              <div v-link="../market/cus-pc-prolist.html">
+                <div class="icon saler"></div>
+                <div class="right-pannel">
+                  <div>我的驻场</div>
+                  <div>及时判客，高效沟通</div>
+                </div>
+              </div>
+            </div>            
+          </div>
+
+          <div class="f-layer ${KPI:hide}">
+            <div class="func-layer flex">
+              <div v-link="./kpi-index.html">
+                <div class="icon kpi"></div>
+                <div class="right-pannel">
+                  <div>KPI考核</div>
+                  <div>一分耕耘，一分收获</div>
+                </div>
+              </div>
+            </div>            
+          </div>
+
+          <div class="f-layer ${XSJL:hide}">
+            <div class="func-layer">
+              <div v-link="../market/statistic-personnelpfm.html">
+                <div class="icon ryyj"></div>
+                <div class="right-pannel">
+                  <div>人员数据</div>
+                  <div>我的团队，业绩报表</div>
+                </div>
+              </div>
+              <div v-link="../market/statistic-internetpfm.html">
+                <div class="icon hlwyj"></div>
+                <div class="right-pannel">
+                  <div>线上数据</div>
+                  <div>需求万变，努力不变</div>
+                </div>
+              </div>
+            </div>
+            <div class="func-layer">
+              <div v-link="../market/statistic-projectpfm.html">
+                <div class="icon xmyj"></div>
+                <div class="right-pannel">
+                  <div>项目数据</div>
+                  <div>我的项目，全局掌握</div>
+                </div>
+              </div>
+              <div v-link="../market/statistic-detailpfm.html">
+                <div class="icon xmkh"></div>
+                <div class="right-pannel">
+                  <div>项目客户</div>
+                  <div>客户信息，及时更新</div>
+                </div>
+              </div>
+            </div>            
+            <div class="func-layer flex ${GXXM:hide}">
+              <div v-link="*gxxm">
+                <div class="icon gxxm"></div>
+                <div class="right-pannel">
+                  <div>管辖项目</div>
+                  <div>我的项目，灵活管理</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-layer ${REGISTER:borderbt}">
+            <div class="func-layer">
+              <div v-link="./favorites.html">
+                <div class="icon wdsc"></div>
+                <div class="right-pannel">
+                  <div>我的收藏</div>
+                  <div>喜欢的都在这里</div>
+                </div>
+              </div>
+              <div v-link="./histories.html">
+                <div class="icon lljl"></div>
+                <div class="right-pannel">
+                  <div>浏览记录</div>
+                  <div>雁过留声，房过留名</div>
+                </div>
+              </div>
+            </div>
+            <div class="func-layer ${AGENT:flex}">
+              <div v-link="../market/my-calchistory.html">
+                <div class="icon sjjl"></div>
+                <div class="right-pannel">
+                  <div>算价记录</div>
+                  <div>精打细算</div>
+                </div>
+              </div>
+              <div v-link="./myqrcode.html" class="${AGENT:hide}">
+                <div class="icon qrcode"></div>
+                <div class="right-pannel">
+                  <div>我的二维码</div>
+                  <div>点击查看专属二维码</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+
+        <script name="reg-layer" type="text/template">
+          <div class="comm-default-btn" v-link="./register-agent.html">中原经纪人注册</div>
+          <div class="other-way" v-link="./register-agent.html?type=2">渠道经纪人注册</div>
+        </script>
+
+        <script name="reg-layer2" type="text/template">
+          <div class="comm-default-btn" v-link="*reregister ${agentType}">重新注册</div>
+        </script>
+
+        <script name="status-layer" type="text/template">
+          <div class="status-layer">${notetxt}</div>
+        </script>
+
+
+        <script name="exceptions" type="text/template">
+          <div class="exceptions" v-link="./statement.html">免责声明</div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>排行榜</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+  <!-- html -->
+  <article id="page-diamond-rank" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <script name="stage" class="hide" type="text/template">
+          <div class="head-bt">
+            <div class="cust-tap" v-link="*totalRank">总积分排行</div>
+            <div v-link="*cashRank">钻石排行</div>
+          </div>
+          <div class="contents">
+            <div class="list"></div>
+            <div class="loadding-bar"></div>
+          </div>
+        </script>
+        <script name="item" class="hide" type="text/template">
+          <div class="item">
+            <div class="index ${HIDE_INDEX?hide}">${index}</div>
+            <div class="emblem ${HIDE_INDEX:hide} index${index}"></div>
+            <img src="${headimgurl}" alt="" class="headimg">
+            <div class="main-layer">
+              <div class="name ellipsis">${nickname}</div>
+              <!--<div class="address-layer">-->
+                <!--<div class="icon"></div>-->
+                <!--<div class="address">${address}</div>-->
+              <!--</div>-->
+            </div>
+            <div class="count-layer">
+              <div class="count">${total}</div>
+              <div class="suffix">${rankType}</div>
+            </div>
+          </div>
+        </script>
+        <script name="fixed-item" class="hide" type="text/template">
+          <div class="fixed-item">
+            <img src="${headimgurl}" alt="" class="headimg">
+            <div class="rank-layer">
+              <div class="rank">${ranking}</div>
+              <div class="suffix">名</div>
+            </div>
+            <div class="space"></div>
+            <div class="count-layer">
+              <div class="count">${total}</div>
+              <div class="suffix">${rankType}</div>
+            </div>
+          </div>
+        </script>
+
+        <script name="noitem" type="text/template">
+          <div class="noitem">暂无数据</div>
+        </script>
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>

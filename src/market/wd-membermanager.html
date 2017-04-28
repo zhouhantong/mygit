@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>店员管理</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-wd-membermanager" class="vpage hide page-common"> 
+    <aside>
+      <ul class="list"></ul>
+    </aside>     
+    <section>
+      <div class="vpage-content">
+        <div class="header-layer"></div>
+
+        <div class="cus-list"></div>
+
+        <script name="header-layer" type="text/template">
+          <div>店长</div>
+          <div class="ellipsis">${leadername}</div>
+          <div>${mobile}</div>
+        </script>
+
+        <script name="del-layer" type="text/template">
+          <div class="del-layer">
+            <div>有关删除店员说明的规则明细</div>
+            <div>以下情况，不能删除店员：</div>
+            <div>1、30日内有一个到访成功项目；</div>
+            <div>2、有客户处于报备阶段；</div>
+            <div>3、30日内有一个项目已经报备且甲方审核通过的客户；</div>
+          </div>
+        </script>
+
+        <script name="item-layer" type="text/template">
+          <div class="item-layer sitem-${id}">
+            <div class="top-layer">
+              <div class="line-layer">
+                <div class="name ellipsis">${name}</div>
+                <div>${mobile}</div>
+                <div class="btn ${DELBTN?hide}" v-link="*del ${id}"></div>
+              </div>
+              <div class="info-layer">
+                <div>
+                  <div>推荐客户</div>
+                  <div>${rcmdcnt}人</div>
+                </div>
+                <div>
+                  <div>到访客户</div>
+                  <div>${visitcnt}人</div>
+                </div>
+                <div>
+                  <div>成交客户</div>
+                  <div>${dealcnt}人</div>
+                </div>
+              </div>
+              <div class="memo-layer ${HIDE:hide}">
+                <div>备注：${memo}</div>
+                <div class="btn" v-link="*editMemo ${id} ${memo}"></div>
+              </div>
+            </div>
+            <div class="bar-layer">
+              <div class="item">
+                <div class="btn ${BZ:flex}" v-link="./cus-management.html?fopenid=${openid}&name=${name}"><span>查看Ta的客户</span></div>
+                <div class="btn ${BZ:hide}" v-link="*editMemo ${id} ${memo}"><span>备注</span></div>
+              </div>                         
+            </div>
+
+          </div>
+        </script>
+
+        <script name="invalid-layer" type="text/template">
+          <div class="invalid-layer">
+            <div>${name}</div>
+            <div>${mobile}</div>
+            <div>${reason}</div>
+          </div>
+        </script>
+
+        <script name="addcus-layer" type="text/template">
+          <div class="addcus-layer" v-link="./wd-teamshare.html">
+            <div> + </div>
+            <div>添加店员</div>
+          </div>
+        </script>
+
+        <script name="common-home-icon" type="text/template">
+          <div class="common-home-icon" v-link="./wd-leaderhome.html"></div>
+        </script>
+
+        <div class="loadding-bar"></div>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="lib/iscroll"></script>
+</body>
+</html>

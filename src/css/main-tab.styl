@@ -1,0 +1,85 @@
+@import "lib"
+@import "common"
+
+@keyframes main-menu-in
+  0%
+    transform: translate3d(0, 100%, 0)
+  100%
+    transform: translate3d(0, 0, 0)
+
+@keyframes main-menu-out
+  0%
+    transform: translate3d(0, 0, 0)
+  100%
+    transform: translate3d(0, 100%, 0)
+
+.main-tab
+  @extend .hflexbox
+  @extend .fixed-font-size
+  background-color: #F0F4F7
+  background-image: image('mm-bg.png')
+  background-size: auto PAGE_FOOTER_HEIGHT
+  > .button
+    @extend .hflexbox
+    box-pack: center
+    box-flex: 1
+    height: PAGE_FOOTER_HEIGHT
+    > .label
+      font-size: .875em
+      color: #363636
+      margin-right: 0.5em
+    &.selected > .label
+      color: #D21727
+    &.back
+      width: @height
+      box-flex: 0
+      background: image('mm-back.png') no-repeat center center
+      background-size: 1.4375em
+  > .sep
+    width: 1px
+    height: PAGE_FOOTER_HEIGHT
+    background: image('mm-line.png') repeat-y left top
+    background-size: 1px PAGE_FOOTER_HEIGHT
+
+#main-submenu
+  @extend .vflexbox
+  @extend .fixed-font-size
+  position: fixed
+  //min-width: 5.5em
+  left: 3.125em
+  bottom: (PAGE_FOOTER_HEIGHT + 3px)
+  box-sizing: border-box
+  border-image: image('mm-sub-bg.png') 12 12 22 12 stretch stretch
+  border-width: 0.375em 0.375em 0.6875em 0.375em
+  z-index: 98
+  animation: main-menu-in .15s linear 1
+  &.hide-main-submenu
+    animation: main-menu-out .15s linear 1
+    transform: translate3d(0, 200%, 0)
+  > .main-menu-item
+    position: relative
+    box-sizing: border-box
+    border: 0.25em solid transparent
+    margin: 0.3125em -0.1875em 0 -0.1875em
+    .label
+      text-align: center
+      font-size: .875em
+      line-height: 1.875em
+      color: MENU_TEXT_COLOR
+    &:before
+      content: ""
+      position: absolute
+      top: -0.4375em
+      left: 0
+      right: 0
+      height: 1px
+      background: image('mm-sub-line.png') no-repeat
+      background-size: 100% 100%
+    &:first-child
+      margin-top: -0.1875em
+      &:before
+        display: none
+    &:last-child
+      margin-bottom: -0.1875em
+    &.highlight
+      border-image: image('mm-sub-bg-hl.png') 8 8 8 8 stretch stretch

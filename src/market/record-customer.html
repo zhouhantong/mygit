@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+  <!-- html -->
+  <article id="page-record-customer" class="vpage hide page-record">
+    <section>
+      <div class="vpage-content">
+
+        <script name="item-btn" type="text/template">
+          <div class="search-panel">
+            <div class="search-box">
+              <input type="text" class="search" placeholder="电话／姓名">
+            </div>
+            <div class="searchbt" v-link="*search"></div>
+          </div>
+          <ul>
+            <li v-link="*selectState" class="selected">全部</li>
+            <li v-link="*selectState 0">报备</li>
+            <li v-link="*selectState 5">成交</li>
+            <li v-link="*selectState 0 1">有效</li>
+          </ul>
+        </script>
+        <div class="topHeader"></div>
+
+        <div class="list"></div>
+
+        <script name="item" type="text/template">
+          <div class="item" id="item-${id}">
+            <div class="header">
+              <div class="name">客户：${name}</div>
+              <div class="mobile" v-link="*call ${mobile} ${isprivate}">电话：${mobile2}</div>
+            </div>
+            <div class="main">
+              <img src="${picurl}" alt="">
+              <div class="valuebox">
+                <div class="valuepanel">
+                  <div class="flex">${projectname}</div>
+                  <div style="font-size: 10px">发布人:${ownername}</div>
+                  <div style="padding-left: 5px;font-size: 10px" class="${FOOTERSHOW:hide}">分享人:${agentname}</div>
+                </div>
+                <div class="valuepanel">
+                  <div class="flex value1">楼栋房号:${propertycompany}</div>
+                </div>
+                <div class="valuepanel">
+                  <div class="flex value1">户型:${structure}</div>
+                  <div class="typename ${type:value2?value3}">${typename}</div>
+                </div>
+              </div>
+            </div>
+            <div class="footer ${FOOTERSHOW:hide}">
+              <div class="cj-desc ${CONTRACTRECORD:hide}">
+                <div>系统成交</div>
+                <div>${contractrecord}</div>
+              </div>
+              <div class="statetext">${STATETEXT}</div>
+              <div class="memo">${comment}</div>
+              <div class="fbtn-bar">
+                <div class="btn ${CHGSTATE:hide}" v-link="*updateStatus ${id}">修改状态</div>
+                <div class="btn" v-link="*updateMemo ${id} ${comment} " >修改备注</div>
+                <div class="btn ${APPROVESTATE:hide}" v-link="*updateApproveState ${id} 1 ">有效</div>
+                <div class="btn ${APPROVESTATE:hide}" v-link="*updateApproveState ${id} -1 ">无效</div>
+              </div>
+            </div>
+            <div class="footer ${FOOTERSHOW2:hide}">
+              <div class="cj-desc ${CONTRACTRECORD:hide}">
+                <div>系统成交</div>
+                <div>${contractrecord}</div>
+              </div>            
+              <div class="memo ${MEMO:hide}">${comment}</div>
+            </div>            
+          </div>
+        </script>
+
+        <script name="noitem" type="text/template">
+          <div class="noitem">暂无数据</div>
+        </script>
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="lib/iscroll"></script>

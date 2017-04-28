@@ -1,0 +1,592 @@
+@import 'lib'
+
+_1px = 0.03125rem
+
+//DIALOG_WIDTH = 18em
+DIALOG_WIDTH = 90%
+//DIALOG_BUTTON_HEIGHT = 2.75em
+DIALOG_BUTTON_HEIGHT = 44px
+
+//PAGE_HEADER_HEIGHT = 2.75em
+PAGE_HEADER_HEIGHT = 44px
+PAGE_HEADER_BGCOLOR = #EA1E37
+//PAGE_FOOTER_HEIGHT = 2.75em
+PAGE_FOOTER_HEIGHT = 44px
+PAGE_FOOTER_BGCOLOR = #eee
+PAGE_LINE_BORDER = PX1 solid #c8c8c8
+PAGE_WIDTH = 20em
+
+LINK_COLOR = #d21726
+LINK_COLOR_HL = #999
+
+// Base
+html
+  font-family: 'Helvetica Neue', 'Nimbus Sans L', Arial, sans-serif
+  // user-select: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  font-size: 16px
+  -webkit-text-size-adjust: 100%
+  //height: 100%
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, section, header, footer
+  position: relative;
+  margin: 0
+  padding: 0
+
+body
+  //min-height: 100%
+  -webkit-overflow-scrolling: touch
+  vendor font-smoothing antialiased
+  &.env-desktop
+    font-size: 16px
+
+fieldset, img
+  border: 0
+
+abbr, acronym
+  border: 0
+  font-variant: normal
+
+:focus
+  outline: 0
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+  font-size: 100%
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content: ''
+  content: none
+
+// ::-webkit-input-placeholder
+textarea, input, select
+  resize: none
+  -webkit-appearance: caret
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number]
+  -moz-appearance: textfield
+
+ul, ol
+  list-style: none
+
+li
+  display: block
+
+a, a:hover, a:active, a:link, a:visited
+  color: inherit
+  text-decoration: none
+
+.html
+  ul, ol
+    list-style: disc inside !important
+    margin: 1.12em 0
+    margin-left: 2.5em
+  ol
+    list-style-type: decimal !important
+  li
+    display: list-item
+
+// Common **************************************************************
+.hide
+  display: none !important
+
+.ellipsis
+  ellipsis: 1
+
+.hflexbox
+  flexbox: horizontal
+
+.vflexbox
+  flexbox: vertical
+
+.space
+  box-flex: 1
+
+.fixed
+  position: fixed
+  z-index: 1000
+.scrim
+  @extend .fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background-color: rgba(0,0,0,0.5)
+
+.spotlight-mask
+  position: absolute
+  z-index: 1000
+
+.scrollable
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+.highlight
+  background-color: rgba(0,0,0,0.1) !important
+  user-select: none
+
+.clear
+  clear: both
+
+.fixed-font-size
+  font-size: 16px
+
+// common
+.common-top-line
+  position: relative
+  &:before
+    content: ''
+    position: absolute 0 0 none 0
+    height: 1px
+    background: image('line.png') repeat
+    background-size: 1px
+    z-index: 1
+    transform: rotate(180deg)
+
+.common-bottom-line
+  position: relative
+  &:before
+    content: ''
+    position: absolute none 0 0 0
+    height: 1px
+    background: image('line.png') repeat
+    background-size: 1px
+    z-index: 1
+
+.common-left-line
+  position: relative
+  &:after
+    content: ''
+    position: absolute 0 none 0 0
+    width: 1px
+    background: image('line2.png') repeat
+    background-size: 1px
+    z-index: 1
+    transform: rotate(180deg)
+
+.common-right-line
+  position: relative
+  &:after
+    content: ''
+    position: absolute 0 0 0 none
+    width: 1px
+    background: image('line2.png') repeat
+    background-size: 1px
+    z-index: 1
+
+.common-row-arrow
+  position: relative
+  padding-right: 1.5em !important
+  &:before
+    content: ''
+    position: absolute 50% 0.3125em
+    size: 0.9375em 0.9375em
+    margin-top: -(@height / 2)
+    background: image('table-cell-arrow.png') no-repeat 0 0
+    background-size: 0.9375 1.875em
+
+.common-nodata-item
+  font-size: 0.875em
+  line-height: 2.5em
+  text-align: center
+  color: #888
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes fade-out
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes fade-in-out
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes fly-up
+  0%
+    opacity: 0
+    transform: translate3d(0, 1.875em, 0)
+  100%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+@keyframes fly-down
+  0%
+    opacity: 0
+    transform: translate3d(0, -1.875em, 0)
+  100%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+@keyframes fly-left
+  0%
+    opacity: 0
+    transform: translate3d(1.875em, 0, 0)
+  100%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+@keyframes fly-right
+  0%
+    opacity: 0
+    transform: translate3d(-1.875em, 0, 0)
+  100%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+.animation-fade-in
+  animation: fade-in .3s ease-out 1
+
+.animation-fade-out
+  animation: fade-out .3s ease-out 1
+
+.animation-fly-up
+  animation: fly-up .3s ease-out 1
+
+.animation-fly-down
+  animation: fly-down .3s ease-out 1
+
+.animation-fly-left
+  animation: fly-left .3s ease-out 1
+
+.animation-fly-right
+  animation: fly-right .3s ease-out 1
+
+// Popup
+.popup-view
+  @extend .fixed-font-size
+  position: fixed
+  z-index: 2000
+
+.toast-view
+  background-color: rgba(0,0,0,0.7)
+  border-radius: 0.25em
+  padding: 0.375em 1em
+  color: #fff
+  bottom: 3em
+  left: 50%
+  pointer-events: none
+
+.dialog-view
+  background-color: #fff
+  top: 50%
+  left: 50%
+  width: DIALOG_WIDTH
+  > .title
+    @extend .ellipsis
+    margin: .5em 1em
+    font-size: 1.125em
+    font-weight: bold
+    text-align: center
+    line-height: 2em
+  &.alert-view,
+  &.confirm-view
+    > .content
+      font-size: 0.875em
+      line-height: 1.5em
+      margin: .5em 0.25em 2em 0.25em
+      padding: 0 0.75em
+      text-align: justify
+      white-space: pre-wrap
+      word-wrap: break-word
+      max-height: 20em
+      overflow: auto
+      -webkit-overflow-scrolling: touch
+    > .buttons
+      @extend .common-top-line
+  &.with-buttons
+    padding-bottom: DIALOG_BUTTON_HEIGHT
+    > .buttons
+      @extend .hflexbox
+      position: absolute none 0 0 0
+      height: DIALOG_BUTTON_HEIGHT
+      border-top: PAGE_LINE_BORDER
+      box-align: stretch
+      > .button
+        box-flex: 1
+        text-align: center
+        border-right: PAGE_LINE_BORDER
+        line-height: DIALOG_BUTTON_HEIGHT
+        color: #1d8dbd
+        &:last-child
+          border-right: none
+
+
+// Page
+article.vpage
+  position: relative
+  z-index: 10
+  //min-height: 100%
+  width: PAGE_WIDTH
+  margin: auto
+  &.with-header
+    padding-top: PAGE_HEADER_HEIGHT
+  &.with-footer
+    padding-bottom: PAGE_FOOTER_HEIGHT
+  //&.with-scroller
+  //  position: fixed 0 0 0 0
+  //  > section
+  //    min-height: 100%
+
+  .vpage-content
+    padding-bottom: 1px
+
+  > header,
+  > footer
+    @extend .fixed-font-size
+    position: fixed
+    left: 0
+    right: 0
+    z-index: 99
+
+  > header
+    top: 0
+    height: PAGE_HEADER_HEIGHT
+    background-color: PAGE_HEADER_BGCOLOR
+
+  > footer
+    bottom: 0
+    height: PAGE_FOOTER_HEIGHT
+    background-color: PAGE_FOOTER_BGCOLOR
+
+
+TABLE_MARGIN = 2.125em
+.form-view,
+.table-view
+  position: relative
+  margin-top: TABLE_MARGIN
+  margin-bottom: TABLE_MARGIN
+  &.with-header
+    margin-top: 2.75em
+  &.none-margin
+    margin-top 0
+    margin-bottom 0
+  &.without-margin
+    margin-top: 0
+    margin-bottom: 0
+  &:before
+    content: ''
+    position: absolute
+    pos: 0 0 none 0
+    height: 1px
+    background: image('line.png') repeat
+    background-size: 1px
+    z-index: 1
+    transform: rotate(180deg)
+
+.table-view
+  > li,
+  > div
+    position: relative
+    min-height: 2.75em
+    line-height: @min-height
+    padding: 0 1.5em 0 0.625em
+    background-color: #fff
+    &:after
+      content: ''
+      position: absolute none 0 0 0
+      height: 1px
+      background: image('line.png') repeat
+      background-size: 1px
+      z-index: 1
+    &:before
+      content: ''
+      position: absolute 50% 0.3125em
+      size: 0.9375em 0.9375em
+      margin-top: -(@height / 2)
+      background: image('table-cell-arrow.png') no-repeat 0 0
+      background-size: 0.9375 1.875em
+    &.highlight
+      background-color: rgba(0,0,0,0.1)
+      &:before
+        background-position: 0 -0.9375em
+  > section
+    position: relative
+    &:after
+      content: ''
+      position: absolute none 0 0 0
+      height: 1px
+      background: image('line.png') repeat
+      background-size: 1px
+      z-index: 1
+  > .nodata
+    background-color: #fff
+    font-size: 0.875em
+    line-height: 2.75em
+    text-align: center
+    color: #888
+    &:before
+      display: none
+
+.form-view
+  font-size: 0.875em
+  > header
+    line-height: 1.375em
+    position: absolute -1.625em none none 0.625em
+    font-weight: bold
+    color: #000
+    border-top: 0.125em solid #000
+  > li,
+  > div
+    position: relative
+    padding: 0 0.75em 0 6em
+    min-height: 2.75em
+    background: #fff
+    flexbox: horizontal
+    &:after
+      content: ''
+      position: absolute none 0 0 0
+      height: 1px
+      background: image('line.png') repeat
+      background-size: 1px
+      z-index: 1
+    &.with-note
+      padding-bottom: 0.875em
+    > label
+      position: absolute 0 none 0 0
+      line-height: @min-height
+      text-align: right
+      width: 6em
+    > .column
+      @extend .space
+      .checkbox
+        display: inline-block
+        float: left
+        padding-right: 1em
+    .text-value,
+    > input,
+    > textarea
+      @extend .space
+      display: block
+      font-size: 1em
+      background-color: #fff
+      min-height: @min-height
+      -webkit-appearance: inherit
+      border-width: 0
+    > textarea
+      padding: 0.6875em 0
+      line-height: 1.5em
+    .select-box
+      position: relative
+      line-height: @min-height
+      min-height: @min-height
+      min-width: 3.75em
+      text-align: center
+      background-color: #f2f2f2
+      float: left
+      > select
+        position: absolute 0 0
+        z-index: 9
+        width: 100%
+        line-height: @min-height
+        opacity: 0
+        border: 0
+        margin: 0
+        padding: 0
+    .text
+      color: #888
+    .note
+      @extend .ellipsis
+      position: absolute none 0 0.125em 7em
+      font-size: 0.75em
+      line-height: 0.75em
+      color: #aaa
+    .checkbox
+      @extend .space
+      font-size: 0.875em
+      padding-left: 1.25em
+      line-height: @min-height
+      background: image('icon_selected.png') no-repeat 0.25em center
+      background-size: 0.375em
+      &.selected
+        background-image: image('icon_selected_down.png')
+
+.tab-view
+  @extend .hflexbox
+  @extend .common-bottom-line
+  > li
+    @extend .space
+    text-align: center
+    line-height: 2.75em
+    color: #F8C6AA
+    background-color: #fff
+    &.selected
+      background-color: #F8C6AA
+      color: #fff
+
+button
+  font-size: 1em
+  min-width: 6.25em
+  height: 2em
+  line-height: @height
+  text-align: center
+  color: #fff
+  background-color: LINK_COLOR
+  border: none
+  border-radius: 0.25em
+  padding: 0 1em
+  &.disabled
+    background-color: #eb6435 !important
+  &:active
+    background-color: LINK_COLOR_HL
+    border: none !important
+    padding: 0 1em
+
+.button-bar
+  flexbox: horizontal
+  box-pack: center
+  margin: 2em 0 1.25em 0
+  > button
+    margin: 0 0.625em
+
+.flat-button-bar
+  @extend .common-top-line
+  flexbox: horizontal
+  background-color: #fff !important
+  > li,
+  > div
+    @extend .space
+    height: 2.75em
+    line-height: @height
+    text-align: center
+    font-size: 0.875em
+    border-left: 1px solid #CDCDCD
+    &:first-child
+      border: none
+    &.disabled
+      color: #efefee
+    &.highlight
+      background-color: rgba(0,0,0,0.1)
+
+.scroll-wrapper
+  height: 100%
+  box-flex: 1
+
+.loadding-bar
+  position: relative
+  height: 3rem
+  line-height: 3rem
+  font-size: 0.75em
+  text-align: center
+  color: #666

@@ -1,0 +1,86 @@
+@import "../../css/common"
+
+#page-register-guide
+  .banner-wrapper
+    position: absolute 4em 0 none 10.5em
+    color: white
+    .title
+      font-weight: bold
+      font-size: 0.75em
+    hr
+      border: 0
+      height: 0
+      border-top: 1px solid rgba(255, 255, 255, 0.5)
+      margin: 0.25em 0
+    .text
+      font-size: 0.75em
+    .mp-name
+      font-size: 1em
+      line-height: 2em
+
+   .step-wrapper
+     text-align: center
+     margin: 2em 3em 1em 3em
+     > img
+       display: block
+       width: 10em
+       margin: auto
+     .step
+       font-weight: bold
+       font-size: 0.75em
+     .title
+       line-height: 1.5em
+       letter-spacing: 0.25em
+       font-size: 0.75em
+     .text
+       margin-top: 1em
+       font-size: 0.75em
+       color: #b8b8b8
+
+  .footer
+    text-align: center
+    margin: 4em 0 1em 0
+    > img
+      display: block
+      width: 4.375em
+      margin: auto
+
+
+#page-download
+  background-color: #56667F
+  .vpage-content
+    > img
+      display: block
+      width: 100%
+    > .download-button-1,
+    > .download-button-2
+      user-select: none
+      position: absolute
+      text-align: center
+      border-radius: 0.5em
+      left: 50%
+      > .text
+        letter-spacing: 0.25em
+        font-size: 0.9375em
+      &:active > .text
+        opacity: 0.5
+    > .download-button-1
+      top: 14.25em
+      width: 11em
+      height: 2.5em
+      margin-left: -(@width / 2);
+      line-height: @height
+      background-color: white
+      color: black
+      &.highlight
+        background-color: @background-color !important;
+    > .download-button-2
+      bottom: 5.5em
+      width: 12em
+      height: 2.5em
+      margin-left: -(@width / 2);
+      line-height: @height
+      background-color: #DF3539
+      color: #f2f2f2
+      &.highlight
+        background-color: @background-color !important;

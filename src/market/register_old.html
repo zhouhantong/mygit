@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>注册</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-market-register" class="vpage hide page-white">
+    <section>
+      <div class="vpage-content v1">
+        <div class="header">
+          <div class="bg"></div>
+          <div class="txt">注册</div>
+        </div>
+        <div class="form-table-view">
+
+          <div class="input-area">
+            <label class="l1">姓名</label>
+            <input type="text" id="mname" placeholder="请输入您的姓名" value="">
+          </div> 
+          <div class="input-area">
+            <label class="l2">电话</label>
+            <input type="tel" id="telnum" placeholder="请输入手机号码" value="" maxlength="11">
+          </div> 
+          <div class="input-area vericode">
+            <label class="l3">验证码</label>
+            <input type="tel" id="vericode" value="" placeholder="请输入验证码">
+            <div class="button-vericode">获取<br>验证码</div>
+          </div>           
+          <div class="input-area select-company-1 hide">  
+            <label class="l4">公司</label>
+            <div class="text-value" data-index="1"></div>
+            <select></select>
+          </div>
+          <div class="input-area select-company-2 hide">  
+            <label class="l4 noafter"></label>
+            <div class="text-value" data-index="2"></div>
+            <select></select>
+          </div>  
+          <div class="input-area select-company-3 hide">  
+            <label class="l4 noafter"></label>
+            <div class="text-value" data-index="3"></div>
+            <select></select>
+          </div>
+          <div class="input-area select-company-4 hide">  
+            <label class="l4 noafter"></label>
+            <div class="text-value" data-index="4"></div>
+            <select></select>
+          </div> 
+          <div class="input-area type-position">  
+            <label class="l6">职位</label>
+            <div class="text-value"></div>
+            <select></select>
+          </div>                         
+          <div class="input-area type-memo">
+            <label class="l5">备注</label>
+            <input type="text" id="memo" placeholder="请输入备注" value="">
+          </div>
+          <div class="sbtn-bar">
+            <div class="next-button t1">确认</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

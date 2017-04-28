@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <link href="index.css" rel="stylesheet">
+  <title></title>
+</head> 
+<body> 
+  <!-- html -->
+  <article id="" class="">
+    <section>
+      <div class="selectappid">
+        <div>appid：</div>
+        <select class='appid'></select>
+      </div>
+      <div id='editor_holder'></div>
+    </section>
+  </article>
+  <div class="createbtn">创建</div>
+  <div class="updatebtn">确定</div>
+
+<!-- js -->
+<script src="./jsoneditor.js"></script>
+<script src="./jquery.min.js"></script>
+<script src="../src/setting.js"></script>
+<script>
+  $(function() {
+
+    var host = location.origin;
+
+    if(host.indexOf('127.0.0.1') || host.indexOf('localhost')){
+      host = 'http://web.dev.goodhfz.com'
+    }
+
+    var editor = new JSONEditor($('#editor_holder')[0], {
+      schema: {
+        title: "setting.js",
+      },
+      disable_collapse: true,
+      disable_properties: true,
+      disable_array_reorder: true
+    });
+
+    var data = {};
+
+    var j = {
+      "wxappid": "wx6f49f336913746d1",
+      "openid": "oCYeat6yI55CZgnccKNHZOrYWwto",
+      "passport": "f4d3931da6e286d85305c8f81424d8fb",
+      "requestParam": {
+        obj: {}
+      }
+    }
+
+    $.get(host + '/qc-webapp/qcapi.do', {
+      j: JSON.stringify($.extend(j, {
+        "action": "/webconfig/WebConfigAction/list",
+      }))
+    }).then(function(obj){
+      if(obj.code != 0){
+        return Promise.reject(obj.errmsg);
+      }
+      obj = obj.obj;
+      var list = (obj.list || []).map(function(item, index){
+        var cache = {};
+        $.each(item, function(key, value){
+          try{
+            cache[key] = $.parseJSON(value);
+          }catch(e){
+            cache[key] = value;
+          }
+        })
+        return cache
+      })
+      $.each(list, function(index, item){
+        data[item.appid] = item;
+        $('<option/>', {
+          value: item.appid,
+          text: item.appid,
+          onChange: function(){
+            editor.setValue(data[this.value]);
+          }
+        }).appendTo('select.appid');
+      })
+    }).catch(function(msg){
+      alert(JSON.stringify(msg))
+    })
+
+    $('.createbtn').click(function(){
+      window.scrollTo(0, 0);
+      var cache = setting;
+      cache.appid = "";
+      editor.setValue(cache)
+      alert("按照模版创建完成");
+    })
+
+    $('.updatebtn').click(function(){
+      var json = editor.getValue();
+      $.each(json, function(key, value){
+        if($.type(value) != 'string'){
+          json[key] = JSON.stringify(value);
+        }
+      })
+      if(!json.appid){
+        return alert("数据错误");
+      }
+      $.post(host + '/qc-webapp/qcapi.do', {
+        j: JSON.stringify($.extend(j, {
+          "wxappid": json.appid,
+          "action": data[json.appid] ? "/webconfig/WebConfigAction/update" : "/webconfig/WebConfigAction/save",
+          "requestParam": {
+            obj: json
+          }
+        }))
+      }).then(function(obj){
+        if(obj.code != 0){
+          return Promise.reject(obj.errmsg);
+        }
+        alert("成功")
+        location.reload();
+      }).catch(function(msg){
+        alert(JSON.stringify(msg))
+      });
+    })
+
+  })
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>Test Page</title>
+  <!-- css -->
+  <link href="css/app.css" rel="stylesheet">
+  <style type="text/css">
+    .field {
+      margin: 0.5em;
+      font-size: 0.875em;
+    }
+    .field > label {
+      color: #999;
+      margin-right: 0.25em;
+    }
+    .field > span {
+      padding: 0 1px;
+      word-break: break-all;
+    }
+    .row {
+      position: relative;
+      line-height: 2.75em;
+      border-bottom: 1px solid #ccc;
+      padding: 0 0.5em;
+      background-color: #f2f2f2;
+    }
+    .row:before {
+      content: "";
+      position: absolute;
+      height: 0.5em;
+      width: 0.5em;
+      right: 0.75em;
+      top: 50%;
+      margin-top: -0.25em;
+      border: 2px solid #888;
+      border-width: 2px 2px 0 0;
+      transform: rotate(45deg)
+    }
+  </style>
+</head> 
+<body> 
+  <!-- html -->
+  <article id="page-test" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <div class="table">
+          <!-- <div class="row" v-link="*onSearch">搜索(啊哈)</div> -->
+          <!-- <div class="row" v-link="*onSearchBlank">搜索(空)</div> -->
+          <div class="row" v-link="*onOpenUrl">openUrl</div>
+          <div class="row" v-link="*onOpenUrl2">openUrl2</div>
+          <div class="row" v-link="*onCallApi">callApi</div>
+          <!-- <div class="row" v-link="*onOpenUrlDianping">openUrl(大众点评)</div> -->
+          <!-- <div class="row" v-link="*onAddFavoriteAlbum">收藏清单</div> -->
+          <!-- <div class="row" v-link="*onAddFavoriteItem">收藏清单项</div> -->
+          <!-- <div class="row" v-link="*onOpenUrlAlbum">openUrl album 协议</div> -->
+          <!-- <div class="row" v-link="*onPreviewImages">previewImages</div> -->
+          <!-- <div class="row" v-link="*onScan">scan</div> -->
+          <!-- <div class="row" v-link="*onScanNeedResult">scan(needResult=1)</div> -->
+          <!-- <div class="row" v-link="*onSpeech">speech</div> -->
+          <!-- <div class="row" v-link="*onSpeechNeedResult">speech(needResult=1)</div> -->
+          <!-- <div class="row" v-link="*onFetchWeb">fetchWeb</div> -->
+          <!-- <div class="row" v-link="*onGetLocation">getLocation</div> -->
+          <!-- <div class="row" v-link="*onCallApi">callApi</div> -->
+          <!-- <div class="row" v-link="*onShareWechatTimeline">分享到朋友圈</div> -->
+          <!-- <div class="row" v-link="*onShareSinaWeibo">分享到微博</div> -->
+          <!-- <div class="row" v-link="*onShare">分享...</div> -->
+          <!-- <div class="row" v-link="*onShareNoAlbumId">分享...(无albumId)</div> -->
+        </div>
+      </div>
+    </section>
+  </article>
+
+<!-- js -->
+<script src="main.js" data-require=""></script>

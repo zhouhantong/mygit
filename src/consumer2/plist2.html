@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/consumer.css" rel="stylesheet">
+  <link href="css/zy.css" rel="stylesheet">
+</head>
+<body>
+  <!-- html -->
+  <article id="page-zy-plist" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+
+        <script name="item-btn" type="text/template">
+          <ul>
+            <li v-link="*selectState 0" class="selected">待审核</li>
+            <li v-link="*selectState 1">审核通过</li>
+            <li v-link="*selectState -1">审核失败</li>
+          </ul>
+        </script>
+
+        <script name="item" type="text/template">
+          <div class="group-item">
+            <div class="header-item ${HEADER:hide}">${projectname}</div>
+            <div class="item" v-link="*goDetail ${id}">
+              <img src='${picurl}'>
+              <div class="right-pannel">
+                <div class="top">
+                  <div class="title">${structure}</div>
+                  <div class="${APSTATE:hide}">已预约${booknum}人</div>
+                </div>
+                <div class="old-price">原价:¥${propertyexpense}</div>                
+                <div class='price'>特惠价:¥${price}</div>
+              </div>
+            </div>
+            <div class="fbtn-bar ${BTNSHOW:hide}">
+              <div class="btn" v-link="*approveHouse ${id} 1">审核通过</div>
+              <div class="btn" v-link="*approveHouse ${id} -1">审核失败</div>
+            </div>
+          </div>
+        </script>
+
+        <script name="noitem" type="text/template">
+          <div class="noitem">暂无数据</div>
+        </script>
+
+        <div class="topHeader"></div>
+
+        <div class="list"></div>
+
+      </div>
+    </section>
+  </article>
+ 
+<!-- js -->
+<script src="../main.js" data-require="./listItemCache"></script>

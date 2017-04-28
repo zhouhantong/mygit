@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../../css/main.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head> 
+<body> 
+  <!-- html -->
+  <article id="page-post" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <div class="imgBox">
+          <div class="imgBox-wrapper">
+            <img class="fileimg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAQAIBRAA7" alt="">
+          </div>
+          <input type="file" accept="image/*" name="fileinput" class="fileinput" capture="camera" v-link="*onChange" v-link-event="change">
+        </div>
+        <div class="inputBox">
+          <div class="inputItem">
+            <div class="title">编 号</div>
+            <input type="text" class="no">
+          </div>
+          <div class="inputItem">
+            <div class="title">姓 名</div>
+            <input type="text" class="name">
+          </div>
+          <div class="inputItem">
+            <div class="title">描 述</div>
+            <textarea class="memo"></textarea>
+          </div>
+        </div>
+        <div class="btBox">
+          <div class="savebt" v-link="*onSave">提 交</div>
+        </div>
+      </div>
+    </section>
+  </article>
+<!-- js -->
+<script src="../../main.js" data-require="lib/iscroll,./actcode,http://img.sh.newhante.com/js/binaryajax,http://img.sh.newhante.com/js/canvasResize,http://img.sh.newhante.com/js/exif"></script>

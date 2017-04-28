@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>浏览记录</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/consumer.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>   
+</head>
+<body>
+  <!-- html -->
+  <article id="page-histories" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <div class="list"></div>
+
+        <script name="house-item" type="text/template">
+          <div class="house-item" v-link="${goUrl}">
+            <div class="info-box">
+              <div class="time">${time}</div>
+              <div class="img" style="background-image: url('${picurl}')"></div>
+              <div class="content">
+                <div class="title">${projectname}</div>
+                <div class="value ${canSHOW1:hide}">价 格：${price}</div>
+                <div class="value ${canSHOW1:hide}">地 址：${address}</div>
+                <div class="value ${canSHOW2:hide}">楼栋房号：${propertycompany}</div>
+                <div class="value ${canSHOW2:hide}">原价:¥${propertyexpense} <span>${notetxt} ${price}</span></div>
+                <div class="value ${canSHOW2:hide}">已有<span>${num}</span>人预约</div>
+                <ul class="tag-box-inline ${canSHOW1:hide}">
+                  <li class="tag ${issubway:hide}">轻轨房</li>
+                  <li class="tag ${isxuequ:hide}">学区房</li>
+                  <li class="tag ${brand:hide}">大品牌</li>
+                </ul>
+              </div>
+              <div class="arrow"></div>
+            </div>
+          </div>
+        </script>
+        <div class="loadding-bar"></div>
+
+      </div>
+    </section>
+  </article>
+<!-- js -->
+<script src="../main.js" data-require=""></script>

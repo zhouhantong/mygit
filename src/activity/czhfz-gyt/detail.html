@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>页面载入中...</title>
+  <!-- css -->
+  <link href="../../css/main.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head> 
+<body> 
+  <!-- html -->
+  <article id="page-detail" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <script name="stage" class="hide" type="text/template">
+          <div class="header">
+            <img src="images/3.jpg">
+          </div>
+          <div class="bannerBox">
+            <div class="left"></div>
+            <div class="banner"></div>
+            <div class="right"></div>
+          </div>
+          <div class="memoBox">
+            <div class="title">参赛宣言:</div>
+            <div class="memo">${memo}</div>
+          </div>
+          <div class="counterBox">
+            <div class="item">
+              <div class="num">${like}</div>
+              <div class="title">当前票数</div>
+            </div>
+          </div>
+          <div class="btsBox">
+            <div class="bt one" v-link="*onLike">投 票</div>
+            <div class="bt two ${isSelf?hide}" v-link="*onMainPage">我 要<br>报 名</div>
+            <div class="bt one ${isSelf:hide}" v-link="*onReply">再 发<br>一 张</div>
+            <div class="bt one" v-link="*onOpenSendText">评论</div>
+          </div>
+          <div class="replyTextBox hide">
+            <div class="title">评论</div>
+            <div class="list"></div>
+          </div>
+        </script>
+        <script name="banner" class="hide" type="text/template">
+          <img src="${bigimgurl}">
+          <div class="mainBox">
+            <div class="aidx">${aidx}号</div>
+            <div class="title ellipsis">${title}</div>
+          </div>
+        </script>
+        <script name="replyText" class="hide" type="text/template">
+          <div class="item">
+            <img src="${headimgurl}" alt="">
+            <div class="main">
+              <div class="nickname">${nickname}</div>
+              <div class="content">${content}</div>
+            </div>
+            <div class="date">${date}</div>
+          </div>
+        </script>
+      </div>
+    </section>
+  </article>
+<!-- js -->
+<script src="../../main.js" data-require="./actcode"></script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>我的预约</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-my-orderlist" class="vpage hide page-common">    
+    <section>
+      <div class="vpage-content">
+
+        <div class="list"></div>
+
+        <script name="item-layer" type="text/template">
+          <div class="item">
+            <div class="line-layer border">
+              <div>${name}</div>
+              <div>${mobile}</div>
+            </div>
+            <div class="line-layer">
+              <div>意向楼盘:</div>
+              <div>${projectname}</div>
+            </div>
+            <div class="line-layer">
+              <div>意向户型:</div>
+              <div>${memo}</div>
+            </div>
+            <div class="line-layer">
+              <div>当前状态:</div>
+              <div>${state}</div>
+            </div> 
+            <div class="bar-layer ${SHOWBTN:hide}">
+              <div class="bitem">
+                <div class="btn ${ROLE:hide}" v-link="*recommend ${id}"><span>推荐并报备客户</span></div>
+                <div class="btn ${ROLE?hide}" v-link="*recommend ${id}"><span>推荐客户</span></div>
+              </div>                           
+            </div>
+          </div>
+        </script>
+
+        <div class="loadding-bar"></div>
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="lib/iscroll"></script>
+</body>
+</html>

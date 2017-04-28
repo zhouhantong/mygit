@@ -1,0 +1,246 @@
+@import "../../css/common"
+
+COMMON_COLOR_GRAY = #929292
+COMMON_COLOR_RED = #e23333
+COMMON_COLOR_BLUE = #2eb3e8
+COMMON_COLOR_BORDER = #F2F2F2
+COMMON_COLOR_BORDER_LINE = #D1D6DA
+
+.time-select-layer
+  .time-layer
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center
+    height: 2.5rem 
+    border-bottom: 1px solid COMMON_COLOR_BORDER_LINE
+    .timebtn
+      width: 25%
+      text-align: center
+      line-height: 2.5rem 
+      font-size: 0.75rem 
+      color: COMMON_COLOR_GRAY
+      &.calendar
+        height: 2.5rem 
+        background: image('icon_rl.png') no-repeat center center
+        background-size: 1.875rem 1.875rem 
+      &.selected 
+        color: COMMON_COLOR_RED
+        &:after 
+          position: absolute
+          content: ''
+          left: 0
+          right: 0 
+          bottom: -1px
+          height: 0.125rem
+          background-color: COMMON_COLOR_RED
+        &:before
+          position: absolute
+          content: ""
+          bottom: 0
+          left: 50%
+          margin-left: -0.3125rem       
+          size: 0 0
+          border: 0.3125rem solid COMMON_COLOR_RED
+          border-color: transparent transparent COMMON_COLOR_RED transparent
+          z-index: 10         
+  .select-layer
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center
+    padding: 0.5rem 0.8rem 
+    .stxt
+      width: 4rem 
+      font-size: 0.75rem 
+      text-align: center
+      color: COMMON_COLOR_GRAY
+      margin-top: 1.5rem
+    .sdate 
+      box-flex: 1
+      vendor-property display box
+      box-orient vertical
+      > div
+        font-size: 0.75rem
+        line-height: 1.5rem 
+        color: COMMON_COLOR_GRAY
+      > input 
+        box-flex 1
+        display: block
+        border: 1px solid COMMON_COLOR_BORDER_LINE
+        font-size: 0.75rem
+        text-align: center
+        background-color: transparent
+        height: 1.875rem
+        line-height: @height
+        appearance: inherit  
+        color: COMMON_COLOR_GRAY             
+
+.statistic-header-layer
+  line-height: 1.375rem 
+  font-size: 0.75rem 
+  color: #000
+  padding-left: 0.5rem
+  margin: 0.5rem 0
+  &:before
+    position: absolute
+    content: ''
+    left: 0
+    size: 0.4rem 1rem 
+    top: 0.18rem 
+    background-color: COMMON_COLOR_RED
+  .font-red14
+    color COMMON_COLOR_RED
+    font-size 1.4em
+    font-weight 900
+  .font-red08
+    color COMMON_COLOR_RED
+    font-size 0.8em
+  .pack-end
+    box-pack end
+
+.statistic-project-layer
+  padding: 0.5rem 0.8rem
+  .input-area
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    height: 2.25rem        
+    border: 1px solid COMMON_COLOR_BORDER_LINE      
+    > input,
+    .text-value
+      box-flex: 1
+      display: block
+      border: none
+      font-size: 0.75rem
+      text-align: left
+      background-color: transparent
+      height: 2.25rem
+      padding-left: 0.5rem
+      line-height: @height
+      -webkit-appearance: inherit  
+      color: COMMON_COLOR_GRAY 
+    .text-value
+      &:before
+        position: absolute
+        content: ''
+        top: 0
+        right: 0
+        width: 2.25rem
+        height: 2.25rem
+        background-color: COMMON_COLOR_RED
+      &:after 
+        position: absolute
+        content: ""
+        right: 0.8rem
+        top: 1rem
+        size: 0 0
+        border: 0.3125rem solid #fff
+        border-color: #fff transparent transparent transparent
+        z-index: 10        
+    > select
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      opacity: 0    
+      z-index: 1000
+      width: 100%
+
+.statistic-line
+  width 100%
+  height 0.2em
+  background COMMON_COLOR_BORDER
+
+.statistic-round-box
+  border 1px solid COMMON_COLOR_BORDER_LINE
+  border-radius 5em
+  vendor-property display box
+  box-pack center
+  box-align center
+  box-orient vertical
+  padding 10px
+  width 4.6em
+  height 4.6em
+  margin 0 auto
+  .font-red12
+    color COMMON_COLOR_RED
+    font-size 1.2em
+    font-weight 900
+  .font-red08
+    color COMMON_COLOR_RED
+    font-size 0.8em
+  .font-06
+    font-size 0.6em
+    white-space nowrap
+  .hflexbox
+    box-align end
+
+.statistic-grid-layer
+  border-top 1px solid COMMON_COLOR_BORDER
+  border-bottom 1px solid COMMON_COLOR_BORDER
+  .row-layer
+    border-bottom 1px solid COMMON_COLOR_BORDER
+    vendor-property display box
+    &:last-child
+      border-bottom none
+    .item-layer
+      padding 0.6em 0
+      font-size 0.6em
+      color COMMON_COLOR_GRAY
+      vendor-property display box
+      box-align center
+      box-pack center
+      box-orient vertical
+      line-height 1.425em
+      &.font-transparent
+        color transparent
+      &.font-red
+        color COMMON_COLOR_RED
+      &.font-green
+        color #50AC6D
+      &.font-blue
+        color #55A5DB
+      &.header
+        background COMMON_COLOR_BORDER
+        > div
+          padding 0.375em
+          text-align justify
+        
+.statistic-tabs-layer
+  vendor-property display box
+  margin 1em 0
+  padding 0 1em
+  .statistic-tab-layer
+    box-flex 1
+    padding 0.625em 0
+    font-size 0.75em
+    text-align center
+    border-top 1px solid COMMON_COLOR_RED
+    border-bottom 1px solid COMMON_COLOR_RED
+    color COMMON_COLOR_RED
+    &.selected
+      background COMMON_COLOR_RED
+      color #fff
+      &:before
+        left 1px
+    &:before
+      content ""
+      width 1px
+      height 1.2em
+      position absolute
+      left -1px
+      top 50%
+      margin-top - (@height / 2)
+      background COMMON_COLOR_RED
+    &:first-child
+      border-left 1px solid COMMON_COLOR_RED
+      border-bottom-left-radius 1em
+      border-top-left-radius 1em
+      &:before
+        background none
+    &:last-child
+      border-right 1px solid COMMON_COLOR_RED
+      border-bottom-right-radius 1em
+      border-top-right-radius 1em

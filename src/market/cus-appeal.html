@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>我的申诉</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-cus-management" class="vpage hide page-common">
+    <aside>
+      <ul class="list"></ul>
+    </aside>  
+    <section>
+      <div class="vpage-content">
+
+        <div class="btn-layer hide">
+          <div class="btn-appeal">我要申诉</div>
+        </div>
+
+        <ul class="cus-list">
+        </ul>  
+
+        <script name="cus-item" type="text/template">
+          <div class="cus-item">
+            <div class="item">
+              <div class="flex">${time}</div>
+              <div>发起申诉</div>
+            </div>
+            <div class="item">
+              <div class="flex">申诉类型：</div>
+              <div>${typename}</div>
+            </div>
+            <div class="item noborder">
+              <div class="flex">申诉内容：</div>
+            </div>
+            <div class="content-layer">${content}</div>
+            <div class="image-layer"></div>
+          </div>
+        </script>
+
+        <script name="cus-item2" type="text/template">
+          <div class="cus-item" style="margin-top: -4px">
+            <div class="item noborder">
+              <div class="flex">处理反馈结果：</div>
+            </div>
+            <div class="content-layer">${content}</div>
+            <div class="image-layer"></div>
+          </div>
+        </script>
+
+        <script name="img-block" type="text/template">
+          <div class="img-block" v-link="*showImage ${IMGSRC} ${INDEX}">
+            <img src="${imgsrc}">
+          </div>
+        </script>
+
+        <script name="noitem" type="text/template">
+          <div class="noitem">未找到相关数据</div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="lib/iscroll"></script>
+</body>
+</html>

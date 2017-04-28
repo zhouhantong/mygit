@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>客户管理</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-cus-management" class="vpage hide page-common">
+    <aside>
+      <ul class="list"></ul>
+    </aside>  
+    <section>
+      <div class="vpage-content">
+        <div class="topheader hide"></div> 
+        <div class="search-panel">
+          <div class="search-box"><input id="search" class="search" placeholder="请输入姓名或手机号进行搜索"></div>
+          <div class="searchbt"></div>
+        </div>
+
+        <div class="invalid-item hide">无效客户60天后系统自动删除</div>
+
+        <ul class="cus-list">
+        </ul>  
+
+        <script name="cus-item" type="text/template">
+          <div class="cus-item">
+            <div class="item">
+              <div class="flex title" v-link="./cus-detail.html?id=${id}"><div class="ellipsis">${name}</div></div>
+              <div v-link="./cus-detail.html?id=${id}">${mobile}</div>
+              <div class="btn-invalid ${SETINVALID:hide}" v-link="*setInvalid ${id}">设为<br>无效</div>
+            </div>
+            <div class="item">
+              <div class="flex ellipsis">推荐人：${agentname}</div>
+              <div>${agentmobile}</div>
+            </div> 
+            <div class="item noborder">
+              <div>客户需求：</div>
+              <div class="flex"><span>${memo}</span></div>
+            </div> 
+            <div class="project-layer ${PROJECTLAYER:hide}">
+              <div>${showname}</div>
+              <div class="list"></div>
+              <div class="bbtrack ${BBTRACK:hide}"><div v-link="*cusTrack ${id}">查看报备轨迹</div></div>
+            </div> 
+            <div class="actbtn-bar ${ACTBTNBAR:hide}">
+              <div class="${ADDBTN:hide}" v-link="*addReportProject ${id}"><span>添加项目</span></div>
+              <div class="${YJBBBTN:hide}" v-link="*reportAll ${id}"><span>一键报备</span></div>
+              <div class="${EDIT:hide}" v-link="*editCustomer ${id}"><span>编 辑</span></div>
+              <div class="${DELETE:hide}" v-link="*deleteCustomer ${id}"><span>删 除</span></div>
+            </div>                     
+          </div>
+        </script>
+
+        <script name="project-item" type="text/template">
+          <div class="project-item ps-${rcmdcustid}" data-pid="${projectid}">
+            <div class="projectname ${bbClass}">${projectname}</div>
+            <div class="right-pannel ${TIME?hide} ${DELETEBTN?end}">
+              <div class="shstatus ${SHSTATUS:hide}">${shstatus}</div>
+              <div class="cusstatus ${CUSSTATUS:hide}">${cusstatus}</div>
+              <div class="reportbtn ${BBBTN:hide}"><div v-link="*report ${rcmdcustid} ${projectid} ${projectname}">报备</div></div>
+              <div class="reportbtn ${DELETEBTN:hide}"><div v-link="*deleteProject ${rcmdcustid} ${projectid} ">删除项目</div></div>
+            </div>  
+            <div class="time ${TIME:hide}">${time}</div>
+          </div>
+          <div class="${LEFTDAY:hide}" style="color:#e86627">回滚时间：${leftday}天后回滚</div>          
+          <div class="guideitem ${GUIDEITEM:hide}">${guidename} ${guidemobile}</div>
+          <div class="${INVALIDDEAL:hide}">
+            <div class="item noborder">
+              <div class="flex">变更无效成交：</div>
+            </div>
+            <div class="item noborder">
+              <div class="flex">变更时间：</div>
+              <div>${invalidtime}</div>
+            </div>
+            <div class="item noborder">
+              <div>变更理由：</div>
+              <div class="flex"><span>${invalidreason}</span></div>
+            </div>
+          </div>
+        </script>
+
+        <script name="addcus-layer" type="text/template">
+          <div class="addcus-layer" v-link="*addCustomer">
+            <div> + </div>
+            <div>添加客户</div>
+          </div>
+        </script>
+
+        <script name="appeal-layer" type="text/template">
+          <div class="appeal-layer" v-link="./cus-appeal.html">
+            <div class="icon"></div>
+            <div>我要申诉</div>
+          </div>
+        </script>
+
+        <script name="home-icon" type="text/template">
+          <div class="home-icon" v-link="*goHome"></div>
+        </script>
+
+        <script name="noitem" type="text/template">
+          <div class="noitem">未找到相关数据</div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="./submitCus,lib/iscroll"></script>
+</body>
+</html>

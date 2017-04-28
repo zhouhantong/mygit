@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=unsupported.html">
+    </noscript>
+    <title>编辑信息</title>
+    <!-- css -->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fff;
+        }
+        ::-webkit-input-placeholder {
+            color: #929292;
+        }
+    </style>
+</head>
+<body>
+<!-- html -->
+<article id="page-market-register" class="vpage hide page-white" style="position:absolute; top:0;">
+    <section>
+        <div class="vpage-content v1">
+            <div class="header">
+                <div class="bg"></div>
+                <div class="txt">编辑信息</div>
+            </div>
+            <div class="form-table-view">
+
+                <div class="input-area">
+                    <label class="l1">姓名</label>
+                    <input type="text" id="mname" placeholder="请输入您的姓名" value="">
+                </div>
+                <div id="_regtype_1_items">
+                    <div class="input-area type-memo">
+                        <label class="l5">备注</label>
+                        <input type="text" id="memo" placeholder="请输入备注" value="">
+                    </div>
+                </div>
+
+                <form id="_reg_form" method="post" enctype="multipart/form-data">
+                    <div class="input-area">
+                        <label class="l4">二维码</label>
+                        <div id="_qr_file" class="upload-img-box"></div>
+                    </div>
+                </form>
+                <div class="sbtn-bar">
+                    <div class="next-button t1">确认</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

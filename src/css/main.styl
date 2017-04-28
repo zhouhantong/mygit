@@ -1,0 +1,334 @@
+@import "lib"
+@import "common"
+
+// @import "album"
+// @import "search"
+@import "main-tab"
+@import "local"
+// @import "album-tool-bar"
+// @import "magazine"
+
+// @import "page-index"
+// @import "page-album"
+// @import "page-search"
+// @import "page-life"
+// @import "page-user"
+// @import "page-searchimg"
+// @import "page-album-centaline"
+
+// app common
+article.vpage
+  > header
+    > h1
+      color: #fff
+      text-align: center
+      line-height: PAGE_HEADER_HEIGHT
+
+body.main-submenu-showing .vpage
+  > header,
+  > section
+    pointer-events: none
+
+// Popup
+.vpopup
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  z-index: 600
+  background-color: rgba(0, 0, 0, 0.5)
+  vendor-property: display box
+  box-orient: vertical
+  box-pack: center
+
+  > .vpopup-wrapper
+    position: relative
+    border-image: image('box-popup.png') 100 30 30 30 stretch stretch
+    border-width: 50px 15px 15px 15px
+    margin: 10px
+    min-height: 80px
+
+    &:before
+      position: absolute
+      content: attr(data-title)
+      left: 0
+      top: -40px
+      font-size: 18px
+      font-weight: bold
+      color: white
+      line-height: 30px
+
+    .close-button
+      position: absolute
+      right: -10px
+      top: -45px
+      size: 40px 40px
+      background: image('icon-close.png') no-repeat center center
+      background-size: 34px
+
+      &:active
+        background-image: image('icon-close-hl.png')
+
+    .vpopup-content
+      color: #7FBA19
+      margin: 0 -5px -5px -5px
+
+.share-bar
+  margin: 60px 0 10px 0
+  vendor-property: display box
+  box-orient: horizontal
+  box-pack: center
+  > .button-share
+    position: relative
+    min-width: 90px
+    font-size: 12px
+    text-align: center
+    color: COLOR_TITLE_TXT
+    height: 36px
+    line-height: (@height - 12)
+    &:before
+      position: absolute
+      content: ""
+      left: 0
+      right: 0
+      top: -35px
+      height: 35px
+      background: image('icon01.png') no-repeat center center
+      background-size: 35px
+    &.add:before
+      background-image: image('icon03.png')
+    &.share:before
+      background-image: image('icon02.png')
+    &:active
+      &:before
+        background-image: image('icon001.png')
+      &.add:before
+        background-image: image('icon003.png')
+      &.share:before
+        background-image: image('icon002.png')
+.guide-wxfriends,
+.guide-share
+  background: rgba(0,0,0,0.65) image('guide-arrow.png') no-repeat right 4px
+  background-size: 216px 200px
+  animation: fade-in 0.5s linear
+  font-weight: bold
+  > div
+    position: absolute
+    color: white
+  > .text1,
+  > .text2
+    letter-spacing: 1px
+    width: 180px
+    font-size: 18px
+  > .text2
+    font-size: 14px
+  > .mascot
+    top: 140px
+    right: 190px
+    size: 100px 100px
+    background-image: image('guide-mascot.gif'), image('guide-mascot-bg.png')
+    background-size: 100px, 100px
+  > .heart
+    size: 25px 25px
+    background: image('guide-heart.png') no-repeat center center
+    background-size: 25px
+    top: 170px
+    right: 190px
+    animation: guide-share-ani 2s linear infinite
+.guide-wxfriends
+  > .text1
+    top: 70px
+    right: 115px
+  > .text2
+    top: 65px
+    right: 54px
+    > .icon
+      display: inline-block
+      width: 38px
+      background: image('icon01.png') no-repeat center top
+      background-size: 35px
+      padding-top: 33px
+      color: #7bc058
+      letter-spacing: 0
+      font-size: 10px
+      text-align: center
+.guide-share
+  > .text1
+    top: 45px
+    right: 95px
+    width: 200px
+    > .icon
+      display: inline-block
+      size: 35px 35px
+      background: image('icon02.png') no-repeat center top
+      background-size: 35px
+      text-align: center
+      transform: translate3d(0, 9px, 0)
+  > .text2
+    top: 85px
+    right: 60px
+    > .icon
+      color: #5599c9
+      font-size: 14px
+
+
+.guide-blur
+  > .vpage,
+  > #main-menu
+    filter: blur(20px)
+
+@keyframes guide-share-ani
+  0%
+    transform: translate3d(0, 0, 0) rotate(-360deg)
+    opacity: 1
+  20%
+    transform: translate3d(45px, -15px, 0) rotate(-288deg)
+  40%
+    transform: translate3d(90px, -33px, 0) rotate(-216deg)
+  65%
+    transform: translate3d(138px, -75px, 0) rotate(-126deg)
+    opacity: 0.5
+  100%
+    transform: translate3d(165px, -165px, 0) rotate(0deg)
+    opacity: 0
+
+.psb-popup-wrapper
+  @extend .vflexbox
+  position: fixed 0 0 0 0
+  background-color: white
+  .psb-input-wrapper
+    @extend .hflexbox
+    height: 2.75em
+    background-color: #EFEFEF
+    padding-left: 0.5em
+    input
+      box-flex: 1
+      appearance: inherit
+      display: block
+      border: none
+      //background-color: transparent
+      background-color: white
+      line-height: @height
+      padding: 0 0.5em
+      font-size: 0.75em
+      border-radius: 0.25em
+    button
+      font-size: 0.875em
+      height: (@height * 1.14285) !important
+      appearance: inherit
+      min-width: 0
+      border-radius: 0
+      color: #333
+      background-color: transparent
+      &:active
+        color: #000
+  .psb-table-wrapper
+    @extend .scrollable
+    box-flex: 1
+    > .row
+      @extend .common-bottom-line
+      font-size: 0.875em
+      padding: 0.75em
+      line-height: 1.25em
+
+body.show-client-download-bar
+  padding-top: 3.4299516908em
+.client-download-bar
+  position: fixed 0 0 none 50%
+  margin-left -10rem
+  width 20rem
+  height: 3.4299516908em
+  background: url(../client/images/download/bg.jpg) no-repeat
+  background-size: 20em @height
+  z-index: 2000000
+  > .button
+    position: absolute 50% 0.5em
+    width: 4.5em
+    height: 2em
+    margin-top: -(@height / 2)
+    background: url(../client/images/download/button.png) no-repeat
+    background-size: @width @height
+    &.highlight
+      background-color: transparent !important
+      opacity: 0.7
+      
+.errorpage
+  animation fade-in 0.5s linear
+  position fixed
+  pos 0 0 0 0
+  z-index 1000000
+  background #fff
+  img
+    width 100%
+    display block
+    margin 0
+  .txt
+    text-align center
+    font-size 1rem
+    color #EB6617
+    margin-top 4rem
+
+.city-layer {
+  line-height: 2.5rem;
+  padding-left: .8rem;
+  margin-top: .5rem;
+  display: box;
+  display: -webkit-box;
+  box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  box-align: center;
+  -webkit-box-align: center;
+  box-pack: start;
+  -webkit-box-pack: start;
+  font-size: .75rem;
+  color: #a1a1a1;
+}
+.city-layer .select-layer .city-item {
+  display: box;
+  display: -webkit-box;
+  box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  box-align: center;
+  -webkit-box-align: center;
+  box-pack: start;
+  -webkit-box-pack: start;
+}
+
+.city-layer .select-layer .city-item .city-select {
+  color: #eb6617;
+  font-size: .75rem;
+  font-weight: bold;
+  padding-left: 1.2rem;
+  margin-left: .8rem;
+  background: url("../images/icon_check.png?_=g7yx") no-repeat left center;
+  background-size: 1rem 1rem;
+}
+
+.city-layer .select-layer .city-item .city-select.checked {
+  background-image: url("../images/icon_check_down.png?_=g7yx")
+}
+
+.search-layer
+  vendor-property: display box
+  box-orient: horizontal
+  box-align: center
+  margin: 0.5rem
+  .search-box
+    box-flex: 1
+    border-image: image('border.png') 2 2 2 2 stretch stretch
+    border-width: 1px
+    > input
+      width: 100%
+      height: 1.75rem
+      margin: 0
+      padding: 0 0.3125rem
+      border: none
+      background: #fff
+      color: #000
+      font-size: 0.75rem
+  .searchbt
+    size: 1.875rem 1.875rem
+    background: #eb6617 image('icon_search.png') no-repeat center center
+    background-size: 1rem 1rem
+

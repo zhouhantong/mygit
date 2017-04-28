@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>报备信息详情</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-bbpro-detail" class="vpage hide page-common"> 
+    <section>
+      <div class="vpage-content">
+
+        <script name="pro-layer" type="text/template">
+          <div class="pro-layer">
+            <div class="item">
+              <div>${projectname}</div>
+              <div>${time}</div>
+            </div>
+          </div>
+          <div class="pro-layer">
+            <div class="detail-txt">${information}</div>
+          </div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

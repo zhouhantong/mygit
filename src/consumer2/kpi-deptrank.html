@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>部门排行</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/kpi.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-kpi-deptrank" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+
+        <div class="list"></div>
+
+        <script name="item-layer" type="text/template">
+          <div class="item" v-link='./kpi-deptdetail.html?info=${info}'>
+            <div class="index">${index}</div>
+            <div class="name">${name}</div>
+            <div>
+              <div>总关注</div>
+              <div>今日关注</div>
+            </div>
+            <div>
+              <div>${subtotal}人</div>
+              <div>${subtoday}人</div>
+            </div>            
+          </div>
+        </script>
+
+        <div class="loadding-bar"></div>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

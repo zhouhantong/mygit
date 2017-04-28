@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>我的微店</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-wd-leaderhome" class="vpage hide page-common"> 
+    <section>
+      <div class="vpage-content">
+        <div class="header-layer"></div>
+        <div class="search-layer"></div>
+        <div class="list"></div>
+
+        <script name="header-layer" type="text/template">
+          <div class="leader-header">
+            <img src="${headimgurl}" onerror="this.src='images/wd/pic_log.png'">
+            <div class="content">${leadername}的好房子微店</div>
+            <div class="btn" v-link="*xmjc"><div>项目纠错</div></div>
+          </div>
+          <div class="actbar-layer">
+            <div class="btn b1" v-link="./wd-projectmanager.html">项目管理</div>
+            <div class="btn b2 ${HASNEWDY?new}" v-link="./wd-membermanager.html">店员管理</div>
+            <div class="btn b3 ${HASNEWKY?new}" v-link="./cus-management.html">客户管理</div>
+            <div class="btn b4" v-link="./wd-performancemanager.html">业绩管理</div>
+          </div>
+        </script>
+        <script name="search-layer" type="text/template">
+          <div class="search-box">
+            <input id="search" class="search" placeholder="请输入项目名称进行搜索">
+          </div>
+          <div class="searchbt" v-link="*search"></div>
+        </script>
+        <script name="city-layer" type="text/template">
+          <div class="city-layer">
+            <div>查看城市：</div>
+            <div class="select-layer"></div>
+          </div></script>
+        <script name=city-item type=text/template>
+          <div class="city-item"></div>
+        </script>
+
+
+        <script name="item-layer" type="text/template">
+          <div class="item-layer ${ISHIDE?hide}">
+            <div class="top-layer">
+              <img src="${picurl}">
+              <div class="right-pannel">
+                <div class="line-layer">
+                  <div class="content">${projectname}</div>
+                  <div class="online ${ONLINE:hide}" v-link="../consumer2/house-online.html?projectid=${id}&fopenid=${fopenid}&memberopenid=${memberopenid}&teamuuid=${teamuuid}">线上售楼部</div>
+                </div>
+                <div class="ctxt">价格：${price}</div>
+                <div class="ctxt">地址：${saleaddress}</div>
+                <div class="ctxt ${discountdesc:hide}">优惠：${discountdesc}</div>
+                <div class="ctxt ${commission:hide}">渠道佣金：${commission}</div>
+                <div class="ctxt ${myprocommission:hide}">店员推荐奖励：<span>${myprocommission}</span></div>
+              </div>
+              <div class="img-logo ${logoClass}"></div>
+            </div>
+            <div class="bar-layer">
+              <div class="item ${cooporateHide?hide}">
+                <div class="btn" v-link="*goCusProject ${id} ${projectname}"><span>项目客户列表</span></div>
+                <div class="btn ${BBKH?disabled}" v-link="*goBbCus ${id} ${projectname}"><span>报备客户</span></div>
+              </div>
+              <div class="item ${cooporateHide?hide}">
+                <div class="btn" v-link="*setCommission ${id}"><span>设置推荐奖励</span></div>
+                <div class="btn ${GG?disabled}" v-link="*goGgDetail ${id} ${hasinfo}"><span>转介须知</span></div>
+              </div>  
+              <div class="item ${specialHide:hide}">
+                <div class="btn flex" v-link="../consumer2/common-hfz-info.html?id=${specialid}"><span>专场海报</span></div>
+              </div>                          
+            </div>
+          </div>
+        </script>
+
+        <div class="loadding-bar"></div>
+
+        <script name="common-share-icon" type="text/template">
+          <div class="common-share-icon" v-link="*shareNote"></div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

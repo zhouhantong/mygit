@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/consumer.css" rel="stylesheet">
+  <link href="css/zy.css" rel="stylesheet">  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-zy-plist4" class="vpage hide">
+    <aside class="hide">
+      <ul>
+        <script name="cate-item" type="text/template">
+          <li class="${current?selected}" v-link="*onCateTap ${displaytype}">${displayvalue}</li>
+        </script>
+      </ul>
+    </aside>  
+    <section>
+      <div class="vpage-content">
+        <div class="banner"></div>
+        <div class="list"></div>
+
+        <script name="item" type="text/template">
+          <div class="group-item" style="border-top-left-radius: ${HEADER?4px:0px};border-top-right-radius: ${HEADER?4px:0px}">
+          <div class="header-item ${HEADER:hide}" style="margin-top: ${HEADER?5px:0px}" id="header-item-${preprojectid}">${projectname} <span>(已预约${ppreportcnt}人)</span> </div>
+            <div class="item" v-link="*goDetail ${id}">
+              <img src='${picurl}'>
+              <div class="right-pannel">
+                <div class="top">
+                  <div class="title">${structure}</div>
+                  <div class="time">${time}</div>
+                </div>
+                <div class="old-price">原价:¥${propertyexpense}</div>                
+                <div class='price'>线上专享:¥${price}</div>
+              </div>
+            </div>
+          </div>
+        </script>
+
+        <script name="noitem" type="text/template">
+          <div class="noitem">暂无数据</div>
+        </script>
+
+        <script name="yybtn" type="text/template">
+          <div class="yybtn" v-link="*bookFun">预约优惠</div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+ 
+<!-- js -->
+<script src="../main.js" data-require="./listItemCache,lib/iscroll"></script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/kpi.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-kpi-deptdetail" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+
+        <div class="list"></div>
+
+        <script name="item-layer" type="text/template">
+          <div class="item">
+            <img src="${headimgurl}" onerror="this.src='images/head.jpg'">
+            <div class="right-pannel">
+              <div>${name}</div>
+              <div>总关注：${subtotal}人</div>
+            </div>
+            <div class="index">NO.${index}</div>           
+          </div>
+        </script>
+
+        <div class="loadding-bar"></div>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

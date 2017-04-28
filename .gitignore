@@ -1,0 +1,12 @@
+/build/
+/work/
+/data/
+/mark/
+/server-logs/
+*.css
+node_modules
+*.esproj
+.DS_Store
+.idea
+.images
+*.iml

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>KPI考核</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/kpi.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-kpi-index" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+
+        <div class="info-layer"></div>
+        <div class="function-layer"></div>
+
+        <script name="info-layer" type="text/template">
+          <img src="${headimgurl}">
+          <div class="right-pannel">
+            <div class="item">
+              <div>${name}</div>
+              <div>部门</div>
+            </div>
+            <div class="item">
+              <div class="mobile">${mobile}</div>
+              <div>${companyname}</div>
+            </div>           
+          </div>
+        </script>
+
+        <script name="function-layer" type="text/template">
+          <div class="f-layer">
+            <div class="func-layer">
+              <div v-link="*openQrcode">
+                <div class="icon qrcode"></div>
+                <div class="right-pannel">
+                  <div>个人二维码</div>
+                  <div>点击查看专属二维码</div>
+                </div>
+              </div>
+              <div v-link="*link">
+                <div class="icon link"></div>
+                <div class="right-pannel">
+                  <div>个人推广链接</div>
+                  <div>分享链接给小伙伴</div>
+                </div>
+              </div>              
+            </div>            
+          </div>
+
+          <div class="f-layer2">
+            <div class="func-layer flex">
+              <div>
+                <div>累计关注</div>
+                <div>${subtotal}人</div>
+              </div>
+              <div>
+                <div>今日关注</div>
+                <div>${subtoday}人</div>
+              </div>              
+            </div>            
+          </div>
+
+          <div class="f-layer">
+            <div class="func-layer">
+              <div v-link="./kpi-deptrank.html">
+                <div class="icon dept"></div>
+                <div class="right-pannel">
+                  <div>部门排行</div>
+                  <div>查看所属部门的成绩</div>
+                </div>
+              </div>
+              <div v-link="./kpi-perrank.html">
+                <div class="icon per"></div>
+                <div class="right-pannel">
+                  <div>个人排行</div>
+                  <div>查看个人的成绩</div>
+                </div>
+              </div>
+            </div>
+            <div class="func-layer flex">
+              <div v-link="./kpi-myfans.html">
+                <div class="icon fans"></div>
+                <div class="right-pannel">
+                  <div>我的粉丝</div>
+                  <div>传播越广，粉丝越多</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

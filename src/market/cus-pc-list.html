@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>客户列表</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-cus-management" class="vpage hide page-common">
+    <aside>
+      <ul class="list"></ul>
+    </aside>  
+    <section>
+      <div class="vpage-content">
+
+        <div class="topheader"></div> 
+
+        <div class="search-panel">
+          <div class="search-box"><input id="search" class="search" placeholder="请输入姓名或手机号进行搜索"></div>
+          <div class="searchbt"></div>
+        </div>
+
+
+        <ul class="cus-list">
+        </ul>  
+
+        <script name="cus-item" type="text/template">
+          <div class="cus-item">
+            <div class="item noborder ${ITEM1:hide}">
+                <div>客户：</div>
+                <div class="flex right ellipsis">${name}</div>
+            </div>
+            <div class="item noborder ${ITEM2:hide}">
+                <div>手机：</div>
+                <div class="flex right"><span class="${isSrcMobile?q3h4}">${showmobile}</span></div>
+            </div>
+            <div class="item noborder ${ITEM3:hide}">
+                <div>报备时间：</div>
+                <div class="flex right">${submittime}</div>
+            </div>
+            <div class="item noborder ${ITEM5:hide}">
+                <div>经纪人： </div>
+                <div class="flex right ellipsis">${agentname}</div>
+                <div class="right">(${agentmobile})</div>
+            </div>
+            <div class="item noborder ${ITEM6:hide}">
+                <div>推荐人：</div>
+                <div class="flex right ellipsis">${rcmdname}</div>
+                <div class="right">(${rcmdmobile})</div>
+            </div>
+            <div class="item noborder ${ITEM8:hide}">
+                <div>状态：</div>
+                <div class="flex right">${status}</div>
+            </div>
+            <div class="item noborder ${ITEM7:hide}">
+                <div>到访时间：</div>
+                <div class="flex right">${visittime}</div>
+            </div>
+            <div class="item noborder ${ITEM4:hide}">
+                <div>成交时间：</div>
+                <div class="flex right">${dealtime}</div>
+            </div>
+            <div class="item noborder ${ITEM9:hide}">
+                <div>回滚时间：</div>
+                <div class="flex right">${leftday}天后回滚</div>
+            </div>
+            <div class="item noborder ${ITEMDEPT:hide}">
+                <div>部门：</div>
+                <div class="flex right">${deptname}</div>
+            </div>            
+            <div class="project-layer ${PROJECTLAYER:hide}">
+              <div class="list"></div>
+            </div> 
+
+            <div class="actbtn-bar">
+              <div class="${FZBBXX:hide}" v-link="*getDeliverInfo ${projectid} ${mobile}"><span>复制报备信息</span></div>
+              <div class="${YZFKFS:hide}" v-link="*deliver ${projectid} ${mobile}"><span class="${issubmit?disable}">已转发开发商</span></div>
+              <div class="${DF:hide}" v-link="*swdf ${id}"><span>到访</span></div>
+              <div class="${CJ:hide}" v-link="*swcj ${id}"><span>成交</span></div>
+              <div class="${CXDF:hide}" v-link="*cxdf ${id} ${teamsubmitid}"><span>撤销到访</span></div>
+              <div class="${SWWXCJBTN:hide}" v-link="*swwxcj ${id} ${teamsubmitid}"><span>判为无效成交</span></div>
+            </div> 
+            <div class="actbtn-bar">
+              <div class="${YX:hide}" v-link="*approve ${projectid} ${mobile}"><span>有效</span></div>
+              <div class="${WX:hide}" v-link="*reject ${projectid} ${mobile}"><span>无效</span></div>
+            </div>                    
+          </div>
+        </script>
+
+        <script name="project-item" type="text/template">
+          <div class="guideitem">状态：${STATUS}</div>
+          <div class="guideitem ${GUIDETXT:hide}">${GUIDETXT}</div>
+        </script>
+
+        <script name="noitem" type="text/template">
+          <div class="noitem">未找到相关数据</div>
+        </script>
+
+        <script name="proinfo" type="text/template">
+          <div class="proinfo">
+            <div class="btpanel">
+              <!-- <div class="editbt" v-link="*editTeamProInfo">编辑</div> -->
+              <div class="date">${date}</div>
+              <div class="updatebt" v-link="*updateTeamProInfo">发布</div>
+            </div>
+            <div class="textareapanel">
+              <textarea>${content}</textarea>
+            </div>
+          </div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+
+  <div class="appointment-popup2 scrim hide">
+    <div class="info-box-area">
+      <div class="info-box-item">
+        <div class="name-left">带访人姓名：</div>
+        <input type="text" id="mname" value="" placeholder="请输入姓名">
+      </div>
+      <div class="info-box-item">
+        <div class="name-left">带访人电话</div>
+        <input type="tel" id="telnum" value="" placeholder="请输入手机号" maxlength="11">
+      </div>
+    </div>
+    <div class="sbtn-bar">
+      <div class="sbtn-next cancel">取 消</div>
+      <div class="sbtn-next submit">保 存</div>
+    </div> 
+  </div> 
+
+<!--JS-->
+<script src="../main.js" data-require="lib/iscroll"></script>
+</body>
+</html>

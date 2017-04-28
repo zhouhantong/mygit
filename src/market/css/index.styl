@@ -1,0 +1,4942 @@
+@import "../../css/common"
+
+.page-gray
+  background-color: #efefef !important
+  > section:first-child
+    padding-top: 2.5rem
+
+.page-white
+  background-color: #fff !important
+
+.page-common
+  background-color: #efefef !important
+
+.page-black
+  background-color: #000 !important
+
+.page-record
+  background-color: #F7F7F7 !important
+
+.sbtn-bar
+  vendor-property: display box
+  box-orient: horizontal
+  box-align: center
+  box-pack: center
+  margin: 1.25rem 0
+  .next-button
+    size: 5.3125rem 2rem
+    line-height: @height
+    color: #fff
+    font-size: 0.75rem
+    border-radius: 0.25rem
+    text-align: center
+    &.t1
+      background-color: #bb4b38
+      &:active
+        background-color: #923524
+    &.t2
+      background-color: #a3ba8b
+      &:active
+        background-color: #829561
+    &.t3
+      background-color: #99B1C7
+      &:active
+        background-color: #B2CBEF
+    &.t4
+      background-color: #388FA3
+      &:active
+        background-color: #1382B6
+    &.t5
+      size: 16.25rem 2.5rem
+      line-height: @height
+      background-color: #bb4b38
+      &:active
+        background-color: #923524
+
+.common-info-bar
+  vendor-property: display box
+  box-orient: horizontal
+  box-align: center
+  box-pack: start
+  height: 2.5rem
+  > div
+    &:last-child
+      border-right: 0px
+  .info-block
+    width: 20%
+    vendor-property: display box
+    box-orient: vertical
+    box-align: center
+    box-pack: center
+    height: 2.25rem
+    margin-top: 0.25rem
+    border-right: 1px dashed #ebebeb
+    > div
+      line-height: 1rem
+      font-size: 0.75rem
+      color: #717171
+      &:last-child
+        color: #F6AC00
+
+.common-topheader
+  position: fixed
+  z-index: 1000
+  top: 0
+  left: 0
+  right: 0
+  height: 2.5rem
+  line-height: @height
+  text-align: center
+  font-size: 0.875rem
+  color: #fff
+  &.c1
+    background-color: #B94C3D
+  &.c2
+    background-color: #65AEA2
+  &.c3
+    background-color: #4D998B
+  &.c4
+    background-color: #388FA3
+  &.c5
+    background-color: #99B1C7
+  &.ct
+    position: absolute
+    top: -3.125rem
+
+.common-topheader2
+  height: 2.5rem
+  line-height: @height
+  text-align: center
+  font-size: 0.875rem
+  color: #fff
+  &.c1
+    background-color: #B94C3D
+
+.form-table-view
+  .input-area
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    font-size: 0.875rem
+    height: 2.75rem
+    &:after
+      position: absolute
+      content: ''
+      left: 4.0625rem
+      right: 0
+      height: 1px
+      bottom: 0
+      background: image('line.png') repeat-x left bottom
+      background-size: 1px
+    &.hasactive
+      &:active
+        background-color: rgba(0,0,0,0.1)
+    > label
+      display: block
+      width: 4.0625rem
+      text-align: center
+      font-size: 0.75rem
+      height: 2.75rem
+      line-height: @height
+      position: relative
+      &:after
+        position: absolute
+        content: ""
+        size: 0.375rem 0.5rem
+        right: 0
+        top: 50%
+        margin-top: -(@height / 2)
+        background: image('arrow2.png') no-repeat center center
+        background-size: cover
+    .noafter
+      &:after
+        background: none
+    .text-value
+      &:after
+        position: absolute
+        content: ""
+        size: 0.5rem 0.625rem
+        right: 0.3125rem
+        top: 50%
+        margin-top: -(@height / 2)
+        margin-right: -0.125rem
+        background: image('arrow.png') no-repeat center center
+        background-size: contain
+    > input,
+    .text-value
+      box-flex: 1
+      display: block
+      border: none
+      font-size: 0.75rem
+      text-align: right
+      background-color: transparent
+      height: 1.875rem
+      padding: 0px
+      margin: 0 0.3125rem
+      line-height: @height
+      -webkit-appearance: inherit
+    .text-value
+      padding-right: 0.9375rem
+    > select
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      opacity: 0
+      z-index: 1000
+      width: 100%
+  .button-vericode
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    height: 2.75rem
+    line-height: 1rem
+    background: #E1E2E2
+    font-size: 0.75rem
+    color: #929292
+    width: 4.375rem
+    text-align: center
+    &.disabled
+      color: #fff
+      background: #929292
+      &:active
+        color: #fff
+        background: #929292
+    &:active
+      color: #fff
+      background-color: #929292
+
+.form-input-view
+  margin: 0.625rem
+  .input-area
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    font-size: 0.875rem
+    padding: 0 0.5rem
+    margin-top: 0.625rem
+    height: 2.5rem
+    line-height: @height
+    -webkit-appearance: inherit
+    border-width: 1px
+    border-image: image('border.png') 2 2 2 2 stretch stretch
+    &.need-input
+      > label
+        &:before
+          position: absolute !important
+          content: "*"
+          size: 0.375rem 0.375rem
+          color: #FB0006
+          left: -0.1875rem
+          top: 0.1875rem
+    .chgbtn
+      width: 2.5rem
+      font-size: 1.25rem
+      text-align: center
+      color: #929292
+      margin-right: -0.5rem
+      &:active
+        background-color: #EBEBEB
+      &:before
+        position: absolute
+        content: ''
+        left: 0
+        top: 0
+        bottom: 0px
+        width: 1px
+        height: 2.5rem
+        background: image('line2.png') repeat-y
+        background-size: 1px 1px
+    > label
+      display: block
+      width: 3.75rem
+      text-align: center
+      font-size: 0.75rem
+      position: relative
+      &:after
+        position: absolute
+        content: ''
+        right: -0.5rem
+        top: 0.3125rem
+        bottom: 0px
+        width: 1px
+        height: 1.875rem
+        background: image('line2.png') repeat-y
+        background-size: 1px 1px
+    .text-value
+      &:after
+        position: absolute
+        content: ""
+        size: 0.5rem 0.625rem
+        right: 0
+        top: 50%
+        margin-top: -(@height / 2)
+        background: image('arrow.png') no-repeat center center
+        background-size: contain
+    > input,
+    .text-value
+      box-flex: 1
+      display: block
+      border: none
+      font-size: 0.75rem
+      text-align: right
+      background-color: transparent
+      height: 1.875rem
+      padding: 0px
+      margin: 0 0.3125rem
+      line-height: @height
+      -webkit-appearance: inherit
+    .text-value
+      padding-right: 0.9375rem
+    > select
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      opacity: 0
+      z-index: 1000
+      width: 100%
+
+
+#page-market-register,
+#page-market-check
+  .vpage-content
+    &.v1
+      .header
+        background-color: #bb4b38
+      .form-table-view
+        .input-area
+          > label
+            color: #fff
+          .l1
+            background-color: #ce7b50
+          .l2
+            background-color: #ac5732
+          .l3
+            background-color: #923524
+          .l4
+            background-color: #aa382a
+          .l5
+            background-color: #C16359
+          .l6
+            background-color: #C65E3E
+          .l7
+            background-color: #F67449
+    &.v2
+      .header
+        background-color: #a3ba8b
+      .form-table-view
+        .input-area
+          > label
+            color: #000
+          .l1
+            background-color: #3690a4
+          .l2
+            background-color: #99b1c8
+          .l3
+            background-color: #a4ba8b
+          .l4
+            background-color: #c5c6c6
+          .l5
+            background-color: #60A6B0
+          .l6
+            background-color: #839564
+    &.v3
+      .header
+        background-color: #bb4b38
+      .form-table-view
+        .input-area
+          > label
+            color: #fff
+          .l1
+            background: #ce7b50 image('default_icon.png') no-repeat center center
+            background-size: 1.5625rem 1.5625rem
+          .l2
+            background: #ac5732 image('default_icon.png') no-repeat center center
+            background-size: 1.5625rem 1.5625rem
+    .header
+      height: 11.25rem
+      vendor-property: display box
+      box-orient: vertical
+      box-align: center
+      box-pack: center
+      .bg
+        size: 5.9375rem 5.9375rem
+        background: image('tag_head.png') no-repeat center center
+        background-size: cover
+      .txt
+        line-height: 2.5rem
+        font-size: 0.875rem
+        font-weight: bold
+        text-align: center
+        color: #fff
+
+
+
+  .regtype-box
+    color #fff
+    input
+      -webkit-appearance: radio !important
+  .file-input
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    opacity: 0;
+    z-index: 2;
+  .upload-img
+    width 2.1875rem
+    height 2.1875rem
+  .upload-img-box
+    box-flex: 1
+    box-sizing border-box
+    padding-right 0.625rem
+    text-align right
+
+.market-table-view
+  background-color: #fff
+  margin-bottom: 0.3125rem
+  > div
+    &:last-child
+      &:after
+        left: 0
+  .item
+    padding: 0 1.375rem 0 0.5rem
+    line-height: 2.5rem
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    color: #000
+    font-size: 0.875rem
+    &:before
+      position: absolute
+      content: ""
+      size: 0.5rem 0.625rem
+      right: 0.5rem
+      top: 50%
+      margin-top: -(@height / 2)
+      background: image('arrow.png') no-repeat center center
+      background-size: contain
+    &:after
+      position: absolute
+      content: ''
+      left: 0.5rem
+      right: 0
+      height: 1px
+      bottom: 0
+      background: image('line.png') repeat-x left bottom
+      background-size: 1px
+    &:active
+      background-color: rgba(0,0,0,0.1)
+    .logbg
+      box-flex: 1
+      padding-left: 1.5625rem
+      &.l1
+        background: image('icon_td.png') no-repeat left center
+        background-size: 1.25rem 1.25rem
+      &.l2
+        background: image('icon_xx.png') no-repeat left center
+        background-size: 1.25rem 1.25rem
+      &.l3
+        background: image('icon_kh.png') no-repeat left center
+        background-size: 1.25rem 1.25rem
+      &.l4
+        background: image('icon_hd.png') no-repeat left center
+        background-size: 1.25rem 1.25rem
+      &.l5
+        background: image('icon_kh.png') no-repeat left center
+        background-size: 1.25rem 1.25rem
+      &.l6
+        background: image('icon_bb.png') no-repeat left center
+        background-size: 1.25rem 1.25rem
+      &.l7
+        background: image('icon_tj.png') no-repeat left center
+        background-size: 1.25rem 1.25rem
+    .number
+      font-size: 0.75rem
+      color: #B94C3D
+      &.n2
+        position: absolute
+        top: 0.75rem
+        right: 1.375rem
+        background-color: #C60E1D
+        color: #fff !important
+        size: 1rem 1rem
+        border-radius: 1rem
+        text-align: center
+        line-height: @height
+        font-size: 0.6em
+
+.project-pannel
+  box-flex: 1
+  line-height: 1.25rem
+  &.p2
+    .name,
+    .nums
+      padding-left: 0.5rem
+  .name
+    color: #000
+    font-size: 0.875rem
+    ellipsis: ellipsis
+    margin-right: 1.25rem
+    line-height: 1.5625rem
+  .nums
+    font-size: 0.75rem
+    color: #929292
+    line-height: 1.25rem
+  .project-block
+    padding: 0px 0.5rem
+    font-size: 0.75rem
+    color: #929292
+    line-height: 1.125rem
+  .info-bar
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: start
+    height: 2.5rem
+    border-top: 1px dashed EBEBEB
+    > div
+      &:last-child
+        border-right: 0px
+    .info-block
+      width: 25%
+      vendor-property: display box
+      box-orient: vertical
+      box-align: center
+      box-pack: center
+      height: 2.25rem
+      margin-top: 0.25rem
+      border-right: 1px dashed #ebebeb
+      > div
+        line-height: 1rem
+        font-size: 0.75rem
+        color: #717171
+        &:last-child
+          color: #F6AC00
+
+#page-market-card,
+#page-market-plist
+  .vpage-content
+    &.v1
+      .header,
+      .headercard
+        background-color: #bb4b38
+    &.v2
+      .header,
+      .headercard
+        background-color: #a3ba8b
+      .market-table-view
+        .item
+          .number
+            color: #A3B98D
+            &.n2
+              background-color: #A3B98D
+    .header
+      height: 9.375rem
+      vendor-property: display box
+      box-orient: vertical
+      box-align: center
+      box-pack: center
+      .bg
+        size: 5.9375rem 5.9375rem
+        background: image('tag_head2.png') no-repeat center center
+        background-size: cover
+        > img
+          size: 3.75rem 3.75rem
+          border-radius: 3.75rem
+          display: block
+          position: absolute
+          top: 50%
+          left: 50%
+          margin-top: -(@height / 2)
+          margin-left: -(@width / 2)
+      .txt
+        height: 1.875rem
+        line-height: 1.875rem
+        font-size: 0.75rem
+        text-align: center
+        color: #fff
+      .infoarea
+        font-size: 0.625rem
+        color: #fff
+        text-align: left
+        width: 6.875rem
+        line-height: 1.125rem
+        position: absolute
+        top: 0.625rem
+        right: 0
+    .infopannel
+      border-bottom: 0.25rem solid #DEECF1
+      .act-bar
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: start
+        height: 5.625rem
+        background: #fff
+        > div
+          &:nth-child(3)
+            &:before
+              background: none
+        .act-block
+          width: 33%
+          vendor-property: display box
+          box-orient: vertical
+          box-align: center
+          box-pack: center
+          height: 5.625rem
+          > img
+            display: block
+          .imagestyle
+            size: 1.5625rem 1.5625rem
+          > div
+            line-height: 1rem
+            font-size: 0.625rem
+            color: #717171
+            &:nth-child(2)
+              margin-top: 0.3125rem
+              color: #B94C3D
+          .numnote
+            position: absolute
+            top: 0px
+            right: 0.3125rem
+            background-color: #C60E1D
+            color: #fff !important
+            size: 1rem 1rem
+            border-radius: 1rem
+            text-align: center
+            line-height: @height
+            font-size: 0.5em
+          .txtstyle
+            margin-top: 1.3125rem
+            &.t2
+              margin-top: 0.625rem
+          &:before
+            position: absolute
+            content: ''
+            right: 0px
+            top: 0px
+            bottom: 0px
+            width: 1px
+            height: 5.625rem
+            background: image('line2.png') repeat-y
+            background-size: 1px 1px
+    .actpannel
+      .act-bar
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: start
+        height: 6.875rem
+        background: #fff
+        > div
+          &:nth-child(3)
+            &:before
+              background: none
+        .act-block
+          width: 33%
+          vendor-property: display box
+          box-orient: vertical
+          box-align: center
+          box-pack: center
+          height: 6.875rem
+          > img
+            display: block
+            size: 3.625rem 3.625rem
+          > div
+            line-height: 1.875rem
+            font-size: 0.75rem
+            color: #717171
+          &:after
+            position: absolute
+            content: ''
+            left: 0px
+            right: 0px
+            bottom : 0px
+            height: 1px
+            background: image('line.png') repeat-x left bottom
+            background-size: 1px 1px
+          &:before
+            position: absolute
+            content: ''
+            right: 0px
+            top: 0px
+            bottom: 0px
+            width: 1px
+            height: 6.875rem
+            background: image('line2.png') repeat-y
+            background-size: 1px 1px
+    .headercard
+      height: 9.375rem
+      padding: 0 2.8125rem
+      vendor-property: display box
+      box-orient: vertical
+      box-align: center
+      box-pack: center
+      .topheader
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        .bg
+          size: 5.9375rem 5.9375rem
+          background: image('tag_head2.png') no-repeat center center
+          background-size: cover
+          > img
+            size: 3.75rem 3.75rem
+            border-radius: 3.75rem
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            margin-top: -(@height / 2)
+            margin-left: -(@width / 2)
+        .rightpannel
+          box-flex: 1
+          margin-left: 1.25rem
+          font-size: 0.75rem
+          line-height: 1.125rem
+          color: #fff
+          .username
+            line-height: 1.5625rem
+            font-size: 0.875rem
+            font-weight: bold
+      .pathname
+        margin-top: 0.3125rem
+        font-size: 0.75rem
+        color: #fff
+        line-height: 1.125rem
+      .selectapart
+        size: 3.75rem 1.375rem
+        border: 1px solid #fff
+        border-radius: 0.125rem
+        -webkit-border-radius: 0.125rem
+        color: #fff
+        line-height: 1.375rem
+        text-align: center
+        font-size: 0.75rem
+    .pro-list
+      > div
+        &:last-child
+          &:after
+            left: 0
+      .pro-item
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        background-color: #fff
+        padding: 0.5rem 0 0.5rem 0.5rem
+        &.highlight
+          background-color: rgba(0,0,0,0.1)
+        &:after
+          position: absolute
+          content: ''
+          left: 0.5rem
+          right: 0
+          height: 1px
+          bottom: 0
+          background: image('line.png') repeat-x left bottom
+          background-size: 1px
+        > img
+          size: 5rem 5rem
+          display: block
+          margin-right: 0.5rem
+        .arrow
+          position: absolute
+          size: 0.5rem 0.625rem
+          right: 0.3125rem
+          top: 0.3125rem
+          background: image('arrow.png') no-repeat center center
+          background-size: contain
+        .btn-bb
+          position: absolute
+          right: 0.3125rem
+          top: 1.125rem
+          size: 3.75rem 1.125rem
+          border: 1px solid #B94C3D
+          border-radius: 0.125rem
+          color: #B94C3D
+          line-height: @height
+          text-align: center
+          font-size: 0.75rem
+          &:active
+            background-color: #B94C3D
+            color: #fff
+
+#page-market-pdetail
+  .vpage-content
+    .banner
+      min-height: 9.375rem
+      width: 100%
+      img
+        min-height: 9.375rem
+        display: block
+        width: 100%
+        margin-top: 0
+    .infopannel
+      vendor-property: display box
+      box-orient: horizontal
+      background-color: #fff
+      margin-bottom: 0.3125rem
+      &:after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+
+#page-market-search,
+#page-market-search2
+  padding-top: 5rem
+  > section
+    padding-left: 4.375rem
+  .search-panel
+    position: fixed
+    top: 2.5rem
+    left: 0
+    right: 0
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    padding: 0.3125rem
+    z-index: 9
+    background-color: #efefef
+    .search-box
+      box-flex: 1
+      border-image: image('border.png') 2 2 2 2 stretch stretch
+      border-width: 1px
+      > input
+        width: 100%
+        height: 1.75rem
+        margin: 0
+        padding: 0 0.3125rem
+        border: none
+        background: #fff
+        color: #000
+        font-size: 0.75rem
+    .searchbt
+      size: 1.875rem 1.875rem
+      background: #B94C3D image('icon_search.png') no-repeat center center
+      background-size: 1rem 1rem
+      &.s2
+        background-color: #65AEA2
+  > aside
+    position: fixed
+    top: 5rem
+    left: 0
+    bottom: 0
+    width: 4.375rem
+    z-index: 8
+    background-color: #fff
+    .item
+      position: relative
+      line-height: 1.5rem
+      padding: 0.625rem 0
+      font-size: 0.75rem
+      color: #595757
+      text-align: center
+      &:after
+        position: absolute
+        content: ''
+        left: 0.625rem
+        right: 0.625rem
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      &.selected
+        color: #FA432D
+        &:before
+          position: absolute
+          content: ""
+          right: 0px
+          top: (@line-height / 2 + 0.625rem)
+          margin-top: -0.3125rem
+          size: 0 0
+          border: 0.3125rem solid #FA432D
+          border-color: transparent transparent transparent #FA432D
+          z-index: 10
+  .cus-item
+    margin: 0 0.3125rem 0.3125rem 0.3125rem
+    background-color: #fff
+    padding-left: 0.5rem
+    padding-bottom: 0.3125rem
+    &.highlight
+      background-color: rgba(0,0,0,0.1)
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 1.75rem
+      border-bottom: 1px dashed #EBEBEB
+      padding-right: 0.3125rem
+      font-size: 0.75rem
+      color: #929292
+      &.noborder
+        border: none
+      .username
+        color: #000
+        font-size: 0.875rem
+        > span
+          font-size: 0.75rem
+          margin-left: 0.625rem
+          padding-left: 0.9375rem
+          background: image('icon.png') no-repeat left center
+          background-size: 0.75rem 0.75rem
+        &.noicon
+          > span
+            background: none
+      .statustxt
+        position: absolute
+        top: 0
+        right: 2.1875rem
+        font-size: 0.625rem
+        padding: 0.1875rem
+        height: 0.625rem
+        line-height: @height
+        color: #fff
+        background-color: #A0A1A1
+        &.wait
+          background-color: #F1992F
+        &.accept
+          background-color: #21A967
+        &.over
+          background-color: #C11229
+      > div
+        &:first-child
+          box-flex: 1
+        &:nth-child(2)
+          text-align: right
+      .mobile
+        padding-left: 0.75rem
+        background: image('telbg.png') no-repeat left center
+        background-size: 0.625rem 0.625rem
+        &.highlight
+          color: #fa432d
+    .delete
+      position: absolute
+      top: 0
+      right: 0
+      size: 1.75rem 1.75rem
+      background: image('icon_delete.png') no-repeat center center
+      background-size: 0.75rem 0.9375rem
+      &:active
+        background-color: #929292
+      &:before
+        position: absolute
+        content: ''
+        left: 0
+        top: 0
+        bottom: 0px
+        width: 1px
+        height: 1.75rem
+        background: image('line2.png') repeat-y
+        background-size: 1px 1px
+    .actpannel
+      height: 5rem
+      background-color: #fff
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      > img
+        display: block
+        size: 2.8125rem 2.8125rem
+        margin: 0 1.875rem
+        &:active
+          transform: scale(0.95)
+    .arrow
+      position: absolute
+      size: 0.5rem 0.625rem
+      right: 0.3125rem
+      top: 0.5625rem
+      background: image('arrow.png') no-repeat center center
+      background-size: contain
+  .cus-nodata-item
+    margin: 0 0.3125rem 0.3125rem 0.3125rem
+    background-color: #fff
+    text-align: center
+    height: 1.875rem
+    line-height: @height
+    color: #929292
+    font-size: 0.75rem
+
+#page-market-search2
+  padding-top: 2.5rem
+  > section:first-child
+    padding-left: 0
+  .search-panel
+    top: 0
+    .all-select
+      width: 2.5rem
+      font-size: 0.75rem
+      color: #929292
+      padding-left: 1.25rem
+      background: image('icon_select.png') no-repeat left center
+      background-size: 0.75rem 0.75rem
+      &.selected
+        background-image: image('icon_select_checked.png')
+      &:active
+        color: #bb4b38
+    .type-status
+      size: 5rem 1.875rem
+      margin-right: 0.3125rem
+      background-color: #99B1C7
+      color: #fff
+      font-size: 0.75rem
+      text-align: center
+      line-height: @height
+      &.t2
+        width: 6.25rem
+    .text-value
+      &:before
+        position: absolute
+        content: ""
+        right: 0.3125rem
+        top: 0.75rem
+        size: 0 0
+        border: 0.25rem solid #fff
+        border-color: #fff transparent transparent transparent
+        z-index: 10
+    select
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      opacity: 0
+      z-index: 1000
+      width: 100%
+    .btn
+      size: 5rem 1.875rem
+      margin-left: 0.3125rem
+      line-height: @height
+      color: #fff
+      font-size: 0.75rem
+      border-radius: 0.125rem
+      text-align: center
+      background-color: #68AEA2
+      &:active
+        background-color: #A2B78E
+  .cus-item2
+    padding: 0 0.3125rem
+    border-bottom: 1px dashed #EBEBEB
+    line-height: 2.5rem
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    color: #000
+    font-size: 0.75rem
+    background-color: #fff
+    &.highlight
+      background-color: rgba(0,0,0,0.1)
+    .selectbg
+      size: 2.5rem 2.5rem
+      background: image('icon_select.png') no-repeat left center
+      background-size: 0.75rem 0.75rem
+      &.selected
+        background-image: image('icon_select_checked.png')
+    &.hasarrow
+      &:after
+        position: absolute
+        content: ""
+        size: 0.5rem 0.625rem
+        right: 0.3125rem
+        top: 50%
+        margin-top: -(@height / 2)
+        background: image('arrow.png') no-repeat center center
+        background-size: contain
+      > div
+        &:last-child
+          padding-right: 1.25rem
+    > div
+      &:nth-child(2)
+        box-flex: 1
+        text-align: left
+        // ellipsis: ellipsis
+      &:last-child
+        text-align: right
+        // ellipsis: ellipsis
+  .select-bar
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    height: 2.5rem
+    z-index: 8
+    background-color: #fff
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    &:before
+      position: absolute
+      content: ''
+      left: 0
+      right: 0
+      height: 1px
+      top: -1px
+      background: image('line.png') repeat-x left bottom
+      background-size: 1px
+    .btn
+      size: 5.3125rem 2rem
+      line-height: @height
+      color: #fff
+      font-size: 0.75rem
+      border-radius: 0.25rem
+      text-align: center
+      background-color: #bb4b38
+      &:active
+        background-color: #923524
+
+
+#page-market-cuslist
+  padding-top: 2.5rem
+  padding-bottom: 2.5rem
+  > section:first-child
+    padding-left: 4.375rem
+  .search-panel
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    padding: 0.3125rem
+    z-index: 9
+    background: #efefef
+    .search-box
+      box-flex: 1
+      border-image: image('border.png') 2 2 2 2 stretch stretch
+      border-width: 1px
+      > input
+        width: 100%
+        height: 1.75rem
+        margin: 0
+        padding: 0 0.3125rem
+        border: none
+        background: #fff
+        color: #000
+        font-size: 0.75rem
+    .searchbt
+      size: 1.875rem 1.875rem
+      background: #B94C3D image('icon_search.png') no-repeat center center
+      background-size: 1rem 1rem
+  > aside
+    position: fixed
+    top: 2.5rem
+    left: 0
+    bottom: 2.5rem
+    width: 4.375rem
+    z-index: 8
+    background-color: #fff
+    .item
+      position: relative
+      line-height: 1.5rem
+      padding: 0.625rem 0
+      font-size: 0.75rem
+      color: #595757
+      text-align: center
+      &:after
+        position: absolute
+        content: ''
+        left: 0.625rem
+        right: 0.625rem
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      &.selected
+        color: #FA432D
+        &:before
+          position: absolute
+          content: ""
+          right: 0px
+          top: (@line-height / 2 + 0.625rem)
+          margin-top: -0.3125rem
+          size: 0 0
+          border: 0.3125rem solid #FA432D
+          border-color: transparent transparent transparent #FA432D
+          z-index: 10
+  .cus-item
+    margin: 0 0.3125rem 0.3125rem 0.3125rem
+    background-color: #fff
+    padding: 0 0 0.3125rem 0.5rem
+    &.highlight
+      background-color: rgba(0,0,0,0.1)
+    .selectbg
+      position: absolute
+      top: 0.4375rem
+      right: 0
+      size: 0.75rem 0.75rem
+      background: image('icon_select.png') no-repeat left center
+      background-size: 0.75rem 0.75rem
+      margin-right: 0.625rem
+      &.selected
+        background-image: image('icon_select_checked.png')
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 1.625rem
+      border-bottom: 1px dashed #EBEBEB
+      padding-right: 0.3125rem
+      font-size: 0.625rem
+      color: #929292
+      .username
+        color: #000
+        font-size: 0.875rem
+        .mobile
+          font-size: 0.75rem
+          margin-left: 0.625rem
+          padding-left: 0.75rem
+          background: image('telbg.png') no-repeat left center
+          background-size: 0.625rem 0.625rem
+          &.highlight
+            color: #fa432d
+      > div
+        &:first-child
+          box-flex: 1
+        &:nth-child(2)
+          text-align: right
+  .select-bar
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    height: 2.5rem
+    z-index: 8
+    background-color: #fff
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    &:before
+      position: absolute
+      content: ''
+      left: 0
+      right: 0
+      height: 1px
+      top: -1px
+      background: image('line.png') repeat-x left bottom
+      background-size: 1px
+    .btn
+      size: 5.3125rem 2rem
+      line-height: @height
+      color: #fff
+      font-size: 0.75rem
+      border-radius: 0.25rem
+      text-align: center
+      background-color: #bb4b38
+      &:active
+        background-color: #923524
+  .cus-nodata-item
+    margin: 0 0.3125rem 0.3125rem 0.3125rem
+    background-color: #fff
+    text-align: center
+    height: 1.875rem
+    line-height: @height
+    color: #929292
+    font-size: 0.75rem
+
+#page-market-cuslist2
+  .cus-item
+    margin: 0.3125rem
+    background-color: #fff
+    padding: 0 0 0.3125rem 0.5rem
+    // &:active
+    //   background-color: rgba(0,0,0,0.1)
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 1.625rem
+      border-bottom: 1px dashed #EBEBEB
+      padding-right: 0.3125rem
+      font-size: 0.75rem
+      color: #929292
+      .username
+        color: #000
+        font-size: 0.875rem
+        > span
+          color: #929292
+          font-size: 0.75rem
+          padding-left: 0.625rem
+      .mobile
+        padding-left: 0.75rem
+        background: image('telbg.png') no-repeat left center
+        background-size: 0.625rem 0.625rem
+        &:active
+          color: #fa432d
+      > div
+        &:first-child
+          box-flex: 1
+        &:nth-child(2)
+          text-align: right
+  .cus-nodata-item
+    margin-top: 0.3125rem
+    background-color: #fff
+    text-align: center
+    height: 1.875rem
+    line-height: @height
+    color: #929292
+    font-size: 0.75rem
+
+#page-market-detail
+  .infopannel
+    background-color: #fff
+    padding-left: 0.5rem
+    padding-bottom: 0.3125rem
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 2.25rem
+      border-bottom: 1px dashed #EBEBEB
+      padding-right: 0.3125rem
+      font-size: 0.75rem
+      color: #929292
+      &.noborder
+        border: none
+      > div
+        &:first-child
+          box-flex: 1
+          font-size: 0.875rem
+          color: #000
+        &:nth-child(2)
+          text-align: right
+      .username
+        > span
+          font-size: 0.75rem
+          margin-left: 0.625rem
+          padding-left: 0.9375rem
+          background: image('icon.png') no-repeat left center
+          background-size: 0.75rem 0.75rem
+      .mobile
+        padding-left: 0.75rem
+        background: image('telbg.png') no-repeat left center
+        background-size: 0.625rem 0.625rem
+        &:active
+          color: #fa432d
+    .info-box2
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 2.25rem
+      border-bottom: 1px dashed #EBEBEB
+      padding-right: 0.3125rem
+      font-size: 0.75rem
+      color: #929292
+      > div
+        &:first-child
+          font-size: 0.875rem
+          color: #000
+        &:nth-child(2)
+          margin-left: 0.3125rem
+          font-size: 0.625rem
+          padding: 0.1875rem
+          height: 0.625rem
+          line-height: @height
+          color: #fff
+          background-color: #A0A1A1
+          &.wait
+            background-color: #F1992F
+          &.accept
+            background-color: #21A967
+        &:nth-child(3)
+          box-flex: 1
+        &:last-child
+          padding-left: 0.9375rem
+          background: image('icon_delete.png') no-repeat left center
+          background-size: 0.75rem 0.9375rem
+    .house-box
+      font-size: 0.875rem
+      line-height: 1.875rem
+      color: #000
+      .house-block
+        border: 1px dashed #EBEBEB
+        margin: 0.3125rem 0.5rem 0 0
+        font-size: 0.75rem
+        color: #929292
+        padding: 0.3125rem
+        .house-info
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          line-height: 1.25rem
+          > div
+            width: 50%
+          &.hh2
+            > div
+              width: 100%
+        .house-btn
+          size: 6.25rem 1.875rem
+          margin: 0.3125rem auto
+          line-height: @height
+          color: #fff
+          font-size: 0.75rem
+          border-radius: 0.25rem
+          text-align: center
+          background-color: #bb4b38
+          &:active
+            background-color: #923524
+
+  .listpannel
+    background-color: #fff
+    padding-left: 0.5rem
+    margin-top: 0.3125rem
+    > div
+      &:first-child
+        line-height: 1.875rem
+        font-size: 0.875rem
+        color: #000
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 1.625rem
+      padding-right: 0.3125rem
+      font-size: 0.75rem
+      color: #929292
+      > div
+        &:first-child
+          box-flex: 1
+        &:nth-child(2)
+          text-align: right
+    .nodata-item
+      background-color: #fff
+      text-align: center
+      height: 1.875rem
+      line-height: @height
+      color: #929292
+      font-size: 0.75rem
+  .actpannel
+    height: 7.5rem
+    background-color: #fff
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    > img
+      display: block
+      size: 3.75rem 3.75rem
+      margin: 0 1.875rem
+      &:active
+        transform: scale(0.95)
+
+#page-market-commission
+  .infopannel
+    background-color: #fff
+    margin-bottom: 0.3125rem
+    padding-bottom: 0.125rem
+    &.i2
+      .info-box
+        > div
+          &:nth-child(2)
+            font-size: 0.75rem
+            color: #929292
+    &.search
+      padding: 0
+      margin: 0
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 2.5rem
+      margin-left: 0.5rem
+      padding-right: 0.5rem
+      font-size: 0.75rem
+      color: #000
+      border-bottom: 1px dashed #EBEBEB
+      &.hasafter
+        padding-right: 1.25rem
+        &:active
+          background-color: rgba(0,0,0,0.1)
+        &:after
+          position: absolute
+          content: ""
+          size: 0.5rem 0.625rem
+          right: 0.3125rem
+          top: 50%
+          margin-top: -(@height / 2)
+          background: image('arrow.png') no-repeat center center
+          background-size: contain
+      > div
+        &:first-child
+          box-flex: 1
+        &:nth-child(2)
+          font-size: 1rem
+          color: #F6B22B
+          text-align: right
+    .header
+      line-height: 2.25rem
+      padding-left: 0.5rem
+      font-size: 0.75rem
+      color: #388FA3
+      &:after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      > div
+        position: absolute
+        right: 0.625rem
+        top: 0
+    .info-box-item
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      height: 2.5rem
+      line-height: @height
+      font-size: 0.75rem
+      color: #000
+      margin-left: 0.5rem
+      padding-right: 0.5rem
+      border-bottom: 1px dashed #EBEBEB
+      > input,
+      .text-value
+        box-flex: 1
+        display: block
+        border: none
+        font-size: 0.75rem
+        text-align: right
+        background-color: transparent
+        height: 1.875rem
+        padding: 0 0.625rem
+        margin: 0 0.3125rem
+        line-height: @height
+        -webkit-appearance: inherit
+      > select
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        opacity: 0
+        z-index: 1000
+        width: 100%
+      &:after
+        position: absolute
+        content: ""
+        size: 0.5rem 0.625rem
+        right: 0.3125rem
+        top: 50%
+        margin-top: -(@height / 2)
+        background: image('arrow.png') no-repeat center center
+        background-size: contain
+
+#page-market-notice
+  .header-select
+    position: fixed
+    z-index: 1000
+    top: 0
+    left: 0
+    right: 0
+    height: 2.5rem
+    line-height: @height
+    text-align: center
+    font-size: 0.75rem
+    color: #fff
+    background-color: #A5D9E5
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    .selected
+      background-color: #fff
+      color: #000
+    > li
+      box-flex: 1
+      text-align: center
+      &:after
+        position: absolute
+        content: ''
+        right: 0
+        top: 0.625rem
+        bottom: 0px
+        width: 1px
+        height: 1.25rem
+        background-color: #fff
+      &:nth-child(1)
+        max-width: 4.375rem
+      &:last-child
+        &:after
+          background: none
+  .notice-item
+    margin-top: 0.3125rem
+    background-color: #fff
+    padding: 0.5rem
+    &:active
+      background-color: rgba(0,0,0,0.1)
+    &.unread
+      margin-left: 1.25rem
+      padding-left: 2.25rem
+      .info-box
+        color: #000
+      .content
+        color: #000
+      &:before
+        position: absolute
+        content: ''
+        size: 2.5rem 1.9375rem
+        left: -1.25rem
+        top: 50%
+        margin-top: -(@height / 2)
+        background: image('icon_wd.png') no-repeat center center
+        background-size: contain
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      line-height: 1.625rem
+      padding-right: 0.3125rem
+      font-size: 0.625rem
+      color: #929292
+      > div
+        &:first-child
+          box-flex: 1
+          font-size: 0.75rem
+        &:nth-child(2)
+          text-align: right
+    .content
+      font-size: 0.625rem
+      color: #929292
+      width: 100%
+      line-height: 0.9375rem
+      word-wrap: normal
+      text-overflow: ellipsis
+      display: -webkit-box
+      line-clamp: 2
+      box-orient: vertical
+      max-height: 1.875rem
+      overflow: hidden
+  .cus-nodata-item
+    margin: 0.3125rem
+    background-color: #fff
+    text-align: center
+    height: 1.875rem
+    line-height: @height
+    color: #929292
+    font-size: 0.75rem
+
+#page-market-check
+  .infopannel
+    width: 18.75rem
+    margin: 0 auto
+    vendor-property: display box
+    box-orient: vertical
+    box-align: center
+    box-pack: center
+    padding-top: 5rem
+    .checkstatus
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      font-size: 0.875rem
+      font-weight: bold
+      &.sh
+        color: #F19728
+        > img
+          size: 3rem 3rem
+      &.sb
+        color: #E60012
+        > img
+          size: 2.0625rem 2.0625rem
+      > img
+        display: bolck
+        margin-right: 0.625rem
+    .content
+      font-size: 0.875rem
+      font-weight: bold
+      color: #000
+      margin-top: 2.5rem
+      text-align: center
+      > span
+        color: #02A4DD
+    .notetxt
+      text-align: center
+      font-size: 0.75rem
+      color: #929292
+      margin-top: 3.75rem
+    .reset-btn
+      size: 6.25rem 1.875rem
+      margin: 2.5rem auto
+      line-height: @height
+      color: #fff
+      font-size: 0.75rem
+      border-radius: 0.25rem
+      text-align: center
+      background-color: #bb4b38
+      &:active
+        background-color: #923524
+  .foot
+    position: fixed
+    z-index: 1000
+    bottom: 0
+    left: 0
+    right: 0
+    height: 3.6875rem
+    background: image('tag_foot2.png') no-repeat center center
+    background-size: 100% 100%
+
+#page-market-listdetail
+  > section:first-child
+    .top
+      width: 100%
+      height: 2.5rem
+      background-color: #4D998B
+      .list
+        text-align: center
+        font-size: 0.875rem
+        color: #fff
+        line-height: @height
+    .cus-item
+      background-color: #fff
+      padding-left: 0.5rem
+      &:active
+        background-color: rgba(255,255,255,0.7)
+      .info-box
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        line-height: 1.625rem
+        border-bottom: 1px dashed #EBEBEB
+        padding-right: 0.3125rem
+        font-size: 0.625rem
+        color: #929292
+        &.noborder
+          border: none
+        .username
+          width: 15%
+        .mobile
+          width: 30%
+        .project
+          width: 35%
+    .cus-nodata-item
+      margin: 0 0.3125rem 0.3125rem 0.3125rem
+      background-color: #fff
+      text-align: center
+      height: 1.875rem
+      line-height: @height
+      color: #929292
+      font-size: 0.75rem
+
+#page-market-alist
+  .act-block
+    .header
+      line-height: 1.875rem
+      font-size: 0.875rem
+      font-weight: bold
+      color: #000
+      padding-left: 0.5rem
+    .act-block-item
+      background-color: #fff
+      &:after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      &:before
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        height: 1px
+        top: -1px
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      .act-item
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: top
+        box-pack: center
+        padding: 0.5rem 1.25rem 0.5rem 0.5rem
+        &.last
+          &:before
+            background: none
+        &:active
+          background-color: rgba(0,0,0,0.1)
+        &:before
+          position: absolute
+          content: ''
+          left: 0.5rem
+          right: 0
+          height: 1px
+          bottom: 0
+          background: image('line.png') repeat-x left bottom
+          background-size: 1px
+        &:after
+          position: absolute
+          content: ""
+          size: 0.5rem 0.625rem
+          right: 0.5rem
+          top: 50%
+          margin-top: -(@height / 2)
+          margin-right: -0.125rem
+          background: image('arrow.png') no-repeat center center
+          background-size: contain
+        > img
+          size: 3.125rem 3.125rem
+          display: bolck
+        .rightpannel
+          box-flex: 1
+          margin-left: 0.5rem
+          .topheader
+            vendor-property: display box
+            box-orient: horizontal
+            box-align: center
+            box-pack: center
+            > div
+              line-height: 1.25rem
+              &:first-child
+                box-flex: 1
+                ellipsis: ellipsis
+                font-size: 0.875rem
+                color: #000
+              &:last-child
+                font-size: 0.75rem
+                color: #929292
+          .content
+            font-size: 0.75rem
+            color: #929292
+            width: 100%
+            line-height: 0.9375rem
+            word-wrap: normal
+            text-overflow: ellipsis
+            display: -webkit-box
+            line-clamp: 2
+            box-orient: vertical
+            max-height: 1.875rem
+            overflow: hidden
+
+#page-market-adetail
+  .vpage-content
+    padding: 0.625rem
+    > h2
+      font-size: 0.875rem
+      color: #000
+      text-align: left
+      line-height: 1.5625rem
+    .time
+      line-height: 1.25rem
+      font-size: 0.75rem
+      color: #929292
+    > img
+      display: block
+      max-width: 18.75rem
+      margin: 0.3125rem auto
+    .timeline
+      .line
+        box-flex: 1
+        height: 1px
+        background: #ccc
+      .date
+        font-size: 0.625rem
+        color: #abadaf
+        width: 5rem
+        line-height: 1.25rem
+        text-align: center
+    .content
+      color: #666666
+      line-height: 1.125rem
+      font-size: 0.75rem
+
+#page-market-loginpc
+  .icon-pc
+    size: 7.375rem 8.875rem
+    background: image('icon_PC.png') no-repeat center center
+    background-size: 7.375rem 8.875rem
+    margin: 2.5rem auto 2.5rem auto
+
+
+#page-record-main
+  .vpage-content
+    .title
+      border-left 0.25rem solid #EF8D3F
+      height 2.5rem
+      padding-left 0.625rem
+      color #A6A6A8
+      font-size 0.875rem
+      line-height @height
+      font-weight 200
+    .menus
+      border-top 1px solid #ECECEC
+      border-bottom 1px solid #ECECEC
+      background #fff
+      vendor-property display box
+      box-orient vertical
+      .menu
+        box-flex 1
+        margin-left 0.625rem
+        height 2.875rem
+        line-height @height
+        border-bottom 1px solid #ECECEC
+        color #847F7E
+        font-weight 200
+        padding-left 1.5rem
+        vendor-property display box
+        .name
+          box-flex 1
+        .num
+          margin-right 1.625rem
+          color #F1963F
+        &:last-child
+          border-bottom none
+        &:after
+          content ""
+          size 0.4375rem 0.75rem
+          background image('arrow3.png')
+          background-size @width @height
+          position absolute
+          top 50%
+          margin-top - (@height / 2)
+          right 0.625rem
+        &.m1
+          &:before
+            content ""
+            size 1.125rem 1.125rem
+            background image("icon_wdfy.png")
+            background-size @width @height
+            position absolute
+            left 0
+            top 50%
+            margin-top - (@height / 2)
+        &.m2
+          &:before
+            content ""
+            size 1.125rem 1.125rem
+            background image("icon_wdyy.png")
+            background-size @width @height
+            position absolute
+            left 0
+            top 50%
+            margin-top - (@height / 2)
+        &.m3
+          &:before
+            content ""
+            size 1.125rem 1.125rem
+            background image("icon_wdbb.png")
+            background-size @width @height
+            position absolute
+            left 0
+            top 50%
+            margin-top - (@height / 2)
+        &.m4
+          &:before
+            content ""
+            size 1.125rem 1.125rem
+            background image("icon_cjkh.png")
+            background-size @width @height
+            position absolute
+            left 0
+            top 50%
+            margin-top - (@height / 2)
+
+#page-record-customer
+  .vpage-content
+    .search-panel
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      padding: 0.3125rem
+      background-color: #717071
+      .search-box
+        box-flex: 1
+        border-image: image('search-box.png') 2 20 2 20 stretch stretch
+        border-width: 1px 0.625rem
+        > input
+          width: 100%
+          height: 1.5rem
+          margin: 0
+          padding: 0
+          border: none
+          background: transparent
+          color: #BAB9B9
+          font-size: 1rem
+      .searchbt
+        size: 4rem 1.625rem
+        background: image('searchbt.png')
+        background-size: 100% 100%
+    ul
+      vendor-property: display box
+      box-orient: horizontal
+      list-style-type: none
+      height: 1.875rem
+      line-height: @height
+      box-align: center
+      box-pack: center
+      background: #bb4a39
+      color: #fff
+      font-size: 0.75rem
+      text-align: center
+      > li
+        box-flex: 1
+        height: 1.875rem
+        &:active,
+        &.selected
+          background: #843128
+        // &:nth-child(2)
+        &:after
+          position: absolute
+          content: ''
+          right: 0
+          top: 0.3125rem
+          width: 1px
+          height: 1.25rem
+          background: image('line2.png') repeat-y
+          background-size: 1px
+        &:last-child
+          &:after
+            background: none
+          // &:before
+          //   position: absolute
+          //   content: ''
+          //   left: 0
+          //   top: 0.3125rem
+          //   width: 1px
+          //   height: 1.25rem
+          //   background: image('line2.png') repeat-y
+          //   background-size: 1px
+    .list
+      padding-top 0.3125rem
+      .item
+        padding 0.3125rem 0.625rem
+        background #fff
+        border-top 1px solid #ECECEC
+        border-bottom 1px solid #ECECEC
+        font-weight 200
+        color #616161
+        font-size 0.875rem
+        margin-top 0.375rem
+        .header
+          vendor-property display box
+          border-bottom 1px dashed #ECECEC
+          padding 0.3125rem 0
+          .name
+            box-flex 1
+        .main
+          vendor-property display box
+          padding 0.3125rem 0
+          > img
+            width 3.75rem
+            display block
+            margin 0
+          .valuebox
+            box-flex 1
+            .valuepanel
+              vendor-property display box
+              margin 0.25rem 0 0.25rem 0.25rem
+              &:first-child
+                margin-top 0
+              &:last-child
+                margin-bottom 0
+              .flex
+                box-flex 1
+                ellipsis: ellipsis
+              .value1
+                font-size 0.625rem
+                color #847F7E
+              .value2
+                font-size 0.875rem
+                color #847F7E
+              .value3
+                font-size 0.875rem
+                color #C8604B
+        .footer
+          border-top: 1px dashed #ececec
+          padding: 0.3125rem
+          .cj-desc
+            border-bottom: 1px dashed #ececec
+            font-size: 0.75rem
+            line-height: 1.125rem
+            > div
+              &:first-child
+                color: #000
+          .statetext
+            line-height: 1.25rem
+            font-size: 0.75rem
+            color: #B94B3D
+          .memo
+            font-size: 0.625rem
+            color: #929292
+            width: 100%
+            line-height: 0.9375rem
+            word-wrap: normal
+            text-overflow: ellipsis
+            display: -webkit-box
+            line-clamp: 2
+            box-orient: vertical
+            max-height: 1.875rem
+            overflow: hidden
+          .fbtn-bar
+            margin-top: 0.5rem
+            vendor-property: display box
+            box-align: end
+            box-pack: end
+            .btn
+              padding: 0 0.5rem
+              height: 1.375rem
+              font-size: 0.75rem
+              color: #fff
+              text-align: center
+              line-height: @height
+              border-radius: 0.125rem
+              margin-left: 0.5rem
+              background: #bb4a39
+              &:active
+                background: #843128
+      .noitem
+        padding 0.3125rem 0.625rem
+        background #fff
+        border-top 1px solid #ECECEC
+        border-bottom 1px solid #ECECEC
+        font-weight 200
+        color #616161
+        font-size 0.875rem
+        margin-top 0.375rem
+        text-align center
+
+.popup-manage-price
+  vendor-property: display box
+  box-align: center
+  box-pack: center
+  .rank-wrapper
+    animation: fly-up .25s linear 1
+    .info-box
+      .info-head
+        size: 17.5rem 1.875rem
+        background: #5B5858
+        text-align: center
+        color: #fff
+        line-height: @height
+        font-size: 0.75rem
+      .info-top
+        width: 17.5rem
+        min-height: 2.5rem
+        background: #fff
+        .scroll-list
+          overflow: auto
+          width: 17.5rem
+          margin: 0 auto
+          .rank-list
+            .rank-item
+              text-align center
+              height 2.5rem
+              line-height @height
+              &.highlight
+                background: #bb4a39
+              &:after
+                position: absolute
+                content: ''
+                left: 0
+                right: 0
+                height: 1px
+                bottom: 0
+                background: image('line.png') repeat-x left bottom
+                background-size: 1px
+      .info-bottom
+        size: 17.5rem 2.5rem
+        background: #bb4a39
+        color: #fff
+        font-size: 0.875rem
+        text-align: center
+        line-height: @height
+        &:active
+          background: #843128
+      .info-top2
+        width: 17.5rem
+        min-height: 2.5rem
+        background: #fff
+        vendor-property: display box
+        box-align: center
+        box-pack: center
+        textarea
+          margin: 0.3125rem 0
+          width: 16.25rem
+          line-height: 1.25rem
+          -webkit-appearance: inherit
+          border-width: 0.125rem
+          border-image: image('border.png') 4 4 4 4 stretch stretch
+      .info-bottom2
+        vendor-property: display box
+        box-align: center
+        box-pack: center
+        height: 2.5rem
+        > div
+          width: 50%
+          background: #bb4a39
+          color: #fff
+          font-size: 0.875rem
+          text-align: center
+          line-height: @height
+          &:active
+            background: #843128
+          &:first-child
+            &:after
+              position: absolute
+              content: ''
+              right: 0
+              top: 0.625rem
+              width: 1px
+              height: 1.25rem
+              background: image('line2.png') repeat-y
+              background-size: 1px
+
+
+
+
+
+#page-market-openshop
+  .banner
+    width 100%
+  .contents
+    box-sizing border-box
+    padding-top 3.75rem
+  .trips
+    width 100%
+    text-align center
+    color #EB6617
+    font-size 0.9375rem
+  .bt-box
+    margin-top 1.875rem
+  .apply-bt
+    display block
+    margin auto
+    width 6.875rem
+    height 1.875rem
+    line-height 1.875rem
+    border-radius 0.375rem
+    background-color #EB6617
+    color #FDF6F1
+    text-align center
+  .wait-check-bt
+    display block
+    margin auto
+    width 6.875rem
+    height 1.875rem
+    line-height 1.875rem
+    border-radius 0.375rem
+    background-color #858585
+    color #FDF6F1
+    text-align center
+  .hide
+    display none
+
+#page-market-regsuccess
+
+  .header
+    width 100%
+    height 10.625rem
+    background-color #FFFFFF
+  .img
+    width 100%
+
+  .succ-box
+    width 100%
+    height 10.625rem
+    line-height 10.625rem
+  .succ-left
+    width 30%
+    text-align right
+    display inline-block
+    vertical-align middle
+    line-height initial
+    img
+      width 45%
+  .succ-regiht
+    width 67%
+    text-align left
+    display inline-block
+    box-sizing border-box
+    padding-left 1.25rem
+    font-size 1rem
+    line-height initial
+    vertical-align middle
+    p
+      margin-top 0.3125rem
+
+  .contents
+    box-sizing border-box
+  .trips
+    width 100%
+    text-align center
+    color #EB6617
+    font-size 0.9375rem
+  .bt-box
+    margin-top 3.75rem
+  .goto-index-bt
+    display block
+    margin auto
+    width 6.875rem
+    height 1.875rem
+    line-height 1.875rem
+    border-radius 0.375rem
+    background-color #EB6617
+    color #FDF6F1
+    text-align center
+  .wait-check-bt
+    display block
+    margin auto
+    width 6.875rem
+    height 1.875rem
+    line-height 1.875rem
+    border-radius 0.375rem
+    background-color #858585
+    color #FDF6F1
+    text-align center
+  .hide
+    display none
+
+
+#page-cus-management
+  > section
+    padding-left: 4.375rem
+    padding-top: 2.5rem
+  .topheader
+    position: fixed
+    z-index: 1000
+    top: 0
+    left: 0
+    right: 0
+    height: 2.5rem
+    line-height: @height
+    padding-left: 0.5rem
+    font-size: 0.875rem
+    color: #E86627
+    border-bottom: 1px solid #E86627
+    background-color: #fff
+    overflow: hidden
+  .addcus-layer
+    position: fixed
+    z-index: 9
+    left: 0.5rem
+    bottom: 1rem
+    size: 3.375rem 3.375rem
+    border: 1px dashed #929292
+    text-align: center
+    border-radius: 0.25rem
+    &:active
+      background-color: rgba(0,0,0,0.1)
+    > div
+      &:first-child
+        line-height: 1.6875rem
+        font-size: 1.875rem
+        font-weight: bold
+      &:last-child
+        line-height: 1.6875rem
+        font-size: 0.75rem
+  .appeal-layer
+    position: fixed
+    z-index: 9
+    left: 0.5rem
+    bottom: 4.8rem
+    size: 3.125rem 3.125rem
+    .icon
+      margin: 0 auto
+      size: 1.5625rem 1.5625rem
+      background: image('icon_appeal.png') no-repeat center center
+      background-size: cover
+    > div
+      line-height: 1.5625rem
+      text-align: center
+      font-size: 0.75rem
+  .home-icon
+    position: fixed
+    z-index: 9
+    right: 0
+    bottom: 1.875rem
+    size: 2.8125rem 2.8125rem
+    background: image('home-icon.png') no-repeat center center
+    background-size: 2.8125rem 2.8125rem
+  .invalid-item
+    line-height: 1.875rem
+    text-align: center
+    font-size: 0.75rem
+    color: #E13F37
+  .search-panel
+    position: fixed
+    top: 0
+    left: 4.375rem
+    right: 0
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    padding: 0.3125rem
+    z-index: 10000
+    background-color: #efefef
+    .search-box
+      box-flex: 1
+      border-image: image('border.png') 2 2 2 2 stretch stretch
+      border-width: 1px
+      > input
+        width: 100%
+        height: 1.75rem
+        margin: 0
+        padding: 0 0.3125rem
+        border: none
+        background: #fff
+        color: #000
+        font-size: 0.75rem
+    .searchbt
+      size: 1.875rem 1.875rem
+      background: #E86627 image('icon_search.png') no-repeat center center
+      background-size: 1rem 1rem
+  > aside
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 4.375rem
+    z-index: 8
+    background-color: #fff
+    .item
+      position: relative
+      line-height: 1.5rem
+      padding: 0.625rem 0
+      font-size: 0.75rem
+      color: #595757
+      text-align: center
+      &:after
+        position: absolute
+        content: ''
+        left: 0.625rem
+        right: 0.625rem
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      &.selected
+        color: #E86627
+      &.hasbefore
+        &:before
+          position: absolute
+          content: ''
+          top: 0.75rem
+          right: 0.5rem
+          size: 0.375rem 0.375rem
+          border-radius: 0.625rem
+          background-color: #E54038
+  .noitem
+    line-height: 2.5rem
+    color #616161
+    font-size 0.875rem
+    text-align center
+  .cus-item
+    margin: 0 0.3125rem 0.3125rem 0.3125rem
+    background-color: #fff
+    .item
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: start
+      box-pack: center
+      line-height: 1.875rem
+      padding-left: 0.625rem
+      padding-right 0.625rem
+      border-bottom: 1px dashed #EBEBEB
+      font-size: 0.75rem
+      color: #929292
+      &.noborder
+        border: 0px
+      &.vertical
+        box-orient vertical
+      .flex
+        box-flex: 1
+        position: relative
+        > span
+          line-height: 1.25rem
+          margin-top: 0.3125rem
+          display: block
+          word-break: break-all
+          &.q3h4
+            position: relative
+            &:before
+              content ""
+              size 0.5625rem 0.5625rem
+              background image('icon_q3h4.png')
+              background-size: @width @height
+              right 4.375rem
+              position absolute
+              top 50%
+              margin-top - (@height / 2)
+        &.right
+          text-align right
+      .title
+        font-size: 0.875rem
+        color: #e86627
+        font-weight: bold
+        vendor-property: display box
+        box-align: center
+        box-pack: start
+        > div
+          max-width 90%
+          display: block
+          position: relative
+          padding-right 0.75rem
+          &:after
+            position: absolute
+            content: ""
+            right: 0
+            top: 0.75rem
+            size: 0 0
+            border: 0.1875rem solid #E86627
+            border-color: transparent transparent transparent #E86627
+            z-index: 10
+      .btn-invalid
+        width: 1.875rem
+        height: 1.875rem
+        color: #fff
+        font-size: 0.5rem
+        text-align: center
+        vendor-property: display box
+        box-align: center
+        box-pack: center
+        background-color: #E86627
+        margin-left 0.125rem
+        line-height 0.825rem
+        margin-right -0.625rem
+    .project-layer
+      border-top: 1px dashed #EBEBEB
+      padding: 0 0.625rem
+      font-size: 0.75rem
+      color: #929292
+      line-height: 1.875rem
+      .bbtrack
+        position: absolute
+        top: 0.25rem
+        right: 0.625rem
+        width: 4.875rem
+        vendor-property: display box
+        box-align: center
+        box-pack: center
+        > div
+          size: 4.875rem 1.375rem
+          font-size: 0.625rem
+          border: 1px solid #E86627
+          text-align: center
+          line-height: @height
+          color: #E86627
+          border-radius: 0.25rem
+          &:active
+            background-color: #E86627
+            color: #fff
+      .guideitem
+        line-height: 1.25rem
+      .project-item
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        font-size: 0.625rem
+        .idx
+          size: 0.75rem 0.75rem
+          border-radius: 0.625rem
+          border: 1px solid #EBEBEB
+          text-align: center
+          line-height: @height
+          margin-right: 0.125rem
+        .projectname
+          box-flex: 1
+          ellipsis: ellipsis
+          &.p1
+            background: image('icon_q3h4.png') no-repeat left center
+            background-size: 1.125rem 1.125rem
+            padding-left: 1.25rem
+        .right-pannel
+          vendor-property: display box
+          box-orient: horizontal
+          // width: 8.4375rem
+          box-flex 1
+          &.end
+            box-pack: end
+          .shstatus
+            width: 5rem
+            text-align: left
+          .cusstatus
+            width: 3.4375rem
+            text-align: left
+            color: #6DC397
+          .reportbtn
+            width: 3.4375rem
+            vendor-property: display box
+            box-align: center
+            box-pack: center
+            > div
+              size: 3.4375rem 1.375rem
+              font-size: 0.625rem
+              border: 1px solid #E86627
+              text-align: center
+              line-height: @height
+              color: #E86627
+              border-radius: 0.25rem
+              &:active
+                background-color: #E86627
+                color: #fff
+          .delete
+            width: 1.875rem
+            font-size: 1.125rem
+            // font-weight: bold
+            color: #E86627
+            text-align: right
+      .item
+        padding: 0
+    .actbtn-bar
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      font-size: 0.75rem
+      line-height: 1.875rem
+      color: #E86627
+      &:before
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        top: 0
+        height: 1px
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      > div
+        box-flex: 1
+        vendor-property: display box
+        box-align: center
+        box-pack: center
+        &:active
+          color: #a34414
+          background-color: rgba(0,0,0,0.1)
+        &:after
+          position: absolute
+          content: ''
+          right: -1px
+          top: 0.3125rem
+          bottom: 0px
+          width: 1px
+          height: 1.25rem
+          background: image('line2.png') repeat-y
+          background-size: 1px 1px
+        &:last-child
+          &:after
+            width: 0
+        > span
+          position: relative
+          margin-right: 0.5rem
+          display: block
+          text-align: center
+          &:after
+            position: absolute
+            content: ""
+            right: -0.625rem
+            top: 0.75rem
+            size: 0 0
+            border: 0.1875rem solid #E86627
+            border-color: transparent transparent transparent #E86627
+            z-index: 10
+          &.disable
+            color #929292
+            &:after
+              position: absolute
+              content: ""
+              right: -0.625rem
+              top: 0.75rem
+              size: 0 0
+              border: 0.1875rem solid #929292
+              border-color: transparent transparent transparent #929292
+              z-index: 10
+        &:last-child
+          &:after
+            background: none
+    .image-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: start
+      padding: 5 0.625rem
+      .img-block
+        size: 3.125rem 4.375rem
+        margin-right: 0.3125rem
+        > img
+          display: block
+          size: 3.125rem 4.375rem
+    .content-layer
+      line-height: 1.25rem
+      padding: 0 0.625rem
+      font-size: 0.75rem
+      color: #000
+  .proinfo
+    .textareapanel
+      width 96%
+      margin 0 auto
+      > textarea
+        width 100%
+        height 20rem
+        padding 0.625rem
+        font-size 0.875rem
+        margin 0 auto
+        display block
+        border none
+        line-height 1.125rem
+        box-sizing border-box
+    .btpanel
+      width 96%
+      margin 0 auto
+      vendor-property display box
+      padding-top 0.5rem
+      padding-bottom 0.5rem
+      box-pack end
+      box-align end
+      font-size 12p
+      .editbt
+        width 3.75rem
+        padding 0.3125rem
+        border-radius 0.3125rem
+        background #50AD6F
+        color #FFFFFF
+        text-align center
+      .date
+        box-flex 1
+        margin-left 0.3125rem
+        color #595757
+      .updatebt
+        width 3.75rem
+        padding 0.3125rem
+        border-radius 0.3125rem
+        background #E37031
+        color #FFFFFF
+        margin-left 0.625rem
+        text-align center
+  .btn-layer
+    margin: 0.625rem
+    vendor-property: display box
+    box-align: center
+    box-pack: end
+    > div
+      size: 5.625rem 1.875rem
+      font-size: 0.75rem
+      background-color: #E86627
+      text-align: center
+      line-height: @height
+      color: #fff
+      border-radius: 0.25rem
+      &:active
+        background: #a34414
+
+#page-cus-prolist
+  .search-panel
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    padding: 0.3125rem 0.5rem
+    z-index: 9
+    background-color: #efefef
+    .search-box
+      box-flex: 1
+      border-image: image('border.png') 2 2 2 2 stretch stretch
+      border-width: 1px
+      > input
+        width: 100%
+        height: 1.75rem
+        margin: 0
+        padding: 0 0.3125rem
+        border: none
+        background: #fff
+        color: #000
+        font-size: 0.75rem
+    .searchbt
+      size: 1.875rem 1.875rem
+      background: #E86627 image('icon_search.png') no-repeat center center
+      background-size: 1rem 1rem
+  .list-layer
+    padding: 0 0.5rem 0.3125rem 0.5rem
+    .header-title
+      line-height: 2.5rem
+      color: #000
+      font-size: 0.875rem
+      font-weight: bold
+      background-color: #fff
+      padding: 0 0.3125rem
+      &:after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+  .noitem
+    line-height: 2.25rem
+    color #616161
+    font-size 0.875rem
+    text-align center
+  .pro-item
+    line-height: 2.25rem
+    color: #000
+    font-size: 0.875rem
+    padding: 0 0.3125rem
+    &.b1
+      background-color: #F2F9FB
+    &.b2
+      background-color: #fff
+    &:after
+      position: absolute
+      content: ""
+      size: 0.375rem 0.5rem
+      right: 0.3125rem
+      top: 50%
+      margin-top: -(@height / 2)
+      background: image('arrow.png') no-repeat center center
+      background-size: cover
+  .btn-bar
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1000
+    margin: 0 !important
+    .btn
+      background-color: rgba(255,69,0,0.5) !important
+      height: 2.25rem !important
+      line-height: @height
+      width: 100%
+      border-radius: 0 !important
+      padding: 0 !important
+
+#page-cus-add
+  .vpage-content
+    .form-box
+      background-color: #fff
+      &:after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        bottom: 0
+        height: 1px
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      .label-item
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        font-size: 0.875rem
+        margin: 0 0.5rem
+        line-height: @height
+        -webkit-appearance: inherit
+        &:after
+          position: absolute
+          content: ''
+          right: 0
+          left: 0
+          bottom: 0px
+          width: 100%
+          height: 1px
+          background: image('line.png') repeat-x
+          background-size: 1px 1px
+        .left
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          box-orient vertical
+          box-flex 1
+          &.hasborder
+            &:before
+              position: absolute
+              content: ''
+              right: 0
+              top: 0
+              bottom: 0px
+              width: 1px
+              height: 100%
+              background: image('line2.png') repeat-y
+              background-size: 1px 1px
+            &:after
+              position: absolute
+              content: ''
+              right: 0
+              left: 0
+              bottom: 0px
+              width: 100%
+              height: 1px
+              background: image('line.png') repeat-x
+              background-size: 1px 1px
+          .panel
+            width 100%
+            vendor-property display box
+            box-align: center
+            padding 0.5em 0
+            &.dashed
+              border-bottom: 1px dashed #ECECEC
+            > label
+              display: block
+              width: 2.5rem
+              text-align: left
+              font-size: 0.875rem
+              position: relative
+            > input
+              box-flex: 1
+              display: block
+              border: none
+              font-size: 0.75rem
+              text-align: right
+              background-color: transparent
+              height: 1.875rem
+              padding: 0px
+              margin: 0 0.3125rem
+              color: #919191
+              line-height: @height
+              -webkit-appearance: inherit
+        .right
+          &.address-book-layer
+            width: 5.5em
+            margin-left 0.5rem
+            &.highlight
+              background-color transparent !important
+              .address-book
+                .icon
+                  size 1.4375em
+                  background image('icon_addressbook2.png')
+                  background-size @width @height
+                .name
+                  color #68211D
+            .address-book
+              vendor-property display box
+              box-orient vertical
+              box-pack center
+              box-align center
+              .icon
+                size 1.4375em
+                background image('icon_addressbook2.png')
+                background image('icon_addressbook1.png')
+                background-size @width @height
+              .name
+                font-size 0.875em
+                color #CE433C
+                margin-top 6px
+        // .left
+        //   width: 50%
+        //   &:after
+        //     position: absolute
+        //     content: ''
+        //     right: 0
+        //     top: 0.625rem
+        //     bottom: 0px
+        //     width: 1px
+        //     height: 1.25rem
+        //     background: image('line2.png') repeat-y
+        //     background-size: 1px 1px
+        // .right
+        //   width: 50%
+        //   > label
+        //     padding-left: 0.3125rem
+        .panel
+          width 100%
+          vendor-property display box
+          box-align: center
+          padding 0.5em 0
+          > label
+            display: block
+            width: 3.75rem
+            text-align: left
+            font-size: 0.875rem
+            position: relative
+          > input
+            box-flex: 1
+            display: block
+            border: none
+            font-size: 0.75rem
+            text-align: right
+            background-color: transparent
+            height: 1.875rem
+            padding: 0px
+            margin: 0 0.3125rem
+            color: #919191
+            line-height: @height
+            -webkit-appearance: inherit
+    .rcmd-box
+      background-color: #fff
+      margin-top: 0.5rem
+      padding: 0 0.5rem
+      &:before
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        top: -1px
+        height: 1px
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      &:after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        bottom: 0
+        height: 1px
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      .rcmd-header
+        line-height: 1.875rem
+        font-size: 0.75rem
+        color: #000
+        > span
+          color: #E86627
+      .project-item
+        border-bottom: 1px dashed #ECECEC
+        margin-left: 0.25rem
+        font-size: 0.75rem
+        line-height: 1.875rem
+        color: #919191
+      .add-item
+        line-height: 3.125rem
+        font-size: 0.875rem
+        color: #E86627
+        padding: 0 0.25rem
+        > div
+          width: 3.75rem
+          padding-left: 1.75rem
+          background: image('icon-proadd.png') no-repeat left center
+          background-size: 1.5625rem 1.5625rem
+          &:active
+            color: #a34414
+    .btn-bar
+      margin: 1.25rem 0
+      vendor-property: display box
+      box-align: center
+      box-pack: center
+      .btn
+        box-flex 1
+        margin 0 1rem
+        padding: 0.875rem 0.75rem
+        font-size: 1rem
+        color: #fff
+        text-align: center
+        line-height: @height
+        border-radius: 0.2rem
+        background: #CE433C
+        &:active
+          background: #a34414
+
+#page-cus-prolist
+  .vpage-content
+    .noitem
+      line-height: 2.5rem
+      color #616161
+      font-size 0.875rem
+      text-align center
+    .project-item
+      background-color: #fff
+      margin-bottom: 0.3125rem
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: start
+      box-pack: center
+      padding: 0.3125rem 0.5rem
+      font-size: 0.75rem
+      > img
+        display: block
+        size: 4.6875rem 4.6875rem
+      .right
+        box-flex: 1
+        margin-left: 0.5rem
+        .title
+          line-height: 1.25rem
+          color: #000
+        .item
+          margin-top: 0.25rem
+          line-height: 1rem
+          color: #919191
+      .selectbox
+        size: 1.3125rem 1.125rem
+        background: image('icon_box.png') no-repeat center center
+        background-size: 2.625rem 1.125rem
+        background-position: 0 0
+        &.selected
+          background-position: -1.3125rem 0
+    .btn-bar
+      margin: 1.25rem 0
+      vendor-property: display box
+      box-align: center
+      box-pack: center
+      .btn
+        padding: 0 0.75rem
+        height: 1.875rem
+        font-size: 0.875rem
+        color: #fff
+        text-align: center
+        line-height: @height
+        border-radius: 0.25rem
+        background: #E86627
+        &:active
+          background: #a34414
+
+.appointment-popup2
+  size: 18.75rem 10rem
+  position: fixed
+  z-index: 10001
+  background: rgba(0,0,0,0.5)
+  border-radius: 0.5rem
+  top: 50%
+  left: 50%
+  margin-top: -5rem
+  margin-left: -9.375rem
+  .info-box-area
+    margin: 0.625rem
+    .info-box-item
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      font-size: 0.875rem
+      color: #000
+      padding: 0 0.5rem
+      margin-top: 0.625rem
+      height: 2.5rem
+      line-height: @height
+      -webkit-appearance: inherit
+      border-width: 1px
+      border-image: image('border.png') 2 2 2 2 stretch stretch
+      background-color: #fff
+      .name-left
+        line-height: 2.5rem
+        min-width: 3.75rem
+        text-align: right
+        &:after
+          position: absolute
+          content: ''
+          right: -0.5rem
+          top: 0.75rem
+          width: 1px
+          height: 1rem
+          background: image('line2.png') repeat-y
+          background-size: 1px 1px
+      > input
+        display: block
+        color: #000
+        box-flex: 1
+        font-size: 0.875rem
+        background-color: transparent
+        line-height: 1.875rem
+        -webkit-appearance: inherit
+        border: 0px
+        padding-left: 0.9375rem
+        text-align: right
+      .btn-vericode
+        height: 2.625rem
+        line-height: @height
+        background: #e96628
+        font-size: 0.75rem
+        color: #fff
+        width: 6.875rem
+        text-align: center
+        margin-right: -0.5625rem
+        margin-top: -1px
+        &.disabled
+          background: #929292
+  .sbtn-bar
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    margin: 0.9375rem 0
+    .sbtn-next
+      margin: 0 0.625rem
+      border-radius: 0.25rem
+      size: 5.3125rem 2rem
+      line-height: @height
+      font-size: 0.875rem
+      color: #fff
+      background: #e96628
+      text-align: center
+      &:active
+        background: #a34414
+
+.fixed-layer
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 10001
+  background: rgba(0,0,0,.8)
+  .box-layer
+    width: 18.75rem
+    position: absolute
+    top: 23%
+    left: 50%
+    margin-left: -9.375rem
+    background-color: #fff
+    .title
+      line-height: 2.25rem
+      text-align: center
+      font-size: 0.875rem
+      color: #000
+      background-color: #efefef
+    .item-layer
+      min-height: 5rem
+      .item
+        height: 2.5rem
+        line-height: @height
+        border-bottom: 1px dashed #efefef
+        padding: 0 0.5rem
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        .lt
+          box-flex: 1
+          font-size: 0.875rem
+          color: #000
+        .rt
+          font-size: 0.75rem
+          color: #777777
+        .flag
+          size: 1.3125rem 1.125rem
+          margin-right: 0.3125rem
+          background: image('icon_box.png') no-repeat left center
+          background-size: 2.625rem 1.125rem
+          background-position: 0 0
+          &.selected
+            background-position: -1.3125rem 0
+    .btn-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      &:before
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        height: 1px
+        top: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      .btn
+        margin: 0.3125rem 0
+        border-radius: 0.25rem
+        size: 5.3125rem 2rem
+        line-height: @height
+        font-size: 0.875rem
+        color: #fff
+        background: #e96628
+        text-align: center
+        &:active
+          background: #a34414
+  .mh-scroll-13
+    max-height: 13.8rem
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+
+.popup-track-layer
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background-color: rgba(0,0,0,0.6)
+  z-index: 10000
+  .track-layer
+    width: 18.75rem
+    position: absolute
+    top: 10%
+    left: 50%
+    margin-left: -9.375rem
+    background-color: #fff
+    border-radius: 0.25rem
+    .track-title
+      line-height: 1.875rem
+      font-size: 0.875rem
+      color: #777
+      text-align: center
+      border-bottom: 1px solid #777
+  .track-block
+    max-height: 15.625rem
+    overflow: scroll
+  .track-item
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    line-height: 1.875rem
+    padding: 0 0.625rem
+    font-size: 0.75rem
+    color: #777
+    &.dashed
+      border-bottom: 1px dashed #777
+    > div
+      text-align right
+      margin-left 0.2rem
+      &:first-child
+        margin-left 0
+      &.flex
+        box-flex 1
+      > span
+        color: #000
+  .close-bar
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    margin: 0.9375rem 0
+    .close
+      size: 2.3125rem 2.3125rem
+      background: image('icon_close.png') no-repeat center center
+      background-size: contain
+
+.popup-track-layer2
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background-color: rgba(0,0,0,0.6)
+  z-index: 10000
+  .track-layer
+    width: 18.75rem
+    position: absolute
+    top: 30%
+    left: 50%
+    margin-left: -9.375rem
+    background-color: #fff
+    border-radius: 0.25rem
+    .track-title
+      line-height: 1.875rem
+      font-size: 0.875rem
+      color: #777
+      text-align: center
+      border-bottom: 1px solid #777
+  .track-item
+    line-height: 1.875rem
+    margin: 0.625rem 0
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    padding: 0 0.625rem
+    > label
+      width: 3.125rem
+      font-size: 0.75rem
+      color: #777
+      text-align: left
+      display: block
+    > input
+      box-flex: 1
+      display: block
+      font-size: 0.75rem
+      text-align: right
+      background-color: transparent
+      height: 1.875rem
+      padding: 0px 0.625rem
+      margin: 0 0.3125rem
+      line-height: @height
+      -webkit-appearance: inherit
+      border: 1px solid #777
+      border-radius: 0.25rem
+  .close-bar
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: end
+    margin: 0.625rem 0
+    .btn
+      margin-right: 0.625rem
+      border-radius: 0.25rem
+      size: 4.6875rem 1.75rem
+      line-height: @height
+      font-size: 0.875rem
+      color: #fff
+      background: #e96628
+      text-align: center
+      &:active
+        background: #a34414
+      &.b1
+        background: #BDBEBE
+        &:active
+          background: #777
+
+#page-bbpro-detail
+  .vpage-content
+    .pro-layer
+      margin: 0.3125rem
+      background-color: #fff
+      .item
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        line-height: 2.5rem
+        padding: 0 0.625rem
+        > div
+          &:first-child
+            box-flex: 1
+            font-size: 0.875rem
+            color: #000
+          &:last-child
+            color: #777
+            font-size: 0.75rem
+      .detail-txt
+        padding: 0.625rem
+        line-height: 1.5625rem
+        font-size: 0.75rem
+        color: #000
+
+.popup-appeal-layer
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background-color: rgba(0,0,0,0.6)
+  z-index: 10000
+  .appeal-layer
+    width: 19.375rem
+    position: absolute
+    top: 20%
+    left: 50%
+    margin-left: -9.6875rem
+    background-color: #fff
+    border-radius: 0.25rem
+    .appeal-title
+      line-height: 1.875rem
+      font-size: 0.875rem
+      color: #777
+      text-align: center
+      border-bottom: 1px solid #eeeeee
+  .view-layer
+    padding: 0 0.625rem
+    margin: 0.625rem 0
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: start
+    box-pack: start
+    > label
+      display: block
+      width: 5rem
+      text-align: left
+      line-height: 1.875rem
+      font-size: 0.75rem
+      color: #777
+    .text-value
+      &:after
+        position: absolute
+        content: ""
+        size: 0.5rem 0.625rem
+        right: 0.3125rem
+        top: 50%
+        margin-top: -(@height / 2)
+        background: image('arrow.png') no-repeat center center
+        background-size: contain
+        transform: rotate(90deg)
+    > input,
+    .text-value
+      box-flex: 1
+      display: block
+      border: none
+      font-size: 0.75rem
+      text-align: right
+      background-color: transparent
+      height: 1.875rem
+      padding: 0px
+      margin: 0 0.3125rem
+      line-height: @height
+      -webkit-appearance: inherit
+    .text-value
+      padding-right: 1.25rem
+      margin: 0
+      border-width: 0.125rem
+      border-image: image('border.png') 4 4 4 4 stretch stretch
+    > textarea
+      box-flex: 1
+      display: block
+      line-height: 1.25rem
+      -webkit-appearance: inherit
+      border-width: 0.125rem
+      border-image: image('border.png') 4 4 4 4 stretch stretch
+      font-size: 0.75rem
+    > select
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      opacity: 0
+      z-index: 1000
+      width: 100%
+    .img-layer
+      box-flex: 1
+      margin-top: 0.625rem
+      height: 2.8125rem
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: start
+      box-pack: start
+      .img-area
+        position: relative
+        size: 2.8125rem 2.8125rem
+        margin-right: 0.625rem
+        .file-input
+          position: absolute
+          left: 0
+          top: 0
+          size: 2.8125rem 2.8125rem
+          opacity: 0
+          z-index: 2
+        > img
+          position: absolute
+          left: 0
+          top: 0
+          display: block
+          size: 2.8125rem 2.8125rem
+          z-index: 1
+  .act-bar
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    margin: 0.625rem 0
+    > div
+      margin: 0 0.625rem
+      border-radius: 0.25rem
+      size: 5.3125rem 2rem
+      line-height: @height
+      font-size: 0.875rem
+      color: #fff
+      background: #e96628
+      text-align: center
+      &:active
+        background: #a34414
+
+#page-cus-detail
+  .vpage-content
+    .cus-item-layer
+      height: 2.5rem
+      line-height: @height
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      background-color: #fff
+      > div
+        &:first-child
+          font-size: 0.875rem
+          color: #000
+          padding: 0 1.25rem 0 0.625rem
+        &:nth-child(2)
+          box-flex: 1
+          font-size: 0.75rem
+          color: #929292
+        &:nth-child(3)
+          size: 3.75rem 2.5rem
+          background: image('icon_phone.png') no-repeat center center
+          background-size: 1.5rem 1.5rem
+          &:before
+            position: absolute
+            content: ''
+            left: 0
+            top: 0.3125rem
+            width: 1px
+            height: 1.875rem
+            background: image('line2.png') repeat-y
+            background-size: 1px 1px
+    .block-layer
+      background-color: #fff
+      margin-top: 0.3125rem
+      .header-layer
+        line-height: 2.5rem
+        padding-left: 0.625rem
+        font-size: 0.875rem
+        font-weight: bold
+        color: #000
+        &:after
+          position: absolute
+          content: ''
+          left: 0
+          right: 0
+          height: 1px
+          bottom: 0
+          background: image('line.png') repeat-x left bottom
+          background-size: 1px
+      .memo
+        font-size: 0.75rem
+        color: #929292
+        padding: 0.625rem
+        line-height: 1.375rem
+        word-break: break-all
+      .textarea-pannel
+        margin: 0.625rem
+        > textarea
+          display: block
+          width: 100%
+          line-height: 1.25rem
+          -webkit-appearance: inherit
+          border-width: 0.125rem
+          border-image: image('border.png') 4 4 4 4 stretch stretch
+      .btn-bar
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: end
+        padding: 0 0.625rem 0.625rem 0
+        > div
+          width: 4.375rem
+          height: 1.5625rem
+          font-size: 0.625rem
+          border: 1px solid #e86627
+          text-align: center
+          line-height: @height
+          color: #e86627
+          border-radius: 0.25rem
+          &:active
+            background-color: #e86627
+            color: #fff
+    .bar-layer
+      margin-top: 0.3125rem
+      height: 2.5rem
+      line-height: @height
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      font-size: 0.75rem
+      color: #929292
+      background-color: #fff
+      > div
+        box-flex: 1
+        text-align: center
+        &:first-child
+          &:before
+            position: absolute
+            content: ''
+            right: 0
+            top: 0.3125rem
+            width: 1px
+            height: 1.875rem
+            background: image('line2.png') repeat-y
+            background-size: 1px 1px
+        &.selected
+          color: #e86627
+          font-weight: bold
+      &:after
+        position: absolute
+        content: ''
+        left: 0
+        right: 0
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+    .noitem
+      padding 0.3125rem 0.625rem
+      font-weight 200
+      color #616161
+      font-size 0.875rem
+      margin-top 0.375rem
+      text-align center
+    .gj-list-layer
+      background-color: #fff
+      padding: 0 0.625rem
+      .item-layer
+        padding: 0.625rem 0 0.625rem 0.625rem
+        &:before
+          position: absolute
+          content: ''
+          left: 0
+          top: 0
+          bottom: 0
+          width: 1px
+          background: image('line2.png') repeat-y
+          background-size: 1px 1px
+        > div
+          font-size: 0.75rem
+          &:first-child
+            line-height: 1.25rem
+            color: #929292
+            &:before
+              position: absolute
+              content: ''
+              size: 0.375rem 0.375rem
+              background-color: #e86627
+              border-radius: 0.375rem
+              left: -0.75rem
+              top: 0.375rem
+          &:last-child
+            line-height: 1.125rem
+            word-break: break-all
+            color: #000
+    .bb-list-layer
+      background-color: #fff
+      padding: 0.3125rem 0.625rem
+      .item-layer
+        // -webkit-appearance: inherit
+        // border-width: 0.125rem
+        // border-image: image('icon_select.png') 4 4 4 4 stretch stretch
+        border: 1px solid #efefef
+        padding: 0.3125rem
+        margin-top: 0.3125rem
+        .projectname
+          line-height: 1.25rem
+          font-size: 0.75rem
+          color: #000
+        .item
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          box-pack: center
+          padding: 0.625rem 0
+          &:before
+            position: absolute
+            content: ''
+            left: 0
+            right: 0
+            height: 1px
+            top: 1.125rem
+            background: image('line.png') repeat-x left bottom
+            background-size: 1px
+          > div
+            box-flex: 1
+            vendor-property: display box
+            box-orient: vertical
+            box-align: center
+            font-size: 0.75rem
+            height: 3.75rem
+            .icon
+              size: 1rem 1rem
+              background: image('icon_check.png') no-repeat center center
+              background-size: 1rem 1rem
+              &.selected
+                background-image: image('icon_check_down.png')
+            > div
+              line-height: 1.25rem
+              color: #000
+            .nocheck
+              color: #929292
+
+.common-share-icon
+  position: fixed
+  z-index: 9
+  right: 0
+  bottom: 2.5rem
+  size: 2.8125rem 2.8125rem
+  background: image('wd/icon_share.png') no-repeat center center
+  background-size: 2.8125rem 2.8125rem
+
+.common-home-icon
+  position: fixed
+  z-index: 9
+  right: 0
+  bottom: 2.5rem
+  size: 2.8125rem 2.8125rem
+  background: image('wd/home-icon.png') no-repeat center center
+  background-size: 2.8125rem 2.8125rem
+
+.home-share-note
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 10
+  background: rgba(0,0,0,0.5)
+  .home-share-arrow
+    position: absolute
+    top: 0.625rem
+    right: 0.625rem
+    size: 5.375rem 3.25rem
+    background: image('wd/pic_share.png') no-repeat center center
+    background-size: 2.8125rem 2.8125rem
+
+#page-wd-leaderhome,
+#page-wd-memberhome,
+#page-wd-projectmanager
+  .leader-header
+    height: 4.75rem
+    background-color: #383e56
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    padding: 0 0.625rem
+    > img
+      display: block
+      size: 3.75rem 3.75rem
+      border: 0.125rem solid #fff
+      border-radius: 3.75rem
+    .content
+      padding-left: 0.625rem
+      font-size: 0.75rem
+      color: #fff
+      box-flex: 1
+      ellipsis: ellipsis
+    .btn  
+      size: 4.6875rem 1.5625rem
+      border: 1px solid #fff
+      border-radius: 0.125rem
+      text-align: center
+      font-size: 0.625rem
+      color: #fff
+      line-height: @height
+      > div
+        background: image('icon_xmjc.png') no-repeat 0.4375rem center
+        background-size: 1.125rem 1.125rem
+        padding-left: 1rem
+  .member-header
+    height: 4.75rem
+    background-color: #6ABF91
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    padding: 0 0.625rem
+    > img
+      display: block
+      size: 3.75rem 3.75rem
+      border: 0.125rem solid #fff
+      border-radius: 3.75rem
+    .right-pannel
+      box-flex: 1
+      padding-left: 0.625rem
+      .item
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        font-size: 0.75rem
+        color: #fff
+        line-height: 1.8rem
+        .name
+          box-flex: 1
+        .btn
+          size: 4.6875rem 1.325rem
+          border: 1px solid #fff
+          border-radius: 0.125rem
+          text-align: center
+          font-size: 0.625rem
+          color: #fff
+          line-height: @height
+      .ctxt
+        background-color: #fff
+        border-radius: 0.125rem
+        color: #000
+        font-size: 0.75rem
+        line-height: 1.2rem
+        padding-left: 0.5rem
+
+//自己加的
+
+.city-layer {
+  line-height: 2.5rem;
+  padding-left: .8rem;
+  margin-top: .5rem;
+  display: box;
+  display: -webkit-box;
+  box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  box-align: center;
+  -webkit-box-align: center;
+  box-pack: start;
+  -webkit-box-pack: start;
+  font-size: .75rem;
+  color: #a1a1a1;
+}
+.city-layer .select-layer .city-item {
+  display: box;
+  display: -webkit-box;
+  box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  box-align: center;
+  -webkit-box-align: center;
+  box-pack: start;
+  -webkit-box-pack: start;
+}
+
+.city-layer .select-layer .city-item .city-select {
+  color: #eb6617;
+  font-size: .75rem;
+  font-weight: bold;
+  padding-left: 1.2rem;
+  margin-left: .8rem;
+  background: url("../images/icon_check.png?_=g7yx") no-repeat left center;
+  background-size: 1rem 1rem;
+}
+
+.city-layer .select-layer .city-item .city-select.checked {
+  background-image: url("../images/icon_check_down.png?_=g7yx")
+}
+
+////////////////////////////////////////
+  .actbar-layer
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    height: 3.4375rem
+    background-color: #fff
+    .btn
+      box-flex: 1
+      // border-right: 1px solid #eaeaea
+      text-align: center
+      font-size: 0.625rem
+      color: #a1a1a1
+      height: 3.4375rem
+      padding-top: 2rem
+      position: relative
+      &:after
+        position: absolute
+        content: ''
+        right: 0
+        top: 0
+        bottom: 0
+        width: 1px
+        background-color: #eaeaea
+      &.b1
+        background: image('wd/icon/icon_xmgl.png') no-repeat center 0.5rem
+        background-size: 1.3125rem 1.3125rem
+      &.b2
+        background: image('wd/icon/icon_dygl.png') no-repeat center 0.5rem
+        background-size: 1.3125rem 1.3125rem
+      &.b3
+        background: image('wd/icon/icon_khgl.png') no-repeat center 0.5rem
+        background-size: 1.3125rem 1.3125rem
+      &.b4
+        background: image('wd/icon/icon_yjgl.png') no-repeat center 0.5rem
+        background-size: 1.3125rem 1.3125rem
+      &.b5
+        background: image('wd/icon/icon_wdkh.png') no-repeat center 0.5rem
+        background-size: 1.3125rem 1.3125rem
+      &.b6
+        background: image('wd/icon/icon_khgl.png') no-repeat center 0.5rem
+        background-size: 1.3125rem 1.3125rem
+      &.new
+        &:after
+          position: absolute
+          content: ''
+          size: 0.5rem 0.5rem
+          border-radius: 0.5rem
+          background-color: #f00
+          top: 0.5rem
+          right: 1rem
+      &:last-child
+        &:after
+          width: 0
+        // border: none
+  .item-layer
+    margin-top: 0.3125rem
+    .top-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: start
+      box-pack: center
+      padding: 0.5rem
+      background-color: #fff
+      > img
+        display: block
+        size: 5.3125rem 5.3125rem
+      .right-pannel
+        box-flex: 1
+        padding-left: 0.5rem
+        .line-layer
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          box-pack: center
+          font-size: 0.75rem
+          color: #000
+          height: 1rem
+          .content
+            box-flex: 1
+            ellipsis: ellipsis
+          .online
+            color: #11A452
+            padding-right: 0.8rem
+            &:after
+              position: absolute
+              content: ""
+              right: 0px
+              top: 0.15rem
+              size: 0 0
+              border: 0.3125rem solid #11A452
+              border-color: transparent transparent transparent #11A452
+              z-index: 10
+          .sbox
+            size: 1.3125rem 1.125rem
+            background: image('icon_box.png') no-repeat center center
+            background-size: 2.625rem 1.125rem
+            background-position: 0 0
+            &.selected
+              background-position: -1.3125rem 0
+          .btn
+            size: 2.5rem 1.1rem
+            text-align: center
+            border: 1px solid #ea6719
+            border-radius: 0.1875rem
+            color: #ea6719
+            margin-left: 0.625rem
+            line-height: @height
+        .ctxt
+          font-size: 0.75rem
+          color: #a1a1a1
+          line-height: 1rem
+          margin-top 0.125rem
+          > span
+            color: #f00
+        .item-detail
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          box-pack: end
+          line-height: 1rem
+          > div
+            color: #ee8648
+            font-size: 0.75rem
+      .img-logo
+        position: absolute
+        top: 0
+        left: 0
+        size: 3rem 3rem
+        &.zc
+          background: image('wd/tag_zc.png') no-repeat center center
+          background-size: cover
+        &.zd
+          background: image('wd/tag_zd.png') no-repeat center center
+          background-size: cover
+        &.online
+          background: image('wd/tag_online_sale.png') no-repeat center center
+          background-size: cover
+        &.tj
+          background: image('wd/tag_offer.png') no-repeat center center
+          background-size: cover
+    .bar-layer
+      background-color: #fff
+      .item
+        border-top: 1px solid #eaeaea
+        line-height: 1.875rem
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        .btn
+          width: 50%
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          box-pack: center
+          font-size: 0.75em
+          &:first-child
+            &:after
+              position: absolute
+              content: ''
+              right: 0
+              top: 0
+              bottom: 0
+              width: 1px
+              background-color: #eaeaea
+          > span
+            position: relative
+            color: #ee8648
+            &:after
+              position: absolute
+              content: ""
+              right: -0.8rem
+              top: 0.1rem
+              size: 0 0
+              border: 0.3125rem solid #ee8648
+              border-color: transparent transparent transparent #ee8648
+              z-index: 10
+          // &:first-child
+          //   border-right: 1px solid #eaeaea
+          &.flex
+            width: 100%
+            border: none
+          &.disabled
+            > span
+              color: #a1a1a1
+              &:after
+                border: 0.3125rem solid #a1a1a1
+                border-color: transparent transparent transparent #a1a1a1
+#page-wd-membermanager
+  > section
+    padding-left: 4.375rem
+    padding-top: 2.5rem
+  .header-layer
+    position: fixed
+    z-index: 1000
+    top: 0
+    left: 0
+    right: 0
+    height: 2.5rem
+    line-height: @height
+    padding: 0 0.5rem
+    font-size: 0.875rem
+    color: #ed7630
+    border-bottom: 1px solid #E86627
+    background-color: #fff
+    overflow: hidden
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    > div
+      &:nth-child(2)
+        box-flex: 1
+        padding:0 0.5rem
+  .addcus-layer
+    position: fixed
+    z-index: 9
+    left: 0.5rem
+    bottom: 1.5625rem
+    size: 3.375rem 3.375rem
+    border: 1px dashed #929292
+    text-align: center
+    border-radius: 0.25rem
+    > div
+      &:first-child
+        line-height: 1.6875rem
+        font-size: 1.875rem
+        font-weight: bold
+      &:last-child
+        line-height: 1.6875rem
+        font-size: 0.75rem
+  > aside
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 4.375rem
+    z-index: 8
+    background-color: #fff
+    .item
+      position: relative
+      line-height: 1.5rem
+      padding: 0.625rem 0
+      font-size: 0.75rem
+      color: #595757
+      text-align: center
+      &:after
+        position: absolute
+        content: ''
+        left: 0.625rem
+        right: 0.625rem
+        height: 1px
+        bottom: 0
+        background: image('line.png') repeat-x left bottom
+        background-size: 1px
+      &.selected
+        color: #E86627
+      &.hasbefore
+        &:before
+          position: absolute
+          content: ''
+          top: 0.75rem
+          right: 0.5rem
+          size: 0.375rem 0.375rem
+          border-radius: 0.625rem
+          background-color: #E54038
+  .item-layer
+    margin: 0 0 0.25rem 0.25rem
+    background-color: #fff
+    .top-layer
+      vendor-property: display box
+      box-orient vertical
+      margin-left: 0.5rem
+      .line-layer
+        box-flex 1
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        line-height: 1.8125rem
+        font-size: 0.75rem
+        color: #a9a9a9
+        > div
+          &:nth-child(2)
+            box-flex: 1
+            display initial
+            text-align: right
+            padding-right: 0.5rem
+            padding-left: 0.5rem
+        .name
+          box-flex 1
+          font-weight: bold
+          color: #000
+        .btn
+          size: 1.8125rem 1.8125rem
+          background: image('wd/icon/icon_del.png') no-repeat right center
+          background-size: 1.8125rem 1.8125rem
+      .info-layer
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        border-top: 1px dashed #a1a1a1
+        border-bottom: 1px dashed #a1a1a1
+        height: 3.125rem
+        > div
+          width: 33.3333%
+          height: 3.125rem
+          vendor-property: display box
+          box-orient: vertical
+          box-align: center
+          box-pack: center
+          > div
+            line-height: 1.2rem
+            font-size: 0.625rem
+            color: #a9a9a9
+          &:nth-child(2)
+            &:before
+              content ""
+              size 1px 100%
+              background #eaeaea
+              position absolute
+              left 0
+              top 0
+            &:after
+              content ""
+              size 1px 100%
+              background #eaeaea
+              position absolute
+              right 0
+              top 0
+      .memo-layer
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        font-size: 0.625rem
+        line-height: 1rem
+        padding: 0.25rem 0.25rem 0.25rem 0
+        border-bottom: solid 1px #e5e6e6
+        > div
+          &:first-child
+            box-flex: 1
+            word-break: break-all
+        .btn
+          size: 2rem 2rem
+          background: image('icon_appeal.png') no-repeat center center
+          background-size: 1.5625rem 1.5625rem
+    .bar-layer
+      margin-top: 0.1rem
+      background-color: #fff
+      .item
+        border-top: solid 1px #e5e6e6
+        line-height: 1.875rem
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        &:first-child
+          border-top none
+        .btn
+          width: 50%
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          box-pack: center
+          font-size: 0.75em
+          > span
+            position: relative
+            color: #ee8648
+            &:after
+              position: absolute
+              content: ""
+              right: -0.8rem
+              top: 0.1rem
+              size: 0 0
+              border: 0.3125rem solid #ee8648
+              border-color: transparent transparent transparent #ee8648
+              z-index: 10
+          &:first-child
+            &:after
+              content ""
+              size 1px 100%
+              background #eaeaea
+              position absolute
+              right 0
+              top 0
+          &.flex
+            width: 100%
+            border: none
+          &.disabled
+            > span
+              color: #a1a1a1
+              &:after
+                border: 0.3125rem solid #a1a1a1
+                border-color: transparent transparent transparent #a1a1a1
+  .invalid-layer
+    margin: 0 0 0.5rem 0.5rem
+    background-color: #fff
+    padding: 0.5rem
+    font-size: 0.75rem
+    color: #a9a9a9
+    line-height: 1.2rem
+    > div
+      &:first-child
+        color: #000
+  .del-layer
+    background-color: #fff
+    margin: 0 0 0.5rem 0.5rem
+    padding: 0.5rem
+    font-size: 0.75rem
+    color: #a9a9a9
+    line-height: 1.2rem
+    > div
+      &:first-child
+        margin: 0.5rem 0
+        text-align: center
+        color: #000
+        font-weight: bold
+#page-wd-teamshare
+  .qrcode-layer
+    background-color: #fff
+    padding: 0.5rem
+    .item
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: start
+      font-size: 0.85rem
+      color: #000
+      font-weight: bold
+      > img
+        size: 8rem 8rem
+        display: block
+      > div
+        padding-left: 0.5rem
+    > div
+      font-size: 0.75rem
+      line-height: 1.5rem
+      color: #6f6967
+  .share-layer
+    background-color: #fff
+    margin-top: 0.5rem
+    .item
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      line-height: 2rem
+      border-bottom: 1px dashed #efefef
+      padding: 0 0.5rem
+      > div
+        &:first-child
+          box-flex: 1
+          font-size: 0.75rem
+          color: #000
+          padding-left: 1.5rem
+          background: image('wd/icon/icon_share_i.png') no-repeat left center
+          background-size: 1.3125rem 1.3125rem
+      .btn
+        size: 4rem 1.5rem
+        border-radius: 0.2rem
+        line-height: @height
+        text-align: center
+        color: #fff
+        background-color: #ee8648
+        font-size: 0.625rem
+    .note
+      padding-left: 0.5rem
+      line-height: 1.6rem
+      font-size: 0.625rem
+      color: #929292
+
+#page-wd-projectmanager
+  .tab-layer
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    line-height: 2.5rem
+    border-bottom: 1px solid #eb6617
+    font-size: 0.75rem
+    color: #eb6617
+    text-align: center
+    > div
+      box-flex: 1
+      &.selected
+        color: #fff
+        background-color: #eb6617
+  .search-layer
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    margin: 0.5rem
+    .search-box
+      box-flex: 1
+      border-image: image('border.png') 2 2 2 2 stretch stretch
+      border-width: 1px
+      > input
+        width: 100%
+        height: 1.75rem
+        margin: 0
+        padding: 0 0.3125rem
+        border: none
+        background: #fff
+        color: #000
+        font-size: 0.75rem
+    .searchbt
+      size: 1.875rem 1.875rem
+      background: #eb6617 image('icon_search.png') no-repeat center center
+      background-size: 1rem 1rem
+  .actsort-layer
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    box-pack: center
+    font-size: 0.75rem
+    line-height: 2.25rem
+    background-color: #fff
+    color: #929292
+    margin-bottom: 0.625rem
+    .btn
+      width: 33.3333%
+      vendor-property: display box
+      box-align: center
+      box-pack: center
+      &:after
+        position: absolute
+        content: ''
+        right: -1px
+        top: 0.3125rem
+        bottom: 0px
+        width: 1px
+        height: 1.625rem
+        background: image('line2.png') repeat-y
+        background-size: 1px 1px
+      &:last-child
+        &:after
+          width: 0
+      &.selected
+        > span
+          color #E86627
+          &:after
+            position: absolute
+            content: ""
+            right: -0.625rem
+            top: 1rem
+            size: 0 0
+            border: 0.1875rem solid #E86627
+            border-color: #E86627 transparent transparent transparent
+            z-index: 10
+      > span
+        position: relative
+        margin-right: 0.5rem
+        display: block
+        text-align: center
+        &:after
+          position: absolute
+          content: ""
+          right: -0.625rem
+          top: 1rem
+          size: 0 0
+          border: 0.1875rem solid #929292
+          border-color: #929292 transparent transparent  transparent
+          z-index: 10
+
+#page-wd-exitteam
+  .header-layer
+    vendor-property: display box
+    box-orient: vertical
+    box-align: center
+    box-pack: center
+    font-size: 0.75rem
+    color: #000
+    line-height: 1.5rem
+    text-align: center
+    > img
+      display: block
+      size: 5rem 5rem
+      margin: 2rem 0
+    .ycode
+      > img
+        height: 2.75rem
+        margin: 0.5rem 0
+    .vaildbox
+      > input
+        width: 15.625rem
+        display: block
+        font-size: 0.75rem
+        text-align: center
+        background-color: transparent
+        height: 1.875rem
+        padding: 0px 0.625rem
+        line-height: @height
+        -webkit-appearance: inherit
+        border: 1px solid #777
+    .act-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: end
+      margin: 0.625rem 0
+      > div
+        width: 4.375rem
+        height: 1.5625rem
+        font-size: 0.625rem
+        background-color: #e86627
+        text-align: center
+        line-height: @height
+        color: #fff
+        border-radius: 0.25rem
+        margin: 0 0.625rem
+        &.b2
+          background-color: #858585
+          color: #fff
+#page-my-calchistory
+  .item
+    background-color: #fff
+    margin: 0.5rem
+    line-height: 2rem
+    color: #aeaeae
+    padding: 0 0.5rem
+    .title
+      color: #000
+      border-bottom: 1px solid #e0e0e0
+      font-size: 0.75rem
+      &:after
+        position: absolute
+        content: ""
+        right: 0
+        top: 0.8rem
+        size: 0 0
+        border: 0.325rem solid #ddd
+        border-color: transparent transparent transparent #ddd
+        z-index: 10
+    .line-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      font-size: 0.65rem
+      > div
+        &:first-child
+          box-flex: 1
+#page-my-notice
+  .item
+    background-color: #fff
+    margin: 0.5rem
+    line-height: 2rem
+    color: #929292
+    .title
+      padding-left: 0.5rem
+      color: #000
+      border-bottom: 1px solid #e0e0e0
+      font-size: 0.75rem
+    .content
+      text-indent: 1.5rem
+      line-height: 1.25rem
+      padding: 0.25rem 0.5rem
+      word-break: break-all
+      font-size: 0.65rem
+    .btn
+      padding-left: 0.5rem
+      font-size: 0.65rem
+      color: #069
+      text-decoration: underline
+#page-my-orderlist
+  .item
+    background-color: #fff
+    margin: 0.5rem
+    line-height: 2rem
+    color: #929292
+    .line-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      box-pack: center
+      padding: 0 0.5rem
+      font-size: 0.625rem
+      &.border
+        border-bottom: 1px solid #e0e0e0
+        > div
+          &:first-child
+            color: #000
+      > div
+        &:first-child
+          box-flex: 1
+    .bar-layer
+      background-color: #fff
+      .bitem
+        border-top: 1px solid #eaeaea
+        line-height: 1.875rem
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center
+        box-pack: center
+        font-size: 0.75em !important
+        .btn
+          width: 100%
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          box-pack: center
+          > span
+            position: relative
+            color: #ee8648
+            &:after
+              position: absolute
+              content: ""
+              right: -0.8rem
+              top: 0.15rem
+              size: 0 0
+              border: 0.3125rem solid #ee8648
+              border-color: transparent transparent transparent #ee8648
+              z-index: 10
+
+
+#page-pm-prolist
+  background-color #ffffff !important
+  .vpage-content
+    box-sizing border-box
+    padding-bottom 2.575rem
+    .noitem
+      line-height: 2.5rem
+      color #616161
+      font-size 0.875rem
+      text-align center
+    .project-item
+      background-color: #fff
+      margin-bottom: 0.3125rem
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: start
+      box-pack: center
+      padding: 0.3125rem 0.5rem
+      font-size: 0.75rem
+      box-sizing border-box
+      margin 0.25rem 0.25rem 0 0.25rem
+      border solid #cfd0d1 0.0625rem
+      > img
+        display: block
+        size: 4.6875rem 4.6875rem
+      .right
+        box-flex: 1
+        margin-left: 0.5rem
+        .title
+          line-height: 1.25rem
+          color: #000
+        .item
+          margin-top: 0.25rem
+          line-height: 1rem
+          color: #919191
+      .selectbox
+        size: 1.3125rem 1.125rem
+        background: image('icon_box.png') no-repeat center center
+        background-size: 2.625rem 1.125rem
+        background-position: 0 0
+        &.selected
+          background-position: -1.4125rem 0
+    .btn-bar
+      display block
+      width 100%
+      position: fixed
+      bottom: 0
+      .btn
+        width: 100%
+        height: 2.575rem
+        font-size: 0.875rem
+        color: #FBFAFA
+        text-align: center
+        line-height: @height
+        background: #D71C27 !important
+        &:active
+          background: #D61C27
+
+    .search-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      padding: 0.5rem 0.25rem
+      .search-box
+        box-flex: 1
+        > input
+          width: 100%
+          height: 1.88rem
+          margin: 0
+          padding: 0 0.9125rem
+          background: #fff
+          color: #000
+          font-size: 0.75rem
+          border:solid #d5d6d6 0.0625rem
+          -webkit-appearance: none !important;
+          box-sizing border-box
+          border-radius 0
+        &:before
+          content: ''
+          background image('tag_arrow.png') no-repeat
+          background-size auto 100%
+          position absolute
+          width: 1.16rem;
+          height: 1.16rem;
+          z-index: 999;
+          top: 0.37rem;
+
+      .searchbt
+        size: 1.875rem 1.875rem
+        background: #d61c27 image('icon_search.png') no-repeat center center
+        background-size: 1rem 1rem
+        margin-left -0.3125rem
+
+#page-diamond-rank
+  .fixed-item
+    position fixed
+    left 0
+    right 0
+    bottom 0
+    background #CD423A
+    vendor-property display box
+    box-pack center
+    box-align center
+    padding 0.6em 0.8em 0.6em 2em
+    color #FFFFFF
+    .headimg
+      width 2.11rem
+      border 2px solid #ebebeb
+      border-radius @width
+    .space
+      box-flex 1
+    .count-layer
+      vendor-property display box
+      box-align end
+      .count
+        font-size 1.8em
+      .suffix
+        font-size 0.6em
+        margin-bottom 8px
+        margin-left 4px
+    .rank-layer
+      vendor-property display box
+      box-align end
+      margin-left 0.4em
+      .rank
+        font-size 1.8em
+      .suffix
+        font-size 0.6em
+        margin-bottom 8px
+        margin-left 4px
+  .vpage-content
+    .head-bt
+      width 18rem
+      height 2.07rem
+      margin 1rem auto 0 auto
+      border solid 0.05rem #D5CCCB
+      vendor-property display box
+      border-radius 0.35rem
+      overflow hidden
+      >div
+        width 9rem
+        text-align center
+        color #cd423a
+        height 2.07rem
+        line-height @height
+        font-size 0.85rem
+        font-weight 500
+      .cust-tap
+        background-color #d31d2a
+        color #ffffff !important
+
+    .contents
+      padding-bottom 4em
+    .list
+      .item
+        vendor-property display box
+        box-pack center
+        box-align center
+        height 3.38rem
+        line-height @height
+        padding 0 0.6rem 0 0.3rem
+        border-bottom 1px solid #ebebeb
+        color #B4C1D0
+        .index
+          width 2.26rem
+          text-align center
+        .emblem
+          width 2.06rem
+          height 2.06rem
+          &.index1
+            background image('wd/icon/icon_gold.png') no-repeat center center
+            background-size @height @height
+          &.index2
+            background image('wd/icon/icon_silver.png') no-repeat center center
+            background-size @height @height
+          &.index3
+            background image('wd/icon/icon_copper.png') no-repeat center center
+            background-size @height @height
+        .headimg
+          width 2.11em
+          border 2px solid #ebebeb
+          border-radius @width
+          margin-left 0.3em
+        .main-layer
+          box-flex 1
+          vendor-property display box
+          box-pack center
+          box-orient vertical
+          margin-left 0.4em
+          margin-right 0.4em
+          .name
+            color #98afaf
+            font-size 0.833rem
+          .address-layer
+            vendor-property display box
+            box-align end
+            margin-top 8px
+            .icon
+              size 1.38rem*0.7 1.97rem*0.7
+              background image('wd/icon/icon_map.png')
+              background-size @width
+            .address
+              font-size 0.7em
+              margin-left 8px
+        .count-layer
+          vendor-property display box
+          box-align end
+          .count
+            font-size 1.2em
+          .suffix
+            font-size 0.6em
+            margin-left 0.25rem
+            font-weight 200
+
+#page-points-convert
+  .vpage-content
+    .count-layer
+      background #fff
+      .count-item
+        vendor-property display box
+        box-pack center
+        box-align center
+        padding 0.875em
+        border-bottom: 1px dashed #ECECEC
+        font-weight 200
+        .icon
+          size px2em(16.9px) px2em(16.9px)
+          &.diamond
+            background image('wd/icon/icon_diamond.png')
+            background-size @width @height
+          &.balance
+            background image('wd/icon/icon_balance.png')
+            background-size @width @height
+          &.points
+            background image('wd/icon/icon_points.png')
+            background-size @width @height
+          &.converted
+            background image('wd/icon/icon_converted.png')
+            background-size @width @height
+        .name
+          box-flex 1
+          font-size 0.875em
+          color #61636E
+          margin-left 0.75em
+        .count
+          font-size 0.75em
+          color #CB5721
+        .suffix
+          font-size 0.75em
+          margin-left 0.2em
+          color #CB5721
+    .convert-layer
+      margin-top 0.475em
+      background #fff
+      padding 0.875em
+      font-size 0.875em
+      .header
+        color #363334
+      .explain
+        vendor-property display box
+        font-size 0.8em
+        margin-top 1em
+        > div
+          color #61636E
+          line-height 1.475em
+        .ex-hintbox
+          height 1rem
+      .input-layer
+        vendor-property display box
+        box-align center
+        box-pack center
+        margin-top 0.875em
+        margin-right 1em
+        .name
+          //width 112px
+          width 3.6rem
+          text-align right
+        > input
+          border 1px solid #CB5721
+          appearance initial
+          box-flex 1
+          display block
+          margin-left 0.6em
+          padding 10px
+          font-size px2em(18px)
+          border-radius 5px
+          font-size: 0.8rem;
+          text-align center
+        .verifybt
+          background #DDDDDD
+          vendor-property display box
+          box-pack center
+          box-align center
+          margin-left 10px
+          padding 10px
+          border-radius 5px
+          //font-size px2em(18px)
+          color #5C595A
+          font-size: 0.825em;
+          color: #5c595a;
+          width: 5.5rem;
+      .convertBt
+        background #D1443B
+        margin 1em 3em 0 3em
+        color #fff
+        text-align center
+        padding 10px 0
+        border-radius 5px
+    .list-layer
+      margin-top 0.475em
+      background #fff
+      font-size 0.875em
+      .header
+        color #363334
+        padding 0.875em
+      .list-header
+        vendor-property display box
+        box-align center
+        box-pack center
+        background #EFEFEF
+        padding 0.475em 0
+        .item
+          box-flex 1
+          font-size 0.875em
+          text-align center
+      .list
+        .item-layer
+          vendor-property display box
+          box-align center
+          box-pack center
+          padding 0.475em 0
+          border-bottom: 1px dashed #ECECEC
+          .item
+            box-flex 1
+            font-size 0.875em
+            text-align center
+            color #5B5A5A
+            width 6.66625rem

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../../css/main.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head> 
+<body> 
+  <!-- html -->
+  <article id="page-list" class="vpage hide">
+    <section>
+      <div class="vpage-content">
+        <script class="hide" name="stage" type="text/template">
+          <div class="stage">
+            <div class="header">
+              <img src="images/2.jpg" alt="">
+            </div>
+            <div class="bts"></div>
+            <div class="searchBox">
+              <input type="text" class="search" placeholder="输入选手的编号或姓名">
+              <div class="searchBtn" v-link="*onSearch">搜索</div>
+            </div>
+            <div class="counterBox"></div>
+            <div class="list"></div>
+          </div>
+        </script>
+        <script class="hide" name="scrim" type="text/template">
+          <div class="scrim bigimg animation">
+            <img src="images/1.jpg" alt="">
+          </div>
+        </script>
+        <script name="bt" type="text/template" class="hide">
+          <div class="bt" v-link="${fn}">${name}</div>
+        </script>
+        <script name="counter" type="text/template" class="hide">
+          <div class="counter">
+            <div class="name">${name}</div>
+            <div class="count">${count}</div>
+          </div>
+        </script>
+        <script name="item" type="text/template" class="hide">
+          <div class="item" v-link="./detail.html?postid=${id}">
+            <img src="${bigimgurl}" alt="">
+            <div class="namepanel">
+              <div class="aidx">${aidx}号</div>
+              <div class="title ellipsis">${title}</div>
+            </div>
+            <div class="counterpanel">
+              <div class="like">票数：${like}</div>
+            </div>
+          </div>
+        </script>
+      </div>
+    </section>
+  </article>
+
+<!-- js -->
+<script src="../../main.js" data-require="./actcode,lib/util/Grid"></script>

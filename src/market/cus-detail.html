@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>客户详情</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-cus-detail" class="vpage hide page-common"> 
+    <section>
+      <div class="vpage-content">
+
+        <div class="info-layer"></div>
+
+        <script name="cus-item-layer" type="text/template">
+          <div class="cus-item-layer">
+            <div>${name}</div>
+            <div>${mobile}</div>
+            <div class="mobile" v-link="*goMobile ${mobile}"></div>
+          </div>
+        </script>        
+
+        <script name="gf-layer" type="text/template">
+          <div class="block-layer">
+            <div class="header-layer">购房意向</div>
+            <div class="memo">${memo}</div>
+          </div>
+        </script> 
+
+        <script name="gj-layer" type="text/template">
+          <div class="block-layer">
+            <div class="header-layer">客户跟进</div>
+            <div class="textarea-pannel">
+              <textarea rows="5" placeholder="请输入跟进内容"></textarea>
+            </div>
+            <div class="btn-bar">
+              <div v-link="*submitGJ">提交跟进</div>
+            </div>
+          </div>
+        </script>
+
+        <div class="bar-layer"></div>
+
+        <script name="bar-layer" type="text/template">
+          <div class="selected" v-link="*showType a">跟进历史</div>
+          <div v-link="*showType b">报备历史</div>
+        </script> 
+
+        <div class="gj-list-layer"></div>
+        <div class="bb-list-layer hide"></div>
+
+        <script name="gj-list-layer" type="text/template">
+          <div class="item-layer">
+            <div>${time}</div>
+            <div>${content}</div>
+          </div>
+        </script>         
+
+        <script name="bb-list-layer" type="text/template">
+          <div class="item-layer">
+            <div class="projectname">${projectname}</div>
+            <div class="item">
+              <div>
+                <div class="icon ${isSelected1?selected}"></div>
+                <div class="${isSelected1:nocheck}">已报备</div>
+                <div class="${isSelected1:hide}">${time1}</div>
+              </div>
+              <div>
+                <div class="icon ${isSelected2?selected}"></div>
+                <div class="${isSelected2:nocheck}">已到访</div>
+                <div class="${isSelected2:hide}">${time2}</div>
+              </div>
+              <div>
+                <div class="icon ${isSelected3?selected}"></div>
+                <div class="${isSelected3:nocheck}">已成交</div>
+                <div class="${isSelected3:hide}">${time3}</div>
+              </div>                            
+            </div>
+          </div>
+        </script>
+
+        <script name="noitem" type="text/template" class="hide">
+          <div class="noitem">暂无记录</div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="./submitCus"></script>
+</body>
+</html>

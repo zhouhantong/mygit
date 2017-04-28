@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>添加店员</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <style>
+    body{
+      background: #efefef;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-wd-teamshare" class="vpage hide page-common">    
+    <section>
+      <div class="vpage-content">
+
+        <script name="share-layer" type="text/template">
+          <div class="qrcode-layer">
+            <div class="item">
+              <img v-name="QrCodeImage" data-obj="${qrcodesrc}"/>
+              <div>扫码添加店员</div>
+            </div>
+            <div>使用说明:请朋友扫描二维码成为你的微店店员</div>
+          </div>
+          <div class="share-layer">
+            <div class="item">
+              <div>微店链接</div>
+              <div class="btn" v-link="*share">点击分享</div>
+            </div>
+            <div class="note">使用说明:请发送链接给朋友,点击加入成为你的微店店员.</div>
+          </div>
+        </script>
+
+        <script name="common-home-icon" type="text/template">
+          <div class="common-home-icon" v-link="./wd-leaderhome.html"></div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require="lib/iscroll"></script>
+</body>
+</html>

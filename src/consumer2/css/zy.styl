@@ -1,0 +1,662 @@
+@import "../../css/common"            
+
+A=720/320
+
+size(width, height, orig=true)
+  if orig
+    width floor(width/A)
+    height floor(height/A)
+  else
+    width width
+    height height
+    
+.zy-header
+  height (5.625rem/A)
+  background #358FA4
+  line-height @height
+  text-align center
+  color #fff
+            
+#page-zy-classify,
+#page-zy-preferential
+  background #3D3B3B
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .search-panel
+      vendor-property display box
+      box-pack center
+      box-align center
+      margin 0.3125rem
+      .search-box
+        box-flex 1
+        border-image url(../images/search-box.png) 2 20 2 20 stretch stretch
+        border-width: 1px 0.625rem
+        > input
+          width 90%
+          height 1.5rem
+          margin 0 0 0 0.625rem
+          padding 0
+          border none
+          background transparent
+          color #BAB9B9
+          font-size 1rem
+          line-height: @height
+      .searchbt
+        width 4rem
+        height 1.6rem
+        background url(../images/searchbt.png)
+        background-size @width @height
+    .hflexbox
+      box-pack center
+      margin-top 0.3125rem
+      &:first-child
+        margin-top 0
+      .space
+        box-flex 1
+    .preferential-menu-box
+      margin 0.3125rem
+      .preferential-menu
+        vendor-property display box
+        margin-top 0.3125rem
+        .title-icon
+          size 13.8125rem 13.8125rem
+          vendor-property display box
+          box-align center
+          box-pack center
+          box-orient vertical
+          > img
+            width (3.5rem/A)
+          &.one
+            background #c34d39
+          &.two
+            background #973624
+          &.three
+            background #d57e4f
+          .title-name
+            margin-top 0.375rem
+            color #fff
+            font-size 0.875rem
+        .preferential-menu-bt
+          box-flex 1
+          vendor-property display box
+          box-pack center
+          box-align start
+          box-orient vertical
+          background #EBEBEA url(../images/line.png) repeat-x left bottom
+          background-size 1px
+          font-size 0.875rem
+          > img
+            max-height 6.125rem
+          &:active
+            &.one
+              background #3690a4
+            &.two
+              background #a4ba8b
+            &.three
+              background #c5c6c6
+            &.four
+              background #829561
+            &.five
+              background #a5d9e6
+          &:before
+            content ""
+            size 1.25rem 1.6875rem
+            background url(../images/three2.png)
+            background-size @width @height
+            position absolute
+            left -0.25rem
+            top 50%
+            margin-top - (@height / 2)
+          &:after
+            content ""
+            size 2.6875rem 0.3125rem
+            background url(../images/three3.png)
+            background-size @width @height
+            position absolute
+            right 0.625rem
+            bottom 0.3125rem
+          .preferential-menu-item
+            vendor-property display box
+            box-align center
+            box-pack center
+            margin-left 1.25rem
+            margin-top 0.5rem
+            &:first-child
+              margin-top 0
+            > img
+              size 5rem 5rem
+              border 0.125rem solid #fff
+              border-radius @width
+            .preferential-menu-item-valuebox
+              width 8.75rem
+              margin-left 0.3125rem
+              .preferential-menu-item-value
+                overflow hidden
+                white-space nowrap
+                line-height 1.125rem
+                font-size 0.75rem
+                &.small
+                  font-size 0.625rem
+                  color #929394
+                  
+#page-zy-notices
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .notice-list
+      border-image url(../images/border.png) 4 4 4 4 stretch stretch
+      border-bottom-width 1px
+      .notice-item
+        vendor-property display box
+        border-image url(../images/border.png) 4 4 4 4 stretch stretch
+        border-top-width 1px
+        margin-top 0.25rem
+        &:after
+          content ""
+          size 1rem 1.6875rem
+          background url(../images/icon-arrow1.png)
+          background-size @width @height
+          position absolute
+          right 0.625rem
+          top 50%
+          margin-top - (@height / 2)
+        .notice-icon-box
+          vendor-property display box
+          box-pack center
+          box-align center
+          box-orient vertical
+          padding 0.625rem
+          background #EAEAEA
+          .notice-icon
+            size 3.0625rem 2rem
+            background url(../images/icon-notices.png?v=1)
+            background-size @width @height
+          .notice-time
+            font-size 0.5rem
+            color #3890A5
+            margin-top 0.25rem
+        .notice-body
+          box-flex 1
+          background #EAEAEA
+          vendor-property display box
+          box-pack center
+          box-align center
+          padding 0.3125rem 0
+          &:before
+            content ""
+            width (0.6875rem/A)
+            height 100%
+            background url(../images/icon-notices-1.png)
+            background-size @width 100%
+            position absolute
+            left 0
+            top 0
+          .notice-title
+            margin 0 1.25rem 0 0.625rem
+            word-break break-word
+            font-size 0.875rem
+            max-height 3.125rem
+            overflow hidden
+            text-align justify
+        &.readed
+          &:after
+            size 1rem 1.6875rem
+            background url(../images/icon-arrow2.png)
+            background-size @width @height
+          .notice-icon-box
+            .notice-icon
+              size 3.0625rem 3.0625rem
+              background url(../images/icon-notices-open.png)
+              background-size @width @height
+            .notice-time
+              color #939393
+          .notice-body
+            color #939393
+        &.reading
+          &:after
+            transform rotate(-90deg)
+    .notice-item-detail
+      border-image url(../images/border.png) 4 4 4 4 stretch stretch
+      border-top-width 1px
+      background #fff
+      vendor-property display box
+      box-align center
+      box-pack center
+      box-orient vertical
+      padding 0.625rem 0
+      > div
+        width 90%
+      .notice-item-detail-box
+        vendor-property display box
+        font-size 0.625rem
+        color #777676
+        .nickname
+          color #27A7E1
+        .time
+          margin 0 0.3125rem
+      .notice-item-detail-title
+        word-break break-word
+        font-size 1.125rem
+        font-weight 900
+        margin 0.25rem 0
+      .notice-item-detail-content
+        color #777676
+        word-break break-word
+        font-size 0.875rem
+        text-align justify
+        padding-bottom 0.625rem
+      .notice-item-detail-bt-panel
+        border-top 1px solid #C9C9CA
+        height (3.375rem/A)
+        .start
+          size 3.3125rem 3.1875rem
+          background url(../images/icon-notices-start.png)
+          background-size @width @height
+          position absolute
+          left 0
+          top 0.375rem
+        .delbt
+          size 2.4375rem 2.8125rem
+          background url(../images/icon-notices-del.png)
+          background-size @width @height
+          position absolute
+          right 0
+          top 0.375rem
+
+.plist
+  width 98%
+  margin 0.25rem auto
+  .item
+    vendor-property display box
+    box-pack center
+    box-align center
+    background #fff
+    padding 0.25rem 0
+    margin-top 0.3125rem
+    &:after
+      content ""
+      size 1rem 1.6875rem
+      background url(../images/icon-arrow2.png)
+      background-size @width @height
+      position absolute
+      right 0.625rem
+      top 50%
+      margin-top - (@height / 2)
+    .item-icon
+      size 5rem*3 3.75rem*3
+      // size 12.5rem 12.5rem
+      display block
+      margin 0
+    .item-box
+      box-flex 1
+      vendor-property display box
+      box-pack center
+      box-align start
+      box-orient vertical
+      .item-box-value1
+        margin 0 1.25rem 0 0.3125rem
+        overflow hidden
+        white-space nowrap
+        margin-bottom 0.3125rem
+        max-width 62%
+      .item-box-value2
+        margin 0 1.25rem 0 0.3125rem
+        font-size 0.625rem
+        overflow hidden
+        white-space nowrap
+        max-width 86%
+        color #878888
+        margin-top 0.125rem
+        &.hasmanagerprice
+          color: #bb4a39
+      .item-box-prize-box
+        vendor-property display box
+        box-pack center
+        box-align end
+        margin 0.5rem 1.25rem 0 0.3125rem
+        .item-box-prize-value1
+          font-size 0.625rem
+        .item-box-prize-value2
+          font-size 0.625rem
+          &:before
+            content ""
+            width 100%
+            height 1px
+            background #000
+            top 50%
+            position absolute
+            left 0
+        .item-box-prize-value3
+          margin-left 0.3125rem
+          color #BF2F00
+          font-weight 900
+      .item-box-tags
+        vendor-property display box
+        margin 0.25rem 1.25rem 0 0.3125rem
+        .item-box-tag
+          border-image url(../images/border.png) 4 4 4 4 stretch stretch
+          border-width 1px
+          padding 0.125rem
+          font-size 0.625rem
+          color #878888
+          margin-left 0.125rem
+          &:first-child
+            margin-left 0
+      .booking
+        position absolute
+        right 0.25rem
+        top 0.25rem
+        font-size 0.625rem
+      .surplus
+        position absolute
+        right 0.25rem
+        top 0
+        font-size 0.625rem
+        padding-left 0.625rem
+        border-image url(../images/border1.png) 4 4 4 4 stretch stretch
+        border-width 1px
+        color #CC5E46
+        padding 0.125rem 0.125rem 0.125rem 0.125rem
+        font-weight 200
+    .online-txt
+      position: absolute
+      bottom: 0.125rem 
+      right: 0.75rem 
+      line-height: 1.25rem
+      font-size: 0.75rem 
+      color: #e96628
+      &:active 
+        color: #a34414 
+    .online-logo
+      position: absolute
+      top: 0
+      left: 0
+      height: 3rem 
+      width: 3rem
+      background: image('online/online_logo.png') no-repeat center center
+      background-size: 3rem 3rem                 
+  .item-explain
+    background #fff
+    .item-explain-value
+      text-align center
+      padding 0.3125rem 0
+      color #BF2F00
+      font-weight 900
+      overflow hidden
+      white-space nowrap
+      margin 0 1.25rem      
+
+#page-zy-house-detail
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .house-detail-header
+      background #C34D38
+      text-align center
+      padding 0.625rem 0
+      .house-title
+        color #fff
+        font-weight 200
+      .home
+        size 2.8125rem 2.8125rem
+        background url(../images/icon_home.png)
+        background-size @width @height
+        position absolute
+        left 0.875rem
+        top 50%
+        margin-top - (@height / 2)        
+      .favorite
+        size 2.4375rem 2.0625rem
+        background url(../images/favorite1.png)
+        background-size @width @height
+        position absolute
+        right 2.75rem
+        top 50%
+        margin-top - (@height / 2)
+      .nav
+        size 2.3125rem 2.3125rem
+        background url(../images/icon_nav_down.png)
+        background-size @width @height
+        position absolute
+        right 0.875rem
+        top 50%
+        margin-top - (@height / 2)
+        &:active
+          background url(../images/icon_nav.png)
+          background-size @width @height
+    .detail-box
+      padding 1.25rem 4% 2.75rem 4%
+      font-size 0.875rem
+      font-weight 200
+      border-top 0.375rem solid #D8D9D9
+      letter-spacing .0.3125rem
+      .detail-value1
+        margin 0.25rem 0
+        text-align justify
+        word-break break-word
+        line-height 1.125rem
+      .detail-tags
+        vendor-property display box
+        margin 0.625rem 1.25rem 0 0
+        .detail-tag
+          border-image url(../images/border.png) 4 4 4 4 stretch stretch
+          border-width 1px
+          padding 0.125rem
+          font-size 0.625rem
+          margin-right 0.25rem
+      .detail-prize-box
+        vendor-property display box
+        box-pack start
+        box-align end
+        margin 0.5rem 1.25rem 0 0
+        .detail-prize-value1
+          font-size 0.625rem
+        .detail-prize-value2
+          font-size 0.625rem
+          &:before
+            content ""
+            width 100%
+            height 1px
+            background #000
+            top 50%
+            position absolute
+            left 0
+        .detail-prize-value3
+          color #BF2F00
+          font-weight 900
+          font-size 1rem
+          word-break break-word
+      .detail-value2
+        margin 0.625rem 0 0 0
+        text-align justify
+        word-break break-word
+        line-height 1.125rem
+        color #7D7E7E
+      .surplus
+        position absolute
+        right 8%
+        top 1.25rem
+        font-size 0.625rem
+        padding-left 0.625rem
+        border-image url(../images/border1.png) 4 4 4 4 stretch stretch
+        border-width 1px
+        color #CC5E46
+        padding 0.125rem 0.125rem 0.125rem 0.125rem
+        font-weight 200
+      .surplusdesc
+        position absolute
+        right 8%
+        top 2.875rem
+        font-size 0.625rem
+        padding-left 0.625rem
+        color #CC5E46
+        font-weight 200
+  .bts
+    vendor-property display box
+    background #C34D38
+    padding 0.25rem 0
+    margin-bottom 2.75rem
+    position fixed
+    left 0
+    right 0
+    bottom 0
+    &.nobottom
+      margin-bottom 0
+    .bt
+      box-flex 1
+      vendor-property display box
+      box-pack center
+      box-align center
+      height 1.875rem
+      border-left 1px solid #fff
+      &:first-child
+        border none
+      .name
+        font-size 0.75rem
+        color #fff
+        padding-left 0.75rem
+        &.ms
+          &:before
+            content ""
+            size 1.125rem*1.3 1.25rem*1.3
+            background url(../images/icon-ms.png)
+            background-size @width @height
+            position absolute
+            left 0
+            top 50%
+            margin-top - (@height / 2)
+        &.yy
+          &:before
+            content ""
+            size 0.8125rem*1.3 1.25rem*1.3
+            background url(../images/icon-yy.png)
+            background-size @width @height
+            position absolute
+            left 0.125rem
+            top 50%
+            margin-top - (@height / 2)
+        &.xq
+          &:before
+            content ""
+            size 1.25rem*1.3 1.25rem*1.3
+            background url(../images/icon-xq.png)
+            background-size @width @height
+            position absolute
+            left -0.125rem
+            top 50%
+            margin-top - (@height / 2)
+    .recordbt
+      width 17.5rem
+      height 2.25rem
+      border-image url("../images/border1.png") 4 4 4 4 stretch stretch;
+      border-width 0.125rem
+      color #CC5E46
+      margin 0.625rem auto 0.625rem auto
+      text-align center
+      line-height @height
+      &.highlight
+        background #CC5E46
+        color #000
+
+.detail-saler
+  position fixed
+  left 0
+  right 0
+  bottom 0
+  height 2.5rem
+  background rgba(0,0,0,0.6)
+  vendor-property display box
+  box-align center
+  box-pack center
+  color #fff
+  font-size 0.75rem
+  > img
+    size 3.75rem 3.75rem
+    border 1px solid #C5774E
+    border-radius @width
+  .saler-nickname
+    margin-left 0.125rem
+  .saler-tel
+    margin-left 0.25rem
+    
+.booking-fixed
+  position fixed
+  pos 0 0 0 0
+  background rgba(0,0,0,0.8)
+  vendor-property display box
+  box-pack center
+  box-align center
+  z-index 10000
+  .booking-box
+    width 16.25rem
+    background #fff
+    padding-bottom: 0.625rem
+    .note-txt
+      font-size: 0.75rem 
+      padding: 0.3125rem 0.5rem 
+      color: #929292
+    .booking-title
+      background #D8D9D9
+      font-size 0.75rem
+      text-align center
+      padding 0.3125rem 0
+    .input-box
+      width 13.75rem
+      margin 0 auto
+      vendor-property display box
+      box-align center
+      box-pack center
+      margin-top 0.625rem
+      &.i2 
+        margin-top: 0
+      .input-title
+        width 2.75rem
+        font-size 0.875rem
+      .inputpanel
+        border-image url(../images/border.png) 4 4 4 4 stretch stretch
+        border-width 1px
+        margin-left 0.3125rem
+        box-flex 1
+        > input
+          width 90%
+          height 1.625rem
+          padding 0
+          margin 0 0.3125rem
+          border 0
+          font-size 1.125rem
+          text-align center
+      .input-verify
+        background #C34D38
+        height 1.5rem
+        color #fff
+        line-height @height
+        margin-left 0.625rem
+        font-size 0.75rem
+        padding 0.125rem 0.3125rem
+    .bts
+      vendor-property display box
+      box-pack center
+      box-align center
+      margin 0.625rem auto
+      .bt
+        width 6.25rem
+        height 1.625rem
+        line-height @height
+        border-image url(../images/border.png) 4 4 4 4 stretch stretch
+        border-width 1px
+        text-align center
+        font-size 0.75rem
+        margin-left 0.25rem
+        &.ok
+          background #C34D38
+          color #fff
+          border 1px solid transparent
+        &:first-child
+          margin 0

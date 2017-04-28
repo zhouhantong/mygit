@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>我要算价</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/consumer.css" rel="stylesheet">
+  <link href="css/zy.css" rel="stylesheet"> 
+  <style>
+    body{
+      background: #fff;
+    }      
+  </style>   
+</head>
+<body>
+  <!-- html -->
+  <article id="page-house-calculate" class="vpage hide page-white"> 
+    <section>
+      <div class="vpage-content">
+        <div class="calculate-box hide">
+          <div class="item x1">
+            <div class="title"></div>
+            <div class="project hide">项目特价房>></div>
+          </div>
+          <div class="item x2">
+            <div>单价</div>
+            <div class="price"></div>
+          </div>
+          <div class="item x2">
+            <div>面积</div>
+            <div class="area"></div>
+          </div>
+          <div class="item x2 leftmore">
+            <div>总价</div>
+            <div class="total"></div>
+          </div>
+          <div class="item x3 type-mortgage">  
+            <label>首付</label>
+            <div class="text-value">2成</div>
+            <select>
+              <option value="9">9成</option>
+              <option value="8">8成</option>
+              <option value="7">7成</option>
+              <option value="6">6成</option>
+              <option value="5">5成</option>
+              <option value="4">4成</option>
+              <option value="3">3成</option>
+              <option value="2" selected="true">2成</option>
+            </select>
+          </div>          
+          <div class="item x3 type-year">  
+            <label>贷款年限</label>
+            <div class="text-value">20年（240期）</div>
+            <select>
+              <option value="1">1年（12期）</option>
+              <option value="2">2年（24期）</option>
+              <option value="3">3年（36期）</option>
+              <option value="4">4年（48期）</option>
+              <option value="5">5年（60期）</option>
+              <option value="6">6年（72期）</option>
+              <option value="7">7年（84期）</option>
+              <option value="8">8年（96期）</option>
+              <option value="9">9年（108期）</option>
+              <option value="10">10年（120期）</option>
+              <option value="11">11年（132期）</option>
+              <option value="12">12年（144期）</option>
+              <option value="13">13年（156期）</option>
+              <option value="14">14年（168期）</option>
+              <option value="15">15年（180期）</option>
+              <option value="16">16年（192期）</option>
+              <option value="17">17年（204期）</option>
+              <option value="18">18年（216期）</option>
+              <option value="19">19年（228期）</option>
+              <option value="20" selected="true">20年（240期）</option>
+              <option value="25">25年（300期）</option>
+              <option value="30">30年（360期）</option>              
+            </select>
+          </div> 
+          <div class="item x3 type-lilv">  
+            <label>贷款利率</label>
+            <div class="text-value">15年10月24日基准利率</div>
+            <select>
+              <option value="0.049" selected="selected">15年10月24日基准利率</option>
+            </select>
+          </div> 
+          <div class="item x3 type-repay last">  
+            <label>还款方式</label>
+            <div class="text-value">等额本息</div>
+            <select>
+              <option value="1" selected="selected">等额本息</option>
+              <option value="2">等额本金</option>
+            </select>
+          </div>  
+          <div class="item x4 hide last">
+            <div class="note-layer">
+              <div>单价</div>
+              <div class="price"></div>
+            </div>
+            <div class="note-layer">
+              <div>面积</div>
+              <div class="area"></div>              
+            </div>
+            <div class="note-layer">
+              <div>总价</div>
+              <div class="total"></div>              
+            </div>
+          </div>         
+        </div>
+
+        <div class="calculate-result-box hide">
+          <div class="result-box">
+            <div class="leftarea">
+              <canvas class="process hide" width="144px" height="144px"></canvas>
+              <div class="textarea-area hide">
+                <textarea rows="7" placeholder=""></textarea>
+              </div>
+            </div>
+            <div class="rightarea">
+              <div class="item">
+                <div class="dk">首付金额</div>
+                <div class="total-sf"></div>
+              </div>            
+              <div class="item">
+                <div class="lx">贷款金额</div>
+                <div class="total-dk"></div>
+              </div>
+<!--               <div class="item">
+                <div class="lx">总支付利息</div>
+                <div class="total-lx"></div>
+              </div> -->
+              <div class="item hide">
+                <div>还款月数</div>
+                <div class="total-month"></div>
+              </div>
+              <div class="item hide">
+                <div>还款总额</div>
+                <div class="total-money"></div>
+              </div>                                          
+            </div>
+          </div>
+          <div class="tax-box">
+            <div class="item">
+              <div class="unitbox">契税</div>
+              <div class="line"></div>
+              <div class="unitbox">公证费</div>
+              <div class="line"></div>
+              <div class="unitbox">委托办理<br>产权手续费</div>
+              <div class="line"></div>
+              <div class="unitbox">房屋买卖<br>手续费</div>
+              <div class="line"></div>
+              <div class="unitbox">税费<br>合计</div>
+            </div>
+            <div class="item last">
+              <div class="unitbox qs"></div>
+              <div class="line"></div>
+              <div class="unitbox gzf"></div>
+              <div class="line"></div>
+              <div class="unitbox cqsxf"></div>
+              <div class="line"></div>
+              <div class="unitbox mmsxf"></div>
+              <div class="line"></div>
+              <div class="unitbox totalfee"></div>              
+            </div>
+          </div>
+          <div class="note-text">*算价结果仅供参考，实际价格因楼层、朝向等因素不同会有差异</div>
+        </div>
+
+        <div class="btn-bar">
+          <div class="btn b1">开始计算</div>
+          <div class="btn b2 hide">重新计算</div>
+          <div class="btn b3 hide">我要预约</div>
+        </div>
+
+
+        <div class="list hide">
+          <div class="header-layer hide">推荐楼盘</div>
+        </div>
+
+        <script name="item" type="text/template">
+          <div class="item" v-link="*goOnline ${id}">
+            <img src='${picurl}'>
+            <div class="right-pannel">
+              <div class="title">${projectname}</div>
+              <div class="citem">${price}</div>  
+              <div class='citem'>${address}</div>
+              <div class="infobar">
+                <div class="${ISXUEQU:hide}">学区房</div>
+                <div class="${ISSUBWAY:hide}">地铁房</div>
+                <div class="${BRAND:hide}">大品牌</div>
+              </div>
+            </div>
+          </div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+
+  <div class="appointment-popup2 scrim hide">
+    <div class="info-box-area">
+      <div class="info-box-item">
+        <div class="name-left">姓&nbsp;&nbsp;&nbsp;&nbsp;名</div>
+        <input type="text" id="mname" value="" placeholder="请输入姓名">
+      </div>
+      <div class="info-box-item">
+        <div class="name-left">手机号码</div>
+        <input type="tel" id="telnum" value="" placeholder="请输入手机号" maxlength="11">
+      </div>
+      <div class="info-box-item vericodeType">
+        <div class="name-left">验 证 码</div>
+        <input type="tel" id="vericode" value="" placeholder="请输入验证码" maxlength="6">
+        <div class="btn-vericode">免费获取验证码</div>
+      </div>
+    </div>
+    <div class="sbtn-bar">
+      <div class="sbtn-next cancel">取 消</div>
+      <div class="sbtn-next submit">预 约</div>
+    </div> 
+  </div> 
+
+<!-- js -->
+<script src="../main.js" data-require="./shareCommon"></script>

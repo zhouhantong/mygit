@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>项目数据</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/statistic.css" rel="stylesheet">
+  <style>
+    body{
+      background: #ffffff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-statistic-personnelpfm" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+
+        <div v-id="time-select-layer" v-name="TimeSelectLayer"></div>
+
+        <div class="stage"></div>
+
+        <script name="stage" type="text/template">
+          <div class="statistic-info-layer time"></div>
+
+          <div class="statistic-project-layer">
+            <div class="input-area">
+              <div class="text-value"></div>
+              <select></select>
+            </div>
+          </div>
+
+          <div class="statistic-info-layer">
+            <div class="statistic-header-layer">项目汇总</div>
+          </div>
+
+          <div class="grid"></div>
+        </script>
+
+        <script name="info-layer" type="text/template">
+          <div class="statistic-header-layer time">${infotxt}</div>
+        </script>
+
+        <script name="round-box" type="text/template">
+          <div class="statistic-round-box">
+            <div class="hflexbox">
+              <div class="font-red12">${count}</div>
+              <div class="font-red08" style="margin-left:0.125em;margin-bottom:0.2em;">${suffix}</div>
+            </div>
+            <div class="font-06" style="margin-top:0.5em;">${name}</div>
+          </div>
+        </script>
+
+        <script name="round-box2" type="text/template">
+          <div class="statistic-round-box">
+            <div class="hflexbox">
+              <div class="font-06">公客:</div>
+              <div class="font-red08" style="margin-left:0.125em;margin-right:0.125em;">${count1}</div>
+              <div class="font-06">${suffix}</div>
+            </div>
+            <div class="hflexbox">
+              <div class="font-06">私客:</div>
+              <div class="font-red08" style="margin-left:0.125em;margin-right:0.125em;">${count2}</div>
+              <div class="font-06">${suffix}</div>
+            </div>
+            <div class="font-06" style="margin-top:0.5em;">${name}</div>
+          </div>
+        </script>
+
+        <script name="report-layer" type="text/template">
+          <div class="statistic-header-layer">微店汇总</div>
+          <div class="statistic-grid-layer ${type}"></div>
+          <div class="statistic-line ${HAS_LINE:hide}"></div>
+        </script>
+
+        <script name="report-row-layout" type="text/template">
+          <div class="row-layer" v-link="${url}"></div>
+        </script>
+
+        <script name="report-item-layout" type="text/template">
+          <div class="item-layer ${ISHEADER?header} ${fontClass}" style="width:${width}%;">
+            <div>${text1}</div>
+            <div>${text2}</div>
+          </div>
+        </script>
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

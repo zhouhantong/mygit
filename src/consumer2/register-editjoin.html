@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title></title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/home.css" rel="stylesheet">
+  <style>
+    body{
+      background: #fff;
+    } 
+    ::-webkit-input-placeholder{
+      color: #929292; 
+    }         
+  </style>  
+</head>
+<body>
+  <!-- html -->
+  <article id="page-register-editjoin" class="vpage hide">    
+    <section>
+      <div class="vpage-content">
+        
+        <script name="form-layer" type="text/template">
+          <div class="form-layer">
+            <div class="input-area hasicon iconname">
+              <input type="text" id="mname" placeholder="请输入姓名" value="${name}">
+            </div>             
+            <div class="input-area hasicon icontel">
+              <input type="tel" id="telnum" v-link="*onInput" v-link-event="input" placeholder="请输入手机号" value="${mobile}">
+            </div>
+            <div class="input-area hasicon iconvericode">
+              <input type="tel" id="vericode" placeholder="请输入验证码" value="" maxlength="6">
+              <div class="btn-vericode" v-link="*getVericode">获取验证码</div>
+            </div> 
+          </div>
+        </script>
+
+        <script name="reg-layer" type="text/template">
+          <div class="comm-default-btn" v-link="*register">${btntxt}</div>
+        </script> 
+
+      </div>
+    </section>
+  </article>
+<!--JS-->
+<script src="../main.js" data-require=""></script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+@import "../../css/lib"
+
+A=720/320
+
+size(width, height, orig=true)
+  if orig
+    width floor(width / A)
+    height floor(height / A)
+  else
+    width width
+    height height
+    
+COLOR_GREEN=#BDE2B4
+COLOR_DEEP_GREEN=#8FC35C
+COLOR_WHITE=#FFFFFF
+COLOR_FONT_COLOR=#0F2F04
+
+@keyframes bigimg
+  0%
+    opacity 1
+    transform scale(1)
+  80%
+    opacity 1
+    transform scale(1)
+  100%
+    opacity 0
+    transform scale(1.5)
+
+.scrim.bigimg
+  img
+    width 100%
+    display block
+    margin 0
+  &.animation
+    transform scale(1.5)
+    animation bigimg 3s linear 1
+    
+body
+  background COLOR_GREEN
+  
+#page-rule
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+
+#page-list
+  background COLOR_GREEN
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .bts
+      padding 0.625rem
+      .bt
+        text-align center
+        background COLOR_DEEP_GREEN
+        font-size 0.75rem
+        border-radius 0.315rem
+        color COLOR_WHITE
+        padding 0.375rem 0
+    .searchBox
+      vendor-property display box
+      margin 0 0.625rem 0.425rem 0.625rem
+      border-radius 0.315rem
+      > input
+        display inherit
+        border none
+        box-flex 1
+        font-size 0.75rem
+        padding 0.375rem
+        color COLOR_FONT_COLOR
+        &::-webkit-input-placeholder
+          color COLOR_GREEN
+      .searchBtn
+        width 3rem
+        vendor-property display box
+        box-pack center
+        box-align center
+        font-size 0.75rem
+        color COLOR_WHITE
+        background COLOR_DEEP_GREEN
+    .counterBox
+      border-bottom 1px solid COLOR_FONT_COLOR
+      .counter
+        vendor-property display box
+        box-pack center
+        box-align center
+        box-orient vertical
+        font-size 0.625rem
+        font-weight 200
+        color COLOR_FONT_COLOR
+        padding 0.125rem
+        > div
+          padding 0.125rem 0
+    .list
+      padding-bottom 1.25rem
+      margin 0 0.3125rem
+      .hflexbox
+        margin-top 0.5rem
+      .item
+        font-size 0.75rem
+        > img
+          border-top-left-radius 0.3125rem
+          border-top-right-radius 0.3125rem
+        .namepanel
+          vendor-property display box
+          box-align center
+          box-pack center
+          width 100%
+          height 1.25rem
+          margin 0 auto
+          background COLOR_WHITE
+          .aidx
+            margin-left 0.3125rem
+          .title
+            box-flex 1
+            text-align right
+            margin-right 0.3125rem
+        .counterpanel
+          width 100%
+          height 1.125rem
+          vendor-property display box
+          box-align center
+          box-pack center
+          border-bottom-left-radius 0.625rem
+          border-bottom-right-radius 0.625rem
+          background #F6F7F8
+          .like
+            margin-left 0.3125rem
+          
+#page-post
+  background COLOR_GREEN
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .imgBox
+      size 31.25rem 31.25rem
+      overflow hidden
+      background #fff
+      margin 0.625rem auto 0 auto
+      .imgBox-wrapper
+        width @width
+        background COLOR_WHITE url(images/add.png) no-repeat center center
+        background-size 3.75rem 3.75rem
+        margin 0 auto
+        .fileimg
+          margin 0 auto
+      .fileinput
+        width @width
+        height @height
+        position absolute
+        left 0
+        top 0
+        z-index 100
+        opacity 0
+    .inputBox
+      .explain
+        width 13rem
+        font-size 0.625rem
+        margin 0.3125rem auto
+        line-height 1rem
+      .inputItem
+        width 13rem
+        vendor-property display box
+        margin 0 auto
+        color COLOR_FONT_COLOR
+        margin-top 0.625rem
+        .title
+          vendor-property display box
+          box-align center
+          box-pack center
+          font-size 1.125rem
+        > input
+          box-flex 1
+          border none
+          border-radius 0.3125rem
+          display inherit
+          padding 0.425rem
+          margin-left 0.425rem
+          font-size 1rem
+        > textarea
+          box-flex 1
+          border none
+          border-radius 0.3125rem
+          display inherit
+          padding 0.425rem
+          margin-left 0.425rem
+          font-size 1rem
+    .btBox
+      margin 0 auto
+      width 13rem
+      margin-top 0.625rem
+      vendor-property display box
+      box-pack end
+      .savebt
+        background COLOR_WHITE
+        padding 0.325rem 0.625rem
+        color COLOR_FONT_COLOR
+        font-size 1rem
+        border-radius 0.75rem
+        
+#page-reply
+  background COLOR_GREEN
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .imgBox
+      size 31.25rem 31.25rem
+      overflow hidden
+      background #fff
+      margin 3rem auto 0 auto
+      .imgBox-wrapper
+        width @width
+        background COLOR_WHITE url(images/add.png) no-repeat center center
+        background-size 3.75rem 3.75rem
+        margin 0 auto
+        .fileimg
+          margin 0 auto
+      .fileinput
+        width @width
+        height @height
+        position absolute
+        left 0
+        top 0
+        z-index 100
+        opacity 0
+    .btBox
+      margin 0 auto
+      width 13rem
+      margin-top 0.625rem
+      vendor-property display box
+      box-pack end
+      .savebt
+        background COLOR_WHITE
+        padding 0.325rem 0.625rem
+        color COLOR_FONT_COLOR
+        font-size 1rem
+        border-radius 0.75rem
+        
+#page-detail
+  background COLOR_GREEN
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .bannerBox
+      vendor-property display box
+      box-pack center
+      box-align center
+      margin-top 0.825rem
+      .left
+        content ""
+        width 2.40625rem
+        height 3rem
+        background url(images/left.png)
+        background-size @width @height
+        position absolute
+        left 0.425rem
+        top 50%
+        margin-top - (@height / 2)
+      .right
+        content ""
+        width 2.40625rem
+        height 3rem
+        background url(images/right.png)
+        background-size @width @height
+        position absolute
+        right 0.425rem
+        top 50%
+        margin-top - (@height / 2)
+      .banner
+        width 13rem
+        height 14.75rem
+        border-radius 0.625rem
+        img
+          border-top-right-radius 0.625rem
+          border-top-left-radius 0.625rem
+        .mainBox
+          vendor-property display box
+          font-size 1rem
+          color COLOR_FONT_COLOR
+          background COLOR_WHITE
+          border-bottom-right-radius 0.625rem
+          border-bottom-left-radius 0.625rem
+          padding 0.215rem 0.475rem
+          .title
+            box-flex 1
+            text-align right
+            margin-left 0.625rem
+    .memoBox
+      width 11.75rem
+      margin 0 auto
+      border-radius 0.625rem
+      background COLOR_WHITE
+      font-size 0.875rem
+      padding 0.325rem 0.625rem
+      margin-top 0.125rem
+      .title
+        color COLOR_DEEP_GREEN
+        font-size 0.625rem
+      .memo
+        color COLOR_FONT_COLOR
+        word-break break-word
+    .counterBox
+      width 12.35rem
+      margin 0 auto
+      font-size 0.875rem
+      color COLOR_WHITE
+      background COLOR_DEEP_GREEN
+      border-radius 0.625rem
+      margin-top 0.325rem
+      padding 0.325rem
+      .item
+        vendor-property display box
+        box-pack center
+        box-align center
+        box-orient vertical
+        .title
+          margin-top 0.125rem
+    .btsBox
+      vendor-property display box
+      box-align center
+      box-pack center
+      margin-top 0.425rem
+      .bt
+        width 4.1rem
+        height 2.5rem
+        border-radius 2rem
+        vendor-property display box
+        box-align center
+        box-pack center
+        color COLOR_WHITE
+        font-size 0.875rem
+        margin-left 0.875rem
+        &:first-child
+          margin-left 0
+        &.one
+          background #599135
+          border 1px solid #3C603E
+        &.two
+          background #8AB563
+          border 1px solid #A6BCA3
+    .replyTextBox
+      background #BCCB8D
+      color COLOR_WHITE
+      margin-top 0.865rem
+      .title
+        font-size 0.675rem
+        padding 0.215rem 0.625rem
+        border-bottom 1px solid COLOR_WHITE
+      .item
+        vendor-property display box
+        padding 5px
+        border-bottom 1px solid rgba(255, 255, 255, 0.2)
+        > img
+          size 80px 80px
+        .main
+          box-flex 1
+          margin-left 5px
+          .nickname
+            font-size 10px
+          .content
+            margin-top 2px
+            font-size 14px
+            word-break break-word
+            text-align justify
+        .date
+          font-size 10px
+          
+.popup-box-info
+  vendor-property: display box
+  box-align: center
+  box-pack: center  
+  animation: fly-up .25s linear 1
+  z-index: 100001
+  .box-info
+    padding-top: 10px
+    width: 268px
+    min-height 110px 
+    background #8fc35c
+    border-radius: 6px
+    .subsrc-txt
+      color: #fff 
+      font-size: 12px
+      line-height: 20px
+      text-align: center
+    .box-title
+      line-height: 30px 
+      color: #FFF
+      font-size: 14px 
+      text-align: left
+      padding-left: 15px 
+    .box-input         
+      > input,
+      > textarea 
+        display: block
+        width: 218px
+        margin: 0 auto
+        font-size: 14px
+        background-color: #fff
+        height: 20px    
+        -webkit-appearance: inherit
+        border-width: 2px    
+        border-image: url(images/input-box.png) 4 4 4 4 stretch stretch
+      > textarea
+        width 208px
+        height 60px
+        padding 5px
+
+.sbtn-bar
+  vendor-property: display box
+  box-orient: horizontal
+  box-align: center 
+  box-pack: center
+  margin: 10px 0
+  .sbtn-common
+    margin: 0 10px
+    size: 100px*2.25 32px*2.25
+    line-height: @height
+    font-size: 14px 
+    color: #fff 
+    background COLOR_BROWN_DEEP
+    text-align: center  
+    border-radius: 4px
+    border 1px solid #FFFFFF
+    &:active
+      background-color: #B24B33
+  .sbtn-next
+    size: 130px 32px
+    line-height: @height
+    font-size: 16px 
+    color: #fff 
+    background: #E76F32
+    text-align: center   
+    &:before 
+      position: absolute
+      content: ''
+      top: -4px
+      left: 0
+      size: 130px 4px
+      background: image('icon2.png') no-repeat center center
+      background-size: 130px 4px
+  .sbtn-pic
+    size: 100px 32px
+    line-height: @height
+    font-size: 14px 
+    color: #fff 
+    background: #53ABDD
+    text-align: center
+    
+#page-rank
+  background COLOR_GREEN
+  .vpage-content
+    img
+      width 100%
+      display block
+      margin 0
+    .title
+      font-size 1.25rem
+      text-align center
+      margin 0.625rem auto
+      font-weight 500
+    .titles
+      width 90%
+      margin 0.325rem auto 0 auto
+      vendor-property display box
+      color COLOR_WHITE
+      .name1
+        width 3.75rem
+        text-align center
+      .name2
+        width 1.875rem
+      .name3
+        box-flex 1
+    .list
+      padding 0 0 0.625rem 0
+      .item
+        width 90%
+        height 1.875rem
+        margin 0.325rem auto 0 auto
+        vendor-property display box
+        background COLOR_WHITE
+        border-radius 0.325rem
+        color COLOR_FONT_COLOR
+        > div
+          height @height
+          color COLOR_BROWN_DEEP
+        .index
+          width 3.75rem
+          font-size 0.875rem
+          text-align center
+          line-height @height
+        .headimg
+          width 1.875rem
+        .nickname
+          box-flex 1
+          line-height @height
+          margin-left 0.325rem
+          margin-right 0.325rem
+        .num
+          line-height @height
+          margin-right 0.325rem

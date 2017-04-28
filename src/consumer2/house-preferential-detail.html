@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <noscript><meta http-equiv="refresh" content="0; url=unsupported.html"></noscript>
+  <title>项目特价房</title>
+  <!-- css -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="css/consumer.css" rel="stylesheet">
+  <link href="css/zy.css" rel="stylesheet"> 
+  <style>
+    body{
+      background: #fff;
+    }      
+  </style>   
+</head>
+<body>
+  <!-- html -->
+  <article id="page-house-preferential-detail" class="vpage hide"> 
+    <section>
+      <div class="vpage-content">
+
+        <div class="banner hide"></div>
+
+        <script name="info" type="text/template">
+          <div class="header-layer" v-link="*goDetail ${preprojectid}">
+            <div>${projectname}<span>(点击进入楼盘详情)</span></div>
+            <div>已预约${booknum}人</div>
+          </div>
+          <div class="info-layer">
+            <div class="item hide">
+              <label>房号：</label>
+              <div>${propertycompany}</div>
+            </div>
+            <div class="item">
+              <label>户型：</label>
+              <div>${structure}</div>
+            </div> 
+            <div class="item">
+              <label>面积：</label>
+              <div>${floorarearatio}㎡</div>
+            </div>
+            <div class="item hide">
+              <label>距离结束时间：</label>
+              <div>${time}</div>
+            </div>                                   
+          </div>
+          <div class="price-layer">
+            <div class="left">
+              <div>原价</div>
+              <div>${propertyexpense}</div>
+            </div>
+            <div class="right">
+              <div>线上专享</div>
+              <div>${price}</div>
+            </div>
+          </div>
+          <div class="bookbtn" v-link="*bookFun ${preprojectid}">预约看房</div>
+          <div class="desc-layer ${COMMISSION:hide}">
+            <div class="header-item">佣金说明</div>
+            <div class="desc-area">${commission}</div>
+          </div>
+          <div class="desc-layer ${AREADESC:hide}">
+            <div class="header-item">房源描述</div>
+            <div class="desc-area">${areadesc}</div>
+          </div>   
+          <div class="desc-layer ${NEARBYDESC:hide}">
+            <div class="header-item">交通状况</div>
+            <div class="desc-area">${nearbydesc}</div>
+          </div>                 
+        </script>
+
+      </div>
+    </section>
+  </article>
+
+  <div class="appointment-popup2 scrim hide">
+    <div class="info-box-area">
+      <div class="info-box-item">
+        <div class="name-left">姓&nbsp;&nbsp;&nbsp;&nbsp;名</div>
+        <input type="text" id="mname" value="" placeholder="请输入姓名">
+      </div>
+      <div class="info-box-item">
+        <div class="name-left">手机号码</div>
+        <input type="tel" id="telnum" value="" placeholder="请输入手机号" maxlength="11">
+      </div>
+      <div class="info-box-item vericodeType">
+        <div class="name-left">验 证 码</div>
+        <input type="tel" id="vericode" value="" placeholder="请输入验证码" maxlength="6">
+        <div class="btn-vericode">免费获取验证码</div>
+      </div>
+    </div>
+    <div class="sbtn-bar">
+      <div class="sbtn-next cancel">取 消</div>
+      <div class="sbtn-next submit">预 约</div>
+    </div> 
+  </div> 
+
+<!-- js -->
+<script src="../main.js" data-require="./shareCommon"></script>

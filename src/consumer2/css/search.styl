@@ -1,0 +1,214 @@
+@import "../../css/common" 
+
+#page-zy-search
+  background-color: #efefef
+  padding-top: (3rem + 1.625rem + 0.625rem)
+  > section
+    padding-left: 4.3125rem
+  .banner
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: 3rem
+    background: no-repeat center center
+    background-size: cover
+    z-index: 9
+  .search-panel
+    position: fixed
+    top: 3rem
+    left: 0
+    right: 0
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center
+    padding: 0.3125rem
+    background-color: #717071
+    z-index: 9
+    .search-box
+      box-flex: 1
+      border-image: url('../images/search-box.png') 2 20 2 20 stretch stretch
+      border-width: 1px 0.625rem
+      > input
+        width: 100%
+        height: 1.5rem
+        margin: 0
+        padding: 0
+        border: none
+        background: transparent
+        color: #BAB9B9
+        font-size: 1rem
+        line-height: @height
+    .searchbt
+      size: 4rem 1.6rem
+      background: url('../images/searchbt.png')
+      background-size: 100% 100%
+  > aside
+    position: fixed
+    top: (3rem + 1.625rem + 0.625rem)
+    left: 0
+    bottom: 2.75rem
+    width: 4.0625rem
+    z-index: 8
+    .item
+      position: relative
+      border-bottom: 1px solid #979898
+      line-height: 1.5rem
+      padding: 0.625rem 0
+      font-size: 0.875rem
+      color: #595757
+      text-align: center
+      &.selected
+        color: #fff
+        &:before
+          position: absolute
+          content: ""
+          right: -0.3125rem
+          top: (@line-height / 2 + 0.625rem)
+          margin-top: -0.3125rem
+          size: 0 0
+          border: 0.3125rem solid #F6F5F1
+          border-color: transparent #F6F5F1 transparent transparent
+          z-index: 10
+  .house-item
+    margin-bottom: 0.3125rem
+    .info-box
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center
+      background-color: #fff
+      padding: 1px
+      > .img
+        size: 4.6875rem 4.6875rem
+        background: #fafafa no-repeat center center
+        background-size: cover
+        margin-right: 0.5rem
+      > .content
+        box-flex: 1
+        .title
+          font-size: 1rem
+          line-height: 1.75em
+          ellipsis: ellipsis
+        .value
+          font-size: 0.625rem
+          line-height: 1.2em
+          color: #838485
+          ellipsis: ellipsis
+          &.hasmanagerprice
+            color: #bb4a39
+        .tag-box-inline
+          vendor-property: display box
+          box-orient: horizontal
+          box-align: center
+          height: 1.25rem
+          .tag
+            border-image url(../images/border.png) 4 4 4 4 stretch stretch
+            border-width: 0.125rem            
+            font-size: 0.625rem
+            line-height: 0.75rem
+            color: #878888
+            // border: 1px solid #333
+            padding: 0 0.125rem 
+            margin-right: 0.125rem
+      > .arrow
+        size: 2rem 2rem
+        background: no-repeat center center
+        background-size: 0.5rem 0.875rem
+      .online-txt
+        position: absolute
+        bottom: 0.125rem 
+        right: 0.75rem 
+        line-height: 1.25rem
+        font-size: 0.75rem 
+        color: #e96628
+        &:active 
+          color: #a34414 
+      .online-logo
+        position: absolute
+        top: 0
+        left: 0
+        size: 3rem 3rem 
+        background: image('online/online_logo.png') no-repeat center center
+        background-size: 3rem 3rem                  
+    .tag-box
+      height: 2.5rem
+      background-color: #fff
+      .tag
+        position: absolute
+        top: 0.5rem
+        left: 0.5rem
+        border: #D8DBDC 1px solid
+        color: #6F6F6F
+        font-size: 0.75rem
+        padding: 0.25rem
+        &:after
+          position: absolute
+          content: ""
+          border: 1px solid #D8DBDC
+          background-color: #fff
+          border-width: 1px 1px 0 0
+          size: 0.4375rem 0.4375rem
+          top: -0.25rem
+          left: 50%
+          margin-left: -0.25rem
+          transform: rotate(-45deg)
+        > div
+          position: relative
+          z-index: 1
+  &.classify-common
+    .banner
+      background-image: url('../images/banner_school.jpg')
+    > aside
+      display: none
+    > section:first-child
+      padding-left: 0
+    .house-item
+      .arrow
+        background-image: url('../images/arrow_school.png')
+  &.classify-school
+    .banner
+      background-image: url('../images/banner_school.jpg')
+    > aside
+      border-right: 0.25rem solid #2ca6e0
+      .item.selected
+        background-color: #2ca6e0
+    .house-item
+      .arrow
+        background-image: url('../images/arrow_school.png')
+  &.classify-map
+    .banner
+      background-image: url('../images/banner_map.jpg')
+    > aside
+      border-right: 0.25rem solid #bc983f
+      .item.selected
+        background-color: #bc983f
+    .house-item
+      .arrow
+        background-image: url('../images/arrow_map.png')
+  &.classify-brand
+    .banner
+      background-image: url('../images/banner_brand.jpg')
+    > aside
+      border-right: 0.25rem solid #6fb1ce
+      .item.selected
+        background-color: #6fb1ce
+    .house-item
+      .arrow
+        background-image: url('../images/arrow_brand.png')
+  &.classify-subway
+    .banner
+      background-image: url('../images/banner_subway.jpg')
+    > aside
+      border-right: 0.25rem solid #6da02a
+      .item.selected
+        background-color: #6da02a
+    .house-item
+      .arrow
+        background-image: url('../images/arrow_subway.png')
+ .noitem
+  line-height: 2.5rem
+  color #616161
+  font-size 0.875rem
+  text-align center   
+  &.noleft 
+    margin-left: -4.3125rem    

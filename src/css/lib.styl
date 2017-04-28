@@ -1,0 +1,164 @@
+image(name, path = '')
+  url('../images/' + path + name)
+
+size(width, height = false)
+  width: width
+  if height
+    height: height
+  else
+    height: width
+    
+px2em(px)
+  (px / 16)em
+em2px(em)
+  (em * 16)px
+
+position(type, top = 'none', right = 'none', bottom = 'none', left = 'none')
+  position: type
+  if top != 'none'
+    top: top
+  if bottom != 'none'
+    bottom: bottom
+  if right != 'none'
+    right: right
+  if left != 'none'
+    left: left
+
+pos(top, right = 'none', bottom = 'none', left = 'none')
+  if top != 'none'
+    top: top
+  if bottom != 'none'
+    bottom: bottom
+  if right != 'none'
+    right: right
+  if left != 'none'
+    left: left
+
+ellipsis(lines)
+  overflow: hidden
+  if lines == 'ellipsis' || lines == '1' || lines == 'yes'
+    text-overflow: ellipsis
+    white-space: nowrap
+  else
+    word-wrap: normal
+    text-overflow: ellipsis
+    flexbox: yes
+    box-orient: vertical
+    line-clamp: lines
+
+// Vendor
+vendor(prop, args)
+  {prop} args
+  -webkit-{prop} args
+  // -moz-{prop} args
+  // -ms-{prop} args
+  // -o-{prop} args
+
+vendor-property(prop, value...)
+  {prop}: value
+  {prop}: (-webkit- + value)
+  // {prop}: (-moz- + value)
+  // {prop}: (-ms- + value)
+  // {prop}: (-o- + value)
+
+border-radius(lt, rt = false, rb = false, lb = false)
+  if !rt && !rb && ! lb
+    vendor('border-radius', lt)
+  else 
+    if lt && lt != 'none'
+      -webkit-border-top-left-radius: lt;
+      // -moz-border-radius-topleft: lt;
+      border-top-left-radius: lt;
+    if rt && rt != 'none'
+      -webkit-border-top-right-radius: rt;
+      // -moz-border-radius-topright: rt;
+      border-top-right-radius: rt;
+    if rb && rb != 'none'
+      -webkit-border-top-right-radius: rb;
+      // -moz-border-radius-topright: rb;
+      border-top-right-radius: rb;
+    if lb && lb != 'none'
+      -webkit-border-bottom-left-radius: lb;
+      // -moz-border-radius-bottomleft: lb;
+      border-bottom-left-radius: lb;
+
+user-select()
+  vendor('user-select', arguments)
+
+border-image()
+  vendor('border-image', arguments)
+
+box-shadow()
+  vendor('box-shadow', arguments)
+
+// horizontal | vertical | inline-axis | block-axis | inherit
+box-orient(dir)
+  vendor('box-orient', dir)
+  // if dir == 'horizontal'
+  //   -ms-flex-direction: row
+  // if dir == 'vertical'
+  //   -ms-flex-direction: column
+
+// start | end | center | baseline | stretch
+box-align()
+  vendor('box-align', arguments)
+  // -ms-flex-align: arguments
+
+// start | end | center | justify
+box-pack()
+  vendor('box-pack', arguments)
+  // -ms-flex-pack: arguments
+
+// single | multiple
+box-lines()
+  vendor('box-lines', arguments)
+
+box-flex()
+  vendor('box-flex', arguments)
+  // -ms-flex: arguments
+
+order()
+  vendor('order', arguments)
+  // -ms-flex-order: arguments
+
+box-sizing()
+  vendor('box-sizing', arguments)
+
+flexbox(dir)
+  vendor-property: display box
+  // display: -ms-flexbox
+  if dir == 'horizontal'
+    box-orient: dir
+    box-align: center
+  if dir == 'vertical'
+    box-orient: dir
+
+// linear  动画从头到尾的速度是相同的。
+// ease  默认。动画以低速开始，然后加快，在结束前变慢。
+// ease-in 动画以低速开始。
+// ease-out  动画以低速结束。
+// ease-in-out 动画以低速开始和结束。
+// cubic-bezier(n,n,n,n) 在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+animation()
+  vendor('animation', arguments)
+
+transform()
+  vendor('transform', arguments)
+
+transform-origin()
+  vendor('transform-origin', arguments)
+
+transition()
+  vendor('transition', arguments)
+
+filter()
+  vendor('filter', arguments)
+
+mask-image()
+  vendor('mask-image', arguments)
+
+line-clamp()
+  vendor('line-clamp', arguments)
+
+appearance()
+  vendor('appearance', arguments)

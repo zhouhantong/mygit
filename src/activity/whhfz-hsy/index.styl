@@ -1,0 +1,216 @@
+@import "../../css/lib"
+
+A=720/320
+
+size(width, height, orig=true)
+  if orig
+    width floor(width / A)
+    height floor(height / A)
+  else
+    width width
+    height height
+    
+COLOR_WHITE=#FFFFFF
+COLOR_PURPLE=#95166C
+COLOR_LIGHT_PURPLE=#DB83B4
+COLOR_BLACK=#000
+
+body
+  background-color COLOR_BLACK
+
+img
+  width 100%
+  display block
+  margin 0
+  
+#page-list
+  background-color COLOR_BLACK
+  .stage
+    .counterBox
+      background url(images/1.png) left bottom repeat-x
+      background-size 0.53125rem 0.34375rem
+      .grid-item
+        &:first-child
+          .counter
+            &:before
+              background none
+      .counter
+        background-color COLOR_PURPLE
+        vendor-property display box
+        box-pack center
+        box-align center
+        box-orient vertical
+        font-size 0.75rem
+        color COLOR_LIGHT_PURPLE
+        padding-top 0.25rem
+        margin 0 0 0.25rem 0
+        &:before
+          content ""
+          width 1px
+          height 1.325rem
+          background-color COLOR_LIGHT_PURPLE
+          position absolute
+          left 0
+          top 50%
+          margin-top - (@height / 2)
+        .count
+          margin-top 0.125rem
+    .list
+      margin 0.25rem
+      .hflexbox
+        margin-top 0.25rem
+        &:first-child
+          margin-top 0
+      .item
+        .imgBox
+          .likebt
+            width 5.53125rem
+            height 1.375rem
+            background url(images/likebt.png)
+            background-size @width @height
+            position absolute
+            left 50%
+            margin-left - (@width / 2)
+            bottom 0.475rem
+        .mainBox
+          vendor-property display box
+          background-color COLOR_PURPLE
+          padding 0.325rem 0.325rem 0.25rem 0.325rem
+          .flex
+            color COLOR_WHITE
+            width 50%
+            font-size 0.625rem
+            > div
+              line-height 0.875rem
+              text-align center
+              margin-top 0.125rem
+              white-space nowrap
+              &:first-child
+                margin-top 0
+              &.like
+                > span
+                  color #F4B723
+                  margin-right 0.1rem
+    .exlpain
+      margin 0.425rem 0.425rem 1rem 0.425rem
+      padding 0.425rem 0
+      font-size 0.625rem
+      color COLOR_LIGHT_PURPLE
+      text-align justify
+      letter-spacing 1px
+      line-height 1.125rem
+      background url(images/2.png) left top repeat-x
+        
+            
+#page-post
+  .vpage-content
+    .imgBox
+      size 31.5rem 42rem
+      overflow hidden
+      background #fff
+      margin 0.625rem auto 0 auto
+      .imgBox-wrapper
+        width @width
+        height @height
+        background COLOR_WHITE url(images/add.png) no-repeat center center
+        background-size 3.75rem 3.75rem
+        margin 0 auto
+        .fileimg
+          margin 0 auto
+      .fileinput
+        width @width
+        height @height
+        position absolute
+        left 0
+        top 0
+        z-index 100
+        opacity 0
+    .inputBox
+      .explain
+        width 13rem
+        font-size 0.625rem
+        margin 0.3125rem auto
+        line-height 1rem
+      .inputItem
+        width 13rem
+        vendor-property display box
+        margin 0 auto
+        color COLOR_WHITE
+        margin-top 0.625rem
+        .title
+          vendor-property display box
+          box-align center
+          box-pack center
+          font-size 1.125rem
+        > input
+          box-flex 1
+          border none
+          border-radius 0.3125rem
+          display inherit
+          padding 0.425rem
+          margin-left 0.425rem
+          font-size 1rem
+        > textarea
+          box-flex 1
+          border none
+          border-radius 0.3125rem
+          display inherit
+          padding 0.425rem
+          margin-left 0.425rem
+          font-size 1rem
+    .btBox
+      margin 0 auto
+      width 13rem
+      margin-top 0.625rem
+      vendor-property display box
+      box-pack end
+      .savebt
+        background COLOR_WHITE
+        padding 0.325rem 0.625rem
+        color COLOR_FONT_COLOR
+        font-size 1rem
+        border-radius 0.75rem
+        
+.scrim
+  .scrim-wrapper
+    padding-bottom 1rem
+  .detail
+    margin 1rem 1rem 0 1rem
+    .main
+      background-color COLOR_PURPLE
+      padding 0.25rem
+      .item
+        vendor-property display box
+        font-size 0.875rem
+        color COLOR_WHITE
+        margin-top 0.25rem
+        > div
+          &.ellipsis
+            margin 0 0.25rem
+          > span
+            color #F4B723
+            margin-right 0.1rem
+        &:first-child
+          margin-top 0
+        .flex
+          box-flex 1
+          text-align justify
+          letter-spacing 1px
+          line-height 1rem
+          word-break break-word
+    .close
+      width 1.875rem
+      height 1.875rem
+      background url(images/close.png)
+      background-size @width @height
+      position absolute
+      right - (@width / 3)
+      top - (@height / 3)
+  .likebt
+    background-color COLOR_PURPLE
+    border-radius 0.5rem
+    font-size 0.875rem
+    text-align center
+    margin 0.5rem 1rem 1rem 1rem
+    color COLOR_WHITE
+    padding 0.25rem 0

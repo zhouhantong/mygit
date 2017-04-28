@@ -1,0 +1,455 @@
+@import "../../css/common"
+
+COMMON_COLOR_GRAY = #929292
+COMMON_COLOR_RED = #e23333
+COMMON_COLOR_BLUE = #2eb3e8
+COMMON_COLOR_BORDER = #F2F2F2
+COMMON_COLOR_BORDER_LINE = #D1D6DA
+
+#page-kpi-index
+  .info-layer
+    padding: 0.5rem 0.75rem
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center  
+    > img 
+      size: 3.9rem 3.9rem 
+      border-radius: 3.9rem
+      border: 1px solid COMMON_COLOR_RED
+    .right-pannel
+      padding-left: 0.75rem 
+      box-flex: 1
+      .item 
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: start 
+        box-pack: start 
+        line-height: 1.3rem 
+        color: #000 
+        > div 
+          font-size: 0.75rem
+          &:last-child 
+            box-flex: 1
+            text-align: right
+        .mobile 
+          color: COMMON_COLOR_GRAY
+          font-size: 0.625rem                                                       
+  .f-layer
+    border-top: 0.3125rem solid COMMON_COLOR_BORDER 
+    &.borderbt
+      border-top: 0
+      border-bottom: 0.3125rem solid COMMON_COLOR_BORDER 
+    .func-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center 
+      box-pack: center
+      border-bottom: 1px solid COMMON_COLOR_BORDER_LINE
+      &:first-child
+        border-top: 1px solid COMMON_COLOR_BORDER_LINE
+      > div 
+        width: 50%
+        height: 3.125rem
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center 
+        box-pack: center   
+        .icon
+          size: 2.75rem 2.75rem
+          &.qrcode
+            background: image('kpi/icon_qrcode.png') no-repeat center center
+            background-size: 1.5rem 1.5rem
+          &.link
+            background: image('kpi/icon_link.png') no-repeat center center
+            background-size: 1.5rem 1.5rem    
+          &.dept
+            background: image('kpi/icon_deptrank.png') no-repeat center center
+            background-size: 1.5rem 1.5rem
+          &.per
+            background: image('kpi/icon_perrank.png') no-repeat center center
+            background-size: 1.5rem 1.5rem
+          &.fans
+            background: image('kpi/icon_fansrank.png') no-repeat center center
+            background-size: 1.5rem 1.5rem                     
+        .right-pannel 
+          box-flex: 1  
+          > div 
+            line-height: 1rem
+            &:first-child
+              color: #000
+              font-size: 0.75rem
+            &:last-child 
+              color: COMMON_COLOR_GRAY   
+              font-size: 0.625rem            
+        &:last-child
+          &:before
+            position: absolute
+            content: ''
+            left: 0
+            top: 0 
+            bottom: 0
+            width: 1px 
+            background-color: COMMON_COLOR_BORDER_LINE          
+          // border-left: 1px solid COMMON_COLOR_BORDER_LINE
+      &.flex    
+        > div 
+          width: 100%
+          &:last-child
+            &:before
+              width: 0            
+            // border: none        
+  .f-layer2
+    border-top: 0.3125rem solid COMMON_COLOR_BORDER 
+    .func-layer
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center 
+      box-pack: center
+      border-bottom: 1px solid COMMON_COLOR_BORDER_LINE
+      &:first-child
+        border-top: 1px solid COMMON_COLOR_BORDER_LINE
+      > div 
+        width: 50%
+        height: 3.125rem
+        vendor-property: display box
+        box-orient: vertical
+        box-align: center 
+        box-pack: center 
+        &:first-child
+          &:before
+            position: absolute
+            content: ''
+            right: 0
+            top: 0.5rem
+            height: 2.125rem 
+            width: 1px 
+            background-color: COMMON_COLOR_BORDER_LINE
+        > div 
+          font-size: 0.75rem 
+          line-height: 1.35rem 
+          &:first-child
+            color: COMMON_COLOR_GRAY
+          &:last-child
+            color: #000
+
+#page-kpi-deptrank
+  .item 
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center    
+    height: 3.75rem 
+    padding: 0 0.5rem
+    &:before
+      position: absolute
+      content: ''
+      left: 2.5rem 
+      right: 0
+      bottom: 1
+      height: 1px 
+      background-color: COMMON_COLOR_BORDER_LINE
+    &:after 
+      position: absolute
+      content: ""
+      size: 0.5rem 0.625rem
+      right: 0.3125rem
+      top: 50%
+      margin-top: -(@height / 2)
+      background: image('arrow.png') no-repeat center center
+      background-size: contain       
+    .index 
+      size: 1.5rem 1.5rem 
+      color: COMMON_COLOR_RED
+      border: 1px solid COMMON_COLOR_RED
+      border-radius: 1.5rem 
+      font-size: 0.65rem 
+      text-align: center
+      line-height: @height
+    .name
+      box-flex: 1
+      font-size: 0.75rem 
+      color: #000 
+      padding-left: 0.5rem
+      padding-right: 0.5rem 
+      ellipsis: ellipsis
+    > div 
+      &:nth-child(3)
+        margin-right: 1rem 
+        > div 
+          font-size: 0.625rem 
+          color: COMMON_COLOR_GRAY
+          line-height: 1.2rem 
+      &:nth-child(4)
+        margin-right: 1rem 
+        > div 
+          font-size: 0.625rem 
+          color: #000
+          line-height: 1.2rem           
+
+#page-kpi-deptdetail
+  .item
+    padding: 0.25rem 0.75rem
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center 
+    height: 3.125rem 
+    &:before
+      position: absolute
+      content: ''
+      left: 0.75rem 
+      right: 0
+      bottom: 1
+      height: 1px 
+      background-color: COMMON_COLOR_BORDER_LINE
+    > img 
+      display: block 
+      size: 2.5rem 2.5rem 
+      border: 1px solid COMMON_COLOR_RED
+      border-radius: 2.5rem 
+    .right-pannel
+      box-flex: 1
+      padding-left: 0.75rem
+      > div 
+        line-height: 1.25rem 
+        color: #000
+        &:first-child
+          font-size: 0.75rem 
+          ellipsis: ellipsis
+        &:last-child
+          font-size: 0.625rem
+    .index
+      color: COMMON_COLOR_RED
+      font-size: 0.875rem
+
+#page-kpi-perrank
+  .info-layer
+    padding: 0.5rem 0.75rem
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center 
+    border-bottom: 0.3125rem solid COMMON_COLOR_BORDER 
+    > img 
+      size: 3.2rem 3.2rem 
+      border-radius: 3.2rem
+      border: 1px solid COMMON_COLOR_RED
+    .right-pannel
+      padding-left: 0.75rem 
+      box-flex: 1
+      .item 
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: start 
+        box-pack: start 
+        line-height: 1.6rem 
+        color: #000 
+        > div 
+          font-size: 0.75rem
+          color: #000
+          &:last-child 
+            box-flex: 1
+            text-align: right
+        .red 
+          color: COMMON_COLOR_RED
+        .index 
+          font-size: 0.625rem 
+          > span 
+            color: COMMON_COLOR_RED
+  .item-layer
+    padding: 0.25rem 0.75rem
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center 
+    height: 3.125rem 
+    &:before
+      position: absolute
+      content: ''
+      left: 4rem 
+      right: 0
+      bottom: 1
+      height: 1px 
+      background-color: COMMON_COLOR_BORDER_LINE
+    > img 
+      display: block 
+      size: 2.5rem 2.5rem 
+      border: 1px solid COMMON_COLOR_RED
+      border-radius: 2.5rem 
+    > div 
+      &:nth-child(2)
+        padding-left: 0.75rem
+        > div 
+          line-height: 1.25rem 
+          color: #000
+          &:first-child
+            font-size: 0.75rem 
+          &:last-child
+            font-size: 0.625rem
+      &:nth-child(3)
+        box-flex: 1
+        > div 
+          text-align: right
+          line-height: 1.25rem 
+          &:first-child
+            color: #000
+            font-size: 0.625rem 
+          &:last-child
+            color: COMMON_COLOR_RED
+            font-size: 0.875rem
+#page-kpi-myfans
+  > section
+    margin-top: 3.25rem
+  .select-layer
+    position: fixed
+    z-index: 10
+    top: 0 
+    left: 0
+    right: 0
+    height: 3.25rem 
+    vendor-property: display box
+    box-align: center 
+    box-pack: center 
+    background-color: #fff    
+    .select-bar
+      box-flex: 1
+      height: 2.25rem 
+      margin: 0 1rem 
+      vendor-property: display box
+      box-orient: horizontal
+      box-align: center 
+      box-pack: center       
+      .btn 
+        box-flex: 1
+        line-height: @height
+        text-align: center
+        color: COMMON_COLOR_RED
+        font-size: 0.75rem
+        &:first-child
+          border: 1px solid COMMON_COLOR_RED
+          border-top-left-radius: 0.3125rem
+          border-bottom-left-radius: 0.3125rem
+        &:last-child
+          border: 1px solid COMMON_COLOR_RED
+          border-top-right-radius: 0.3125rem
+          border-bottom-right-radius: 0.3125rem 
+          border-left: 0         
+        &.selected 
+          color: #fff 
+          background-color: COMMON_COLOR_RED
+  .item-layer 
+    padding: 0.25rem 0.75rem
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center 
+    height: 3.125rem 
+    &:before
+      position: absolute
+      content: ''
+      left: 0.75rem 
+      right: 0
+      bottom: 1
+      height: 1px 
+      background-color: COMMON_COLOR_BORDER_LINE
+    > img 
+      display: block 
+      size: 2.5rem 2.5rem 
+      border: 1px solid COMMON_COLOR_RED
+      border-radius: 2.5rem 
+    .right-pannel
+      box-flex: 1
+      padding-left: 0.75rem
+      > div 
+        line-height: 1.25rem 
+        color: #000
+        &:first-child
+          font-size: 0.75rem 
+          ellipsis: ellipsis
+      .line-layer
+        vendor-property: display box
+        box-orient: horizontal
+        box-align: center 
+        box-pack: center 
+        color: COMMON_COLOR_GRAY 
+        > div 
+          line-height: 1.25rem 
+          &:first-child
+            box-flex: 1    
+            font-size: 0.625rem
+          &:last-child
+            font-size: 0.625rem    
+  .item-layer2
+    padding: 0 1rem 
+    line-height: 2.25rem 
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center
+    > div 
+      font-size: 0.75rem 
+      color: COMMON_COLOR_GRAY
+      &:first-child
+        box-flex: 1    
+  .item-layer3
+    padding: 0 1rem 
+    line-height: 2.25rem 
+    vendor-property: display box
+    box-orient: horizontal
+    box-align: center 
+    box-pack: center
+    border: 1px solid COMMON_COLOR_BORDER_LINE
+    > div 
+      font-size: 0.75rem 
+      color: COMMON_COLOR_RED
+      &:first-child
+        box-flex: 1   
+
+
+.popup-qrcode
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 10
+  background: rgba(0,0,0,0.5) 
+  .qrcode-layer
+    width: 15rem 
+    position: absolute
+    top: 20%
+    left: 50%
+    margin-left: -8.5rem
+    padding: 1rem 1rem 0 1rem
+    vendor-property: display box
+    box-orient: vertical
+    box-align: center 
+    box-pack: center  
+    line-height: 2.5rem 
+    font-size: 0.75rem 
+    color: #fff  
+    background-color: COMMON_COLOR_RED
+    .logo 
+      size: 4.5rem 1.875rem 
+      background: image('kpi/logo.png') no-repeat center center
+      background-size: cover  
+    > img 
+      display: block
+      width: 100%       
+.home-share-note
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 10
+  background: rgba(0,0,0,0.5)
+  .home-share-arrow
+    position: absolute
+    top: 0.625rem 
+    right: 0.625rem
+    size: 5.375rem 3.25rem
+    background: image('kpi/pic_share.png') no-repeat center center
+    background-size: 2.8125rem 2.8125rem 
+
